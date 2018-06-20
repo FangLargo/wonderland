@@ -1,0 +1,27 @@
+
+page3.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dog_bird_bg
+  rotate: false
+  xy: 2, 843
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+dog_bird_bird
+  rotate: false
+  xy: 921, 543
+  size: 342, 298
+  orig: 1920, 1080
+  offset: 1292, 52
+  index: -1
+dog_bird_dog
+  rotate: false
+  xy: 2, 2
+  size: 917, 839
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
