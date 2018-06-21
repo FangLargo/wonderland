@@ -60,7 +60,8 @@ public class GameScreen implements Screen {
         //sprite.setPosition(0, 0);
         
         testBook = BookTest.bookTest();
-
+        BookTest.jsonBookMaker();
+        
 	}
 
 	@Override

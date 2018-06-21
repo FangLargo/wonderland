@@ -30,7 +30,8 @@ public class Page {
 	public float offsetX;
 	public float offsetY;
 	
-	public Array<TextureAtlas> atlases = new Array<TextureAtlas>();
+	//public Array<TextureAtlas> atlases = new Array<TextureAtlas>();
+	public String atlas;
 	public Array<Figure> figures = new Array<Figure>();
 	
 	public Array<Anim> cameraAnims = new Array<Anim>();

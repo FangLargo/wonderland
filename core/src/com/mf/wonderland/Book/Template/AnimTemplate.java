@@ -2,6 +2,10 @@ package com.mf.wonderland.Book.Template;
 
 public class AnimTemplate {
 	
+	public AnimTemplate() {
+		
+	}
+	
 	public AnimTemplate(String ty, float sS, float eS, float sX, float sY, float eX, float eY) {
 		this.type = ty;
 		
