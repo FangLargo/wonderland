@@ -38,6 +38,7 @@ public class BookTest {
 		testing.pages.add(newPage2);
 		
 		return testing;
+		//Yes, we're testing.
 	}
 	
 	public static void xmlBookMaker() {
