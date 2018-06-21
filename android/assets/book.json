@@ -1,0 +1,74 @@
+{
+pages: [
+	{
+		pageName: page1
+		scale: 1440
+		scrollWidth: 2560
+		startPositionX: 0
+		startPositionY: 0
+		endPositionX: 1920
+		endPositionY: 0
+		offsetX: 0
+		offsetY: 0
+		atlas: images/page1.atlas
+		figures: [
+			{
+				regionName: littledog_bg
+				startX: 0
+				startY: 0
+				startRotation: 0
+				parallaxDist: 0
+				anims: []
+			}
+			{
+				regionName: littledog_dog
+				startX: 1290
+				startY: 200
+				startRotation: 0
+				parallaxDist: 0
+				anims: []
+			}
+		]
+		cameraAnims: []
+	}
+	{
+		pageName: page2
+		scale: 1440
+		scrollWidth: 2560
+		startPositionX: 0
+		startPositionY: 0
+		endPositionX: 1920
+		endPositionY: 0
+		offsetX: 0
+		offsetY: 0
+		atlas: images/page2.atlas
+		figures: [
+			{
+				regionName: shogatsu2015_bg
+				startX: 0
+				startY: 0
+				startRotation: 0
+				parallaxDist: 0
+				anims: []
+			}
+			{
+				regionName: shogatsu2015_matsu
+				startX: 1626
+				startY: 380
+				startRotation: 0
+				parallaxDist: 0
+				anims: []
+			}
+			{
+				regionName: shogatsu2015_girl
+				startX: 1425
+				startY: 120
+				startRotation: 0
+				parallaxDist: 0
+				anims: []
+			}
+		]
+		cameraAnims: []
+	}
+]
+}
