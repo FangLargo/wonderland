@@ -15,13 +15,13 @@ shogatsu2015_girl
   rotate: true
   xy: 2, 2
   size: 401, 844
-  orig: 1920, 1080
-  offset: 993, 21
+  orig: 401, 844
+  offset: 0, 0
   index: -1
 shogatsu2015_matsu
   rotate: true
   xy: 2, 405
   size: 471, 993
-  orig: 1920, 1080
-  offset: 1092, 39
+  orig: 471, 993
+  offset: 0, 0
   index: -1

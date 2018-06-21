@@ -15,6 +15,6 @@ littledog_dog
   rotate: false
   xy: 2, 2
   size: 826, 716
-  orig: 1920, 1080
-  offset: 943, 75
+  orig: 826, 716
+  offset: 0, 0
   index: -1
