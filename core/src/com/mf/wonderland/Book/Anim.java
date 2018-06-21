@@ -29,16 +29,6 @@ public class Anim {
 	
 	public Vector2 updateAnim(float progress) {
 		if(queryAnim(progress)) {
-//			float intervalX = this.endX - this.startX;
-//			float intervalY = this.endY - this.startY;
-//			float intervalScroll = this.endScroll - this.startScroll;
-//			
-//			float midScroll = progress - this.startScroll;
-//			float midX = (midScroll/intervalScroll)*intervalX + this.startX;
-//			float midY = (midScroll/intervalScroll)*intervalY + this.startY;
-//			
-//			return new Vector2(midX, midY);
-			
 			return Anim.interpolate(progress, startScroll, endScroll, startX, startY, endX, endY);
 		}
 		
@@ -65,10 +55,8 @@ public class Anim {
 		return false;
 	}
 	
-	
-	public static class AnimType {
-		public static String TRANSLATE = "translate";
-		public static String ROTATE = "rotate";
-		public static String SCALE = "scale";
-	}
+	public static String TRANSLATE = "translate";
+	public static String ROTATE = "rotate";
+	public static String SCALE = "scale";
+
 }

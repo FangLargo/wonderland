@@ -1,9 +1,7 @@
 package com.mf.wonderland.Book;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
@@ -15,8 +13,6 @@ public class Page {
 		startPositionY = 0;
 		endPositionX = 177;
 		endPositionY = 0;
-		
-		//cameraAnims.add(new Anim(Anim.AnimType.TRANSLATE, 0, 0, 0, 0, 0, 0));
 	}
 	
 	public float scale;
@@ -29,24 +25,26 @@ public class Page {
 	
 	public float offsetX;
 	public float offsetY;
-	
-	//public Array<TextureAtlas> atlases = new Array<TextureAtlas>();
+
 	public String atlas;
 	public Array<Figure> figures = new Array<Figure>();
 	
 	public Array<Anim> cameraAnims = new Array<Anim>();
 
+	/**
+	 * For each figures in this page, draw in SpriteBatch. Update figures before doing this. 
+	 * @param sb Spritebatch for render.
+	 */
 	public void renderSprites(SpriteBatch sb) {
-		//Array<Sprite> arr = new Array<Sprite>();
-		
 		for(Figure f: figures) {
-			//arr.add(f.figureSprite);
 			f.figureSprite.draw(sb);
 		}
-		
-		//return arr;
 	}
 	
+	/**
+	 * For each figure, calls updateFigureAnim, which should take care of updates.
+	 * @param progress
+	 */
 	public void updateFigures(float progress) {
 		for(Figure f: figures) {
 			f.updateFigureAnim(progress);

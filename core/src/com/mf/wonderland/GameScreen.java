@@ -2,7 +2,6 @@ package com.mf.wonderland;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,9 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.input.GestureDetector;
-import com.badlogic.gdx.utils.PerformanceCounter;
 import com.mf.wonderland.Book.Book;
-import com.mf.wonderland.debug.BookTest;
 
 public class GameScreen implements Screen {
 	
@@ -41,8 +38,7 @@ public class GameScreen implements Screen {
     AtlasRegion region = atlas.findRegion("littledog_bg");
     float spriteScale = screenHeight/region.getRegionHeight();
     Book testBook;
-    PerformanceCounter count = new PerformanceCounter("counter");
-	
+
 	public GameScreen(final Wonderland gam) {
 		this.game = gam;
 		
@@ -59,8 +55,8 @@ public class GameScreen implements Screen {
         //sprite.setBounds(0, 0, region.getRegionWidth()*spriteScale, screenHeight);
         //sprite.setPosition(0, 0);
         
-        testBook = BookTest.bookTest();
-        BookTest.jsonBookMaker();
+        //testBook = BookTest.bookTest();
+        //BookTest.jsonBookMaker();
         
 	}
 
@@ -77,30 +73,22 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		progress = progress - scrollHandler.dx/pixelsPerUnit;
-		//progress = scrollHandler.dx/pixelsPerUnit;
-		
-		//camera.position.set(progress + screenWidth/2, screenHeight/2, 0);
-		
-		count.start();
 		
 		if(progress < 0) {
 			progress = 0;
 		} else {
 			testBook.updateCamera(camera, progress);
 		}
-		
-		
 		camera.update();
 
 		
 		
 		game.batch.setProjectionMatrix(camera.combined); //or your matrix to draw GAME WORLD, not UI
-		
 	    game.batch.begin();
-	    //sprite.draw(game.batch);
+
+	    //Send in game.batch, Book pulls out each sprite that needs rendering and renders.
 	    testBook.renderBook(progress, game.batch);
-	    //testBook.pages.get(0).figures.get(0).figureSprite.draw(game.batch);
-	    
+
 	    game.batch.end();
 	    
 	    //Render debug
@@ -108,12 +96,11 @@ public class GameScreen implements Screen {
 	    font.draw(debugBatch, progress + " ", 0, 10);
 	    debugBatch.end();
 	    
-	    count.stop();
 	    //log.log();
-	    count.tick();
+
 	}
 
-	FPSLogger log = new FPSLogger();
+	//FPSLogger log = new FPSLogger();
 	
 	@Override
 	public void resize(int width, int height) {

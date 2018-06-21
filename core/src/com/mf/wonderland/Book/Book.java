@@ -1,7 +1,6 @@
 package com.mf.wonderland.Book;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 
@@ -11,7 +10,14 @@ public class Book {
 	}
 	
 	float totalScrollWidth;
+	float viewHeight;
+	float viewWidth;
 	
+	/**
+	 * Updates position of camera according to how much has been scrolled. 
+	 * @param cam The camera to be updated.
+	 * @param progress How much has been scrolled so far.
+	 */
 	public void updateCamera(OrthographicCamera cam, float progress) {
 		float totalProgress = 0;
 		
@@ -22,9 +28,15 @@ public class Book {
 		}
 	}
 	
+	/**
+	 * Checks each page, finds the right one, and then renders each sprite in it. 
+	 * TODO: Add function to render previous or next chapter if in view.
+	 * -Next page is rendered if progress + scaledwidth is beyond page limit.
+	 * @param progress Amount scrolled so far.
+	 * @param sb Spritebatch the sprites will be rendered on.
+	 */
 	public void renderBook(float progress, SpriteBatch sb) {
 		float totalProgress = 0;
-		//int chapter = 0;
 		for(int i = 0; i < this.pages.size; i++) {
 			if(progress >= totalProgress && progress < totalProgress + pages.get(i).scrollWidth) {
 				//chapter = i;
