@@ -1,12 +1,18 @@
 package com.mf.wonderland.debug;
 
+import java.io.StringWriter;
+
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.XmlWriter;
 import com.mf.wonderland.Book.Anim;
 import com.mf.wonderland.Book.Book;
 import com.mf.wonderland.Book.Figure;
 import com.mf.wonderland.Book.Page;
+import com.mf.wonderland.Book.Template.BookTemplate;
 import com.mf.wonderland.Book.Template.FigureTemplate;
 import com.mf.wonderland.Book.Template.PageTemplate;
 
@@ -41,16 +47,46 @@ public class BookTest {
 		//Yes, we're testing.
 	}
 	
-	public static void xmlBookMaker() {
+	public static void jsonBookMaker() {
 		//Page1
-		FigureTemplate p1bg = new FigureTemplate("littledog_bg", 0, 0, 0);
-		FigureTemplate p1dog = new FigureTemplate("littledog_dog", 0, 0, 0);
+		FigureTemplate p1bg = new FigureTemplate("littledog_bg", 0, 0, 1, 0);
+		FigureTemplate p1dog = new FigureTemplate("littledog_dog", 1290, 200, 1, 0);
+		
+		PageTemplate p1 = new PageTemplate("page1", 1440f, 2560, 0f, 0f, 1920f, 0f);
+		p1.atlas = "images/page1.atlas";
+		//p1.atlases.add("images/page1.atlas");
+		p1.figures.add(p1bg);
+		p1.figures.add(p1dog);
 		
 		//PageTemplate p1 = new PageTemplate(1080f, 1920f, 0f, 0f, 1920f, 0f, new Array<String>, new Array<FigureTemplate>, new Array<AnimTemplate>);
 		
 		//Page2
+		FigureTemplate p2bg = new FigureTemplate("shogatsu2015_bg", 0, 0, 1, 0);
+		FigureTemplate p2matsu = new FigureTemplate("shogatsu2015_matsu", 1626, 380, 1, 0);
+		FigureTemplate p2girl = new FigureTemplate("shogatsu2015_girl", 1425, 120, 1, 0);
+		
+		PageTemplate p2 = new PageTemplate("page2", 1440f, 2560f, 0f, 0f, 1920f, 0f);
+		p2.atlas = "images/page2.atlas";
+		p2.figures.add(p2bg);
+		p2.figures.add(p2matsu);
+		p2.figures.add(p2girl);
 		
 		//Page3
+		//TODO : Add page 3
+		
+		BookTemplate book = new BookTemplate();
+		
+		book.pages.add(p1);
+		book.pages.add(p2);
+		
+		Json json = new Json();
+		System.out.println(json.prettyPrint(book));
+		
+		//FileHandle file = Gdx.files.local("book.json");
+		//file.writeString(json.prettyPrint(book), false);
+		
+		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.local("book.json"));
+		System.out.println(bookCopy.pages.get(1).figures.get(2).regionName);
 	}
 	
 	public static void nullCheck() {

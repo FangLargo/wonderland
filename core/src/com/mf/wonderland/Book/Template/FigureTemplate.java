@@ -3,24 +3,17 @@ package com.mf.wonderland.Book.Template;
 import com.badlogic.gdx.utils.Array;
 
 public class FigureTemplate {
-	
-	public FigureTemplate(String rN, float sX, float sY, float sR) {
-		this.regionName = rN;
+	public FigureTemplate() {
 		
-		this.startX = sX;
-		this.startY = sY;
-		
-		this.startRotation = sR;
 	}
 	
-	public FigureTemplate(String rN, float sX, float sY, float sR, Array<AnimTemplate> a) {
+	public FigureTemplate(String rN, float sX, float sY, float sc, float sR) {
 		this.regionName = rN;
 		
 		this.startX = sX;
 		this.startY = sY;
 		
 		this.startRotation = sR;
-		this.anims = a;
 	}
 
 	public String regionName;
@@ -29,6 +22,8 @@ public class FigureTemplate {
 	public float startY;
 	//public float startScale;
 	public float startRotation;
+	
+	public float parallaxDist = 0;
 	
 	public Array<AnimTemplate> anims = new Array<AnimTemplate>();
 	
