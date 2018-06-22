@@ -1,17 +1,126 @@
 package com.mf.wonderland.Book;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.mf.wonderland.Book.Template.BookTemplate;
 
 public class Book {
 	public Book() {
 		
 	}
 	
-	float totalScrollWidth;
+	public Book(BookTemplate template, float viewH) {
+		this.viewHeight = viewH;
+		
+		for(int i = 0; i < template.pages.size; i++) {
+			this.pages.add(new Page());
+			
+			this.pages.get(i).stageHeight = template.pages.get(i).stageHeight;
+			this.pages.get(i).scale = template.pages.get(i).stageHeight/this.viewHeight;
+			float scale = this.pages.get(i).scale;
+			/**
+			 * Offset include:
+			 * scrollWidth -> scrollStart and scrollEnd
+			 * startPositionX and Y is + previous page's endPos
+			 * Offset is (X, Y, scroll)
+			 */
+			Vector3 offset = new Vector3(0, 0, 0);
+			
+			// If NOT the first page, then set offset. Otherwise, stays 0, 0, 0
+			if(i > 0) {
+				offset.set(this.pages.get(i-1).endPositionX, this.pages.get(i-1).endPositionY, this.pages.get(i-1).scrollEnd);
+			}
+			
+			this.pages.get(i).scrollStart = offset.z;
+			this.pages.get(i).scrollEnd = template.pages.get(i).scrollWidth/scale + offset.z;
+			
+			this.pages.get(i).startPositionX = template.pages.get(i).startPositionX/scale + offset.x;
+			this.pages.get(i).startPositionY = template.pages.get(i).startPositionY/scale + offset.y;
+			this.pages.get(i).endPositionX = template.pages.get(i).endPositionX/scale + offset.x;
+			this.pages.get(i).endPositionY = template.pages.get(i).endPositionY/scale + offset.y;
+			//System.out.println(offset.x + ": " + this.pages.get(i).startPositionX + ", " + this.pages.get(i).endPositionX);
+			
+			TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(template.pages.get(i).atlas));
+			
+			//Including all figures.
+			//Figure creation method handles scaling.
+			for(int j = 0; j < template.pages.get(i).figures.size; j++) {
+				this.pages.get(i).figures.add(new Figure(atlas, 
+						template.pages.get(i).figures.get(j).regionName, 
+						scale,
+						template.pages.get(i).figureScale,
+						template.pages.get(i).figures.get(j).startX + offset.x*scale,
+						template.pages.get(i).figures.get(j).startY + offset.y*scale,
+						template.pages.get(i).figures.get(j).startScale,
+						template.pages.get(i).figures.get(j).startRotation,
+						template.pages.get(i).figures.get(j).parallaxDist
+						));
+				
+				// Including all anim in figure
+				for(int k = 0; k < template.pages.get(i).figures.get(j).anims.size; k++) {
+					this.pages.get(i).figures.get(j).anims.add(new Anim(
+							template.pages.get(i).figures.get(j).anims.get(k).type,
+							scale,
+							template.pages.get(i).figures.get(j).anims.get(k).startScroll + offset.z,
+							template.pages.get(i).figures.get(j).anims.get(k).startX,
+							template.pages.get(i).figures.get(j).anims.get(k).startY,
+							template.pages.get(i).figures.get(j).anims.get(k).endScroll + offset.z,
+							template.pages.get(i).figures.get(j).anims.get(k).endX,
+							template.pages.get(i).figures.get(j).anims.get(k).endY));
+					
+					if(template.pages.get(i).figures.get(j).anims.get(k).type == Anim.TRANSLATE) {
+						this.pages.get(i).figures.get(j).anims.get(k).startX = 
+								this.pages.get(i).figures.get(j).anims.get(k).startX + offset.x;
+						this.pages.get(i).figures.get(j).anims.get(k).startY =
+								this.pages.get(i).figures.get(j).anims.get(k).startY + offset.y;
+						
+						this.pages.get(i).figures.get(j).anims.get(k).endX = 
+								this.pages.get(i).figures.get(j).anims.get(k).endX + offset.x;
+						this.pages.get(i).figures.get(j).anims.get(k).endY = 
+								this.pages.get(i).figures.get(j).anims.get(k).endY + offset.y;
+					}
+				}
+			}
+			
+			//Include all camera anims
+			for(int k = 0; k < template.pages.get(i).cameraAnims.size; k++) {
+				this.pages.get(i).cameraAnims.add(new Anim(
+						template.pages.get(i).cameraAnims.get(k).type,
+						scale,
+						template.pages.get(i).cameraAnims.get(k).startScroll + offset.z,
+						template.pages.get(i).cameraAnims.get(k).startX,
+						template.pages.get(i).cameraAnims.get(k).startY,
+						template.pages.get(i).cameraAnims.get(k).endScroll + offset.z,
+						template.pages.get(i).cameraAnims.get(k).endX,
+						template.pages.get(i).cameraAnims.get(k).endY));
+				
+				if(template.pages.get(i).cameraAnims.get(k).type == Anim.TRANSLATE) {
+					this.pages.get(i).cameraAnims.get(k).startX = 
+							this.pages.get(i).cameraAnims.get(k).startX + offset.x;
+					this.pages.get(i).cameraAnims.get(k).startY =
+							this.pages.get(i).cameraAnims.get(k).startY + offset.y;
+					
+					this.pages.get(i).cameraAnims.get(k).endX = 
+							this.pages.get(i).cameraAnims.get(k).endX + offset.x;
+					this.pages.get(i).cameraAnims.get(k).endY = 
+							this.pages.get(i).cameraAnims.get(k).endY + offset.y;
+				}
+			}
+		}
+		
+		this.totalScrollWidth = this.pages.get(this.pages.size - 1).scrollEnd;
+	}
+	
+	public float totalScrollWidth;
 	float viewHeight;
-	float viewWidth;
+	public Array<Page> pages = new Array<Page>();
+	
+	public static Vector2 cameraOffset = new Vector2(88.89f, 50f);
 	
 	/**
 	 * Updates position of camera according to how much has been scrolled. 
@@ -19,11 +128,10 @@ public class Book {
 	 * @param progress How much has been scrolled so far.
 	 */
 	public void updateCamera(OrthographicCamera cam, float progress) {
-		float totalProgress = 0;
-		
 		for(int i = 0; i < this.pages.size; i++) {
-			if(progress >= totalProgress && progress <= totalProgress + pages.get(i).scrollWidth) {
-				pages.get(i).updateCamera(cam, progress - totalProgress);
+			if(progress >= this.pages.get(i).scrollStart && progress < pages.get(i).scrollEnd) {
+				pages.get(i).updateCamera(cam, progress);
+				//System.out.println(cam.position);
 			}
 		}
 	}
@@ -36,20 +144,17 @@ public class Book {
 	 * @param sb Spritebatch the sprites will be rendered on.
 	 */
 	public void renderBook(float progress, SpriteBatch sb) {
-		float totalProgress = 0;
 		for(int i = 0; i < this.pages.size; i++) {
-			if(progress >= totalProgress && progress < totalProgress + pages.get(i).scrollWidth) {
+			if(progress >= this.pages.get(i).scrollStart && progress < this.pages.get(i).scrollEnd) {
 				//chapter = i;
-				pages.get(i).updateFigures(progress - totalProgress);
+				pages.get(i).updateFigures(progress);
 				pages.get(i).renderSprites(sb);
 				if(i + 1 < pages.size) {
-					pages.get(i + 1).updateFigures(progress - totalProgress);
+					pages.get(i + 1).updateFigures(progress);
 					pages.get(i + 1).renderSprites(sb);
 				}
 			}
-			totalProgress = totalProgress + pages.get(i).scrollWidth;
 		}
 	}
-	
-	public Array<Page> pages = new Array<Page>();
+
 }

@@ -7,10 +7,11 @@ public class PageTemplate {
 		
 	}
 	
-	public PageTemplate(String pN, float sc, float scrlW, float sPX, float sPY, float ePX, float ePY) {
+	public PageTemplate(String pN, float sH, float figScale, float scrlW, float sPX, float sPY, float ePX, float ePY) {
 		this.pageName = pN;
 		
-		this.scale = sc;
+		this.stageHeight = sH;
+		this.figureScale = figScale;
 		this.scrollWidth = scrlW;
 		
 		this.startPositionX = sPX;
@@ -23,17 +24,15 @@ public class PageTemplate {
 	
 	public String pageName;
 	
-	public float scale;
+	public float stageHeight;
+	public float figureScale;
 	public float scrollWidth;
 	
 	public float startPositionX;
 	public float startPositionY;
 	public float endPositionX;
 	public float endPositionY;
-	
-	public float offsetX;
-	public float offsetY;
-	
+
 	public String atlas;
 	//public Array<String> atlases = new Array<String>();
 	public Array<FigureTemplate> figures = new Array<FigureTemplate>();

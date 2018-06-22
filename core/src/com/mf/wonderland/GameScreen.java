@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.input.GestureDetector;
 import com.mf.wonderland.Book.Book;
+import com.mf.wonderland.debug.BookTest;
 
 public class GameScreen implements Screen {
 	
@@ -31,12 +32,7 @@ public class GameScreen implements Screen {
     //For debug
     SpriteBatch debugBatch = new SpriteBatch();
     BitmapFont font = new BitmapFont();
-    Texture img;
-    Sprite sprite;
-    
-    TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("images/page1.atlas"));
-    AtlasRegion region = atlas.findRegion("littledog_bg");
-    float spriteScale = screenHeight/region.getRegionHeight();
+
     Book testBook;
 
 	public GameScreen(final Wonderland gam) {
@@ -48,15 +44,8 @@ public class GameScreen implements Screen {
 		
         Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
         
-        //debugs
-        //img = new Texture("badlogic.jpg");
-        //sprite = new Sprite(img, 0, 0, 256, 256);
-        //sprite = atlas.createSprite("littledog_bg");
-        //sprite.setBounds(0, 0, region.getRegionWidth()*spriteScale, screenHeight);
-        //sprite.setPosition(0, 0);
-        
-        //testBook = BookTest.bookTest();
-        //BookTest.jsonBookMaker();
+        //debugs        
+        testBook = BookTest.jsonBookMaker();
         
 	}
 
@@ -76,18 +65,20 @@ public class GameScreen implements Screen {
 		
 		if(progress < 0) {
 			progress = 0;
-		} else {
-			testBook.updateCamera(camera, progress);
+		} else if (progress >= testBook.totalScrollWidth) {
+			progress = testBook.totalScrollWidth - 0.01f;
 		}
-		camera.update();
+			
+		testBook.updateCamera(camera, progress);
 
-		
+		camera.update();
 		
 		game.batch.setProjectionMatrix(camera.combined); //or your matrix to draw GAME WORLD, not UI
 	    game.batch.begin();
 
 	    //Send in game.batch, Book pulls out each sprite that needs rendering and renders.
 	    testBook.renderBook(progress, game.batch);
+	    //testBook.pages.get(0).figures.get(0).figureSprite.draw(game.batch);
 
 	    game.batch.end();
 	    

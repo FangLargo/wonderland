@@ -2,73 +2,47 @@
 pages: [
 	{
 		pageName: page1
-		scale: 1440
+		stageHeight: 1440
+		figureScale: 0.75
 		scrollWidth: 2560
-		startPositionX: 0
-		startPositionY: 0
-		endPositionX: 1920
-		endPositionY: 0
-		offsetX: 0
-		offsetY: 0
+		endPositionX: 2560
 		atlas: images/page1.atlas
 		figures: [
 			{
 				regionName: littledog_bg
-				startX: 0
-				startY: 0
-				startRotation: 0
-				parallaxDist: 0
-				anims: []
+				startScale: 1
 			}
 			{
 				regionName: littledog_dog
 				startX: 1290
 				startY: 200
-				startRotation: 0
-				parallaxDist: 0
-				anims: []
+				startScale: 1
 			}
 		]
-		cameraAnims: []
 	}
 	{
 		pageName: page2
-		scale: 1440
-		scrollWidth: 2560
-		startPositionX: 0
-		startPositionY: 0
-		endPositionX: 1920
-		endPositionY: 0
-		offsetX: 0
-		offsetY: 0
+		stageHeight: 1440
+		figureScale: 0.75
 		atlas: images/page2.atlas
 		figures: [
 			{
 				regionName: shogatsu2015_bg
-				startX: 0
-				startY: 0
-				startRotation: 0
-				parallaxDist: 0
-				anims: []
+				startScale: 1
 			}
 			{
 				regionName: shogatsu2015_matsu
-				startX: 1626
-				startY: 380
-				startRotation: 0
-				parallaxDist: 0
-				anims: []
+				startX: 1426
+				startY: 60
+				startScale: 1
 			}
 			{
 				regionName: shogatsu2015_girl
-				startX: 1425
-				startY: 120
-				startRotation: 0
-				parallaxDist: 0
-				anims: []
+				startX: 1325
+				startY: 50
+				startScale: 1
 			}
 		]
-		cameraAnims: []
 	}
 ]
 }
