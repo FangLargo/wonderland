@@ -46,40 +46,35 @@ public class Figure {
 	public void updateFigureAnim(float progress) {
 		if(anims.size > 0) {
 			for(Anim a: anims) {
-//				Vector3 trans = new Vector3(0, 0, 0);
-//				boolean transDone = false;
-//				Vector2 rot = new Vector2(0, 0);
-//				boolean rotDone = false;
-//				
 				if(a.updateAnim(progress) != null) {
 					Vector2 val = new Vector2(a.updateAnim(progress));
 					
 					if(a.type.equals(Anim.TRANSLATE)) {
 						this.figureSprite.setPosition(val.x, val.y);
-//						transDone = true;
+						this.currentTransAnim = a;
+
 					} else if(a.type.equals(Anim.ROTATE)) {
 						this.figureSprite.setOriginCenter();
 						this.figureSprite.setRotation(val.x);
-//						rotDone = true;
+						this.currentRotAnim = a;
 					}
-				} else {
-					//this.figureSprite.setPosition(this.startX, this.startY);
-//					if(a.type.equals(Anim.TRANSLATE) && a.endScroll > trans.z && progress > a.endScroll) {
-//						trans.set(a.endX, a.endY, a.endScroll);
-//					} else if(a.type.equals(Anim.ROTATE) && a.endScroll > rot.y && progress > a.endScroll) {
-//						rot.set(a.endX, a.endScroll);
-//					}
 				}
-				
-//				if(!transDone) {
-//					this.figureSprite.setPosition(trans.x, trans.y);
-//				}
-//				if(!rotDone) {
-//					this.figureSprite.setRotation(rot.x);
-//				}
-				
-				//System.out.println("AnimTriggered: " + progress + ": " + a.startScroll + ", " + a.endScroll);
-				
+			}
+			
+			if(this.currentTransAnim != null) {
+				if(progress > this.currentTransAnim.endScroll) {
+					this.figureSprite.setPosition(this.currentTransAnim.endX, this.currentTransAnim.endY);
+				} else if(progress < this.currentTransAnim.startScroll) {
+					this.figureSprite.setPosition(this.currentTransAnim.startX, this.currentTransAnim.startY);
+				}
+			}
+			
+			if(this.currentRotAnim != null) {
+				if(progress > this.currentRotAnim.endScroll) {
+					this.figureSprite.setRotation(this.currentRotAnim.endX);
+				} else if(progress < this.currentRotAnim.startScroll) {
+					this.figureSprite.setRotation(this.currentRotAnim.startX);
+				}
 			}
 		} else {
 			this.figureSprite.setPosition(this.startX, this.startY);
