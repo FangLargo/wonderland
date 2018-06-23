@@ -7,7 +7,7 @@ public class FigureTemplate {
 		
 	}
 	
-	public FigureTemplate(String regionN, float sX, float sY, float sc, float sR, float parallax, float paraMode) {
+	public FigureTemplate(String regionN, float sX, float sY, float sc, float sR, float parallax, int paraMode) {
 		this.regionName = regionN;
 		
 		this.startX = sX;
@@ -26,7 +26,7 @@ public class FigureTemplate {
 	public float startRotation;
 	
 	public float parallaxDist;
-	public float parallaxMode;
+	public int parallaxMode;
 	
 	public Array<AnimTemplate> anims = new Array<AnimTemplate>();
 	

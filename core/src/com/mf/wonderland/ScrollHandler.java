@@ -10,6 +10,7 @@ public class ScrollHandler implements GestureListener {
 	public float dx = 0;
 	//Timer timer;
 	float speed = 0;
+	float damp = 0.8f;
 
 	@Override
 	public boolean fling(float velocityX, float velocityY, int button) {
@@ -21,7 +22,7 @@ public class ScrollHandler implements GestureListener {
 			public void run() {
 				if(java.lang.Math.abs(speed)*0.05f > 0.5f) {
 					//0.8 is deceleration of the book. 0.05 update means about 20x per second. 
-					speed = speed*0.8f;
+					speed = speed*damp;
 					dx = speed*0.05f;
 					//System.out.println("Deccel: " + speed + " : " + dx);
 				} else {

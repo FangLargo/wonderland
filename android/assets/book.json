@@ -20,11 +20,21 @@ pages: [
 				parallaxDist: 1
 			}
 		]
+		cameraAnims: [
+			{
+				type: scale
+				startScroll: 2440
+				startX: 1
+				endScroll: 2560
+				endX: 1
+			}
+		]
 	}
 	{
 		pageName: page2
 		stageHeight: 1440
 		figureScale: 0.75
+		scrollWidth: 2880
 		atlas: images/page2.atlas
 		figures: [
 			{
@@ -43,7 +53,44 @@ pages: [
 				startX: 1325
 				startY: 50
 				startScale: 1
-				parallaxDist: 1
+				parallaxDist: 2
+			}
+		]
+		cameraAnims: [
+			{
+				type: scale
+				startX: 1
+				endScroll: 600
+				endX: 5
+			}
+			{
+				type: scale
+				startScroll: 1600
+				startX: 5
+				endScroll: 2880
+				endX: 1
+			}
+			{
+				type: translate
+				endScroll: 600
+				endX: 250
+				endY: 300
+			}
+			{
+				type: translate
+				startScroll: 1600
+				startX: 700
+				startY: 300
+				endScroll: 2880
+			}
+			{
+				type: translate
+				startScroll: 600
+				startX: 250
+				startY: 300
+				endScroll: 1600
+				endX: 700
+				endY: 300
 			}
 		]
 	}
@@ -51,7 +98,7 @@ pages: [
 		pageName: page3
 		stageHeight: 1440
 		figureScale: 0.75
-		scrollWidth: 1440
+		scrollWidth: 2000
 		endPositionY: -1440
 		atlas: images/page3.atlas
 		figures: [
@@ -63,33 +110,48 @@ pages: [
 			}
 			{
 				regionName: dog_bird_bird
-				startX: 1750
-				startY: -1390
+				startX: 2560
+				startY: -1440
 				startScale: 1
-				parallaxDist: 1
+				parallaxDist: 0.4
 				parallaxMode: 1
 				anims: [
 					{
 						type: translate
+						startScroll: 1600
 						startX: 2560
-						startY: -1390
-						endScroll: 1440
+						startY: -1410
+						endScroll: 1900
 						endX: 1750
-						endY: -1390
+						endY: -1410
 					}
 					{
 						type: rotate
-						endScroll: 1440
+						startScroll: 1600
+						endScroll: 1900
 						endX: 360
 					}
 				]
 			}
 			{
 				regionName: dog_bird_dog
-				startY: -1400
+				startY: -1440
 				startScale: 1
-				parallaxDist: 1
+				parallaxDist: 0.4
 				parallaxMode: 1
+			}
+		]
+		cameraAnims: [
+			{
+				type: translate
+				endScroll: 1440
+				endY: -1440
+			}
+			{
+				type: scale
+				startX: 1
+				endScroll: 100
+				endX: 1
 			}
 		]
 	}

@@ -3,6 +3,7 @@ package com.mf.wonderland.Book;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 
 public class Page {
@@ -57,10 +58,10 @@ public class Page {
 	 * For each figure, calls updateFigureAnim, which should take care of updates.
 	 * @param progress
 	 */
-	public void updateFigures(float progress, Vector2 pos) {
+	public void updateFigures(float progress, Vector3 cameraProps) {
 		for(Figure f: figures) {
 			f.updateFigureAnim(progress);
-			f.updateFigureParallax(pos);
+			f.updateFigureParallax(cameraProps);
 		}
 	}
 	
@@ -70,11 +71,24 @@ public class Page {
 	 * @param progress
 	 */
 	public void updateCamera(OrthographicCamera cam, float progress) {
-		// TODO Auto-generated method stub
+		Vector2 pos = new Vector2();
 		if(cameraAnims.size == 0) {
-			Vector2 pos = new Vector2();
 			pos = Anim.interpolate(progress, scrollStart, scrollEnd, startPositionX, startPositionY, endPositionX, endPositionY);
 			cam.position.set(pos.x + Book.cameraOffset.x, pos.y + Book.cameraOffset.y, 0);
+		} else {
+			for(Anim a: this.cameraAnims) {
+				if(a.updateAnim(progress) != null) {
+					pos = new Vector2(a.updateAnim(progress));
+					
+					if(a.type.equals(Anim.TRANSLATE)) {
+						cam.position.set(pos.add(Book.cameraOffset), 0);
+					} else if(a.type.equals(Anim.ROTATE)) {
+						cam.rotate(pos.x);
+					} else if(a.type.equals(Anim.SCALE)) {
+						cam.zoom = 1/pos.x;
+					}
+				}
+			}
 		}
 	}
 }

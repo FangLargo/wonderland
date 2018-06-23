@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.input.GestureDetector;
 import com.mf.wonderland.Book.Book;
+import com.mf.wonderland.Book.Page;
 import com.mf.wonderland.debug.BookTest;
 
 public class GameScreen implements Screen {
@@ -48,6 +49,9 @@ public class GameScreen implements Screen {
         //debugs        
         testBook = BookTest.jsonBookMaker();
         
+//        for(Page p: testBook.pages) {
+//        	System.out.println(p.scrollStart + " -> " + p.scrollEnd);
+//        }
 	}
 
 	@Override
@@ -84,12 +88,15 @@ public class GameScreen implements Screen {
 	    game.batch.end();
 	    
 	    //Render debug
-//	    debugBatch.begin();
-//	    font.draw(debugBatch, progress + " ", 0, 10);
-//	    debugBatch.end();
+	    debugBatch.begin();
+	    font.draw(debugBatch, camera.zoom + " ", 0, 60);
+	    font.draw(debugBatch, progress + " ", 0, 40);
+	    font.draw(debugBatch, camera.position.x + ", " + camera.position.y, 0, 20);
+	    debugBatch.end();
 	    
 	    //log.log();
-
+	    //System.out.println(progress);
+	    //System.out.println(camera.zoom);
 	}
 
 	FPSLogger log = new FPSLogger();

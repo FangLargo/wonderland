@@ -49,13 +49,15 @@ public class Anim {
 		float midY = (midScroll/intervalScroll)*intervalY + sY;
 		
 		return new Vector2(midX, midY);
+		
 	}
 	
 	public boolean queryAnim(float progress) {
 		if(progress >= this.startScroll && progress < this.endScroll) {
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 	
 	public static String TRANSLATE = "translate";

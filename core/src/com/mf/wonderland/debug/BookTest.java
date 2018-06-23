@@ -24,33 +24,60 @@ public class BookTest {
 		p1.atlas = "images/page1.atlas";
 		p1.figures.add(p1bg);
 		p1.figures.add(p1dog);
+//		AnimTemplate p1camDefault = new AnimTemplate(Anim.TRANSLATE, 0, 2560, )
+		AnimTemplate p2camPreCorrection = new AnimTemplate(Anim.SCALE, 2440, 2560, 1, 0, 1, 0);
+		p1.cameraAnims.add(p2camPreCorrection);
 		
 		//Page2
 		FigureTemplate p2bg = new FigureTemplate("shogatsu2015_bg", 0, 0, 1, 0, 0, Figure._X);
 		FigureTemplate p2matsu = new FigureTemplate("shogatsu2015_matsu", 1426, 60, 1, 0, 0.3f, Figure._X);
-		FigureTemplate p2girl = new FigureTemplate("shogatsu2015_girl", 1325, 50, 1, 0, 1, Figure._X);
+		FigureTemplate p2girl = new FigureTemplate("shogatsu2015_girl", 1325, 50, 1, 0, 2, Figure._X);
 		
-		PageTemplate p2 = new PageTemplate("page2", 1440f, 0.75f, 0, 0f, 0f, 0f, 0f);
+//		AnimTemplate p2camPostCorrection = new AnimTemplate(Anim.SCALE, -100, 0, 1, 0, 1, 0);
+//		AnimTemplate p2camPostCorrection = new AnimTemplate(Anim.SCALE, 2880, 2980, 1, 0, 1, 0);
+		
+		AnimTemplate p2camZoomIn = new AnimTemplate(Anim.SCALE, 0, 600, 1, 0, 5, 0);
+		AnimTemplate p2camMoveIn = new AnimTemplate(Anim.TRANSLATE, 0, 600, 0, 0, 250, 300);
+		AnimTemplate p2camPan = new AnimTemplate(Anim.TRANSLATE, 600, 1600, 250, 300, 700, 300);
+		AnimTemplate p2camZoomOut = new AnimTemplate(Anim.SCALE, 1600, 2880, 5, 0, 1, 0);
+		AnimTemplate p2camMoveOut = new AnimTemplate(Anim.TRANSLATE, 1600, 2880, 700, 300, 0, 0);
+		
+		PageTemplate p2 = new PageTemplate("page2", 1440f, 0.75f, 2880, 0f, 0f, 0f, 0f);
 		p2.atlas = "images/page2.atlas";
 		p2.figures.add(p2bg);
 		p2.figures.add(p2matsu);
 		p2.figures.add(p2girl);
 		
+		p2.cameraAnims.add(p2camZoomIn);
+		p2.cameraAnims.add(p2camZoomOut);
+		p2.cameraAnims.add(p2camMoveIn);
+		p2.cameraAnims.add(p2camMoveOut);
+		p2.cameraAnims.add(p2camPan);
+		//p2.cameraAnims.add(p2camPreCorrection);
+		//p2.cameraAnims.add(p2camPostCorrection);
+		
 		//Page3
 		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0, Figure._Y);
-		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1400, 1, 0, 1, Figure._Y);
+		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1440, 1, 0, 0.4f, Figure._Y);
 		
-		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 1750, -1390, 1, 0, 1, Figure._Y);
-		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 2560, -1390, 1750, -1390);
-		AnimTemplate p3birdanimrot = new AnimTemplate(Anim.ROTATE, 0, 1440, 0, 0, 360, 0);
+		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 2560, -1440, 1, 0, 0.4f, Figure._Y);
+		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 1600, 1900, 2560, -1410, 1750, -1410);
+		AnimTemplate p3birdanimrot = new AnimTemplate(Anim.ROTATE, 1600, 1900, 0, 0, 360, 0);
 		p3bird.anims.add(p3birdanim);
 		p3bird.anims.add(p3birdanimrot);
 		
-		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 1440f, 0f, 0f, 0f, -1440f);
+		AnimTemplate p3camAnim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 0, 0, 0, -1440);
+		//AnimTemplate p3camanimZ = new AnimTemplate(Anim.SCALE, 0, 1440f, 1, 0, 1.3f, 0);
+		AnimTemplate p2camPostCorrection = new AnimTemplate(Anim.SCALE, 0, 100, 1, 0, 1, 0);
+		
+		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 2000f, 0f, 0f, 0f, -1440f);
 		p3.atlas = "images/page3.atlas";
 		p3.figures.add(p3bg);
 		p3.figures.add(p3bird);
 		p3.figures.add(p3dog);
+		p3.cameraAnims.add(p3camAnim);
+		p3.cameraAnims.add(p2camPostCorrection);
+		//p3.cameraAnims.add(p3camanimZ);
 		
 		BookTemplate book = new BookTemplate();
 		
@@ -95,8 +122,8 @@ public class BookTest {
 		Page newPage = new Page();
 		
 		TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("images/page1.atlas"));
-		Figure bg = new Figure(atlas, "littledog_bg", 1080f, 0.75f, 0, 0, 0, 0, 0);
-		Figure dog = new Figure(atlas, "littledog_dog", 1080f, 0.75f, 0, 0, 0, 0, 0);
+		Figure bg = new Figure(atlas, "littledog_bg", 1080f, 0.75f, 0, 0, 0, 0, 0, 0);
+		Figure dog = new Figure(atlas, "littledog_dog", 1080f, 0.75f, 0, 0, 0, 0, 0, 0);
 		
 		newPage.figures.add(bg);
 		newPage.figures.add(dog);
@@ -107,7 +134,7 @@ public class BookTest {
 		//newPage2.offsetY = newPage.endPositionY;
 		
 		TextureAtlas atlas2 = new TextureAtlas(Gdx.files.internal("images/page2.atlas"));
-		Figure bg2 = new Figure(atlas2, "shogatsu2015_bg", 1080f, 0.75f, 177, 0, 0, 0, 0);
+		Figure bg2 = new Figure(atlas2, "shogatsu2015_bg", 1080f, 0.75f, 177, 0, 0, 0, 0, 0);
 		//Figure dog = new Figure(atlas, "littledog_dog", 1080f, 0, 0, 0);
 		newPage2.figures.add(bg2);
 		
