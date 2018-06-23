@@ -17,7 +17,7 @@ pages: [
 				startX: 1290
 				startY: 200
 				startScale: 1
-				parallaxDist: 1
+				parallaxDist: 2
 			}
 		]
 		cameraAnims: [
@@ -46,7 +46,7 @@ pages: [
 				startX: 1426
 				startY: 60
 				startScale: 1
-				parallaxDist: 0.3
+				parallaxDist: 0.8
 			}
 			{
 				regionName: shogatsu2015_girl
@@ -62,6 +62,12 @@ pages: [
 				startX: 1
 				endScroll: 600
 				endX: 5
+			}
+			{
+				type: rotate
+				startScroll: 100
+				endScroll: 600
+				endX: 360
 			}
 			{
 				type: scale
@@ -130,6 +136,15 @@ pages: [
 						startScroll: 1600
 						endScroll: 1900
 						endX: 360
+					}
+					{
+						type: scale
+						startScroll: 1600
+						startX: 0.2
+						startY: 0.2
+						endScroll: 1900
+						endX: 1
+						endY: 1
 					}
 				]
 			}

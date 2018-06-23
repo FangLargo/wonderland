@@ -65,6 +65,10 @@ public class Page {
 		}
 	}
 	
+	private Anim currentTransAnim;
+	private Anim currentRotAnim;
+	private Anim currentScaleAnim;
+	
 	/**
 	 * Updates camera position and scale/rotation according to progress.
 	 * @param cam
@@ -82,10 +86,45 @@ public class Page {
 					
 					if(a.type.equals(Anim.TRANSLATE)) {
 						cam.position.set(pos.add(Book.cameraOffset), 0);
+						this.currentTransAnim = a;
 					} else if(a.type.equals(Anim.ROTATE)) {
+						cam.up.set(0, 1, 0);
+						cam.direction.set(0, 0, -1);
 						cam.rotate(pos.x);
+						this.currentRotAnim = a;
 					} else if(a.type.equals(Anim.SCALE)) {
 						cam.zoom = 1/pos.x;
+						this.currentScaleAnim = a;
+					}
+				}
+				
+				if(this.currentTransAnim != null) {
+					if(progress > this.currentTransAnim.endScroll) {
+						cam.position.set(this.currentTransAnim.endX + Book.cameraOffset.x, this.currentTransAnim.endY + Book.cameraOffset.y, 0);
+					} else if(progress < this.currentTransAnim.startScroll) {
+						cam.position.set(this.currentTransAnim.startX + Book.cameraOffset.x, this.currentTransAnim.startY + Book.cameraOffset.y, 0);
+					}
+				}
+				
+				if(this.currentRotAnim != null) {
+					if(progress > this.currentRotAnim.endScroll) {
+						cam.up.set(0, 1, 0);
+						cam.direction.set(0, 0, -1);
+						cam.rotate(this.currentRotAnim.endX);
+					} else if(progress < this.currentRotAnim.startScroll) {
+						cam.up.set(0, 1, 0);
+						cam.direction.set(0, 0, -1);
+						cam.rotate(this.currentRotAnim.startX);
+					}
+				}
+//				cam.up.set(0, 1, 0);
+//				cam.direction.set(0, 0, -1);
+				
+				if(this.currentScaleAnim != null) {
+					if(progress > this.currentScaleAnim.endScroll) {
+						cam.zoom = 1/(this.currentScaleAnim.endX);
+					} else if(progress < this.currentScaleAnim.startScroll) {
+						cam.zoom = 1/(this.currentScaleAnim.startX);
 					}
 				}
 			}

@@ -57,6 +57,9 @@ public class Figure {
 						this.figureSprite.setOriginCenter();
 						this.figureSprite.setRotation(val.x);
 						this.currentRotAnim = a;
+					} else if(a.type.equals(Anim.SCALE)) {
+						this.figureSprite.setScale(val.x, val.y);
+						this.currentScaleAnim = a;
 					}
 				}
 			}
@@ -76,6 +79,14 @@ public class Figure {
 					this.figureSprite.setRotation(this.currentRotAnim.startX);
 				}
 			}
+			
+			if(this.currentScaleAnim != null) {
+				if(progress > this.currentScaleAnim.endScroll) {
+					this.figureSprite.setScale(this.currentScaleAnim.endX, this.currentScaleAnim.endY);
+				} else if(progress < this.currentScaleAnim.startScroll) {
+					this.figureSprite.setScale(this.currentScaleAnim.startX, this.currentScaleAnim.startY);
+				}
+			}
 		} else {
 			this.figureSprite.setPosition(this.startX, this.startY);
 			this.figureSprite.setOriginCenter();
@@ -84,8 +95,8 @@ public class Figure {
 	}
 	
 	public void updateFigureParallax(Vector3 camera) {
-		float mult = 0.2f;
-		float pow = 0.15f/camera.z;
+		float mult = 0.4f;
+		float pow = 0.10f/camera.z;
 		
 		float dispX = (camera.x - this.figureSprite.getX() + this.figureSprite.getWidth()/2)*mult*this.parallaxDist*pow;
 		float dispY = (camera.y - this.figureSprite.getY() + this.figureSprite.getHeight()/2)*mult*this.parallaxDist*pow;
