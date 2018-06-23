@@ -120,6 +120,7 @@ public class Book {
 	public Array<Page> pages = new Array<Page>();
 	
 	public static Vector2 cameraOffset = new Vector2(88.89f, 50f);
+	public static float viewH = 100f;
 	
 	/**
 	 * Updates position of camera according to how much has been scrolled. 
@@ -143,27 +144,29 @@ public class Book {
 	 * @param sb Spritebatch the sprites will be rendered on.
 	 */
 	public void renderBook(float progress, SpriteBatch sb, OrthographicCamera cam) {
+		Vector2 camPos = new Vector2(cam.position.x, cam.position.y);
+		
 		for(int i = 0; i < this.pages.size; i++) {
 			if(progress >= this.pages.get(i).scrollStart && progress < this.pages.get(i).scrollEnd) {
 				//If not first page, check if previous page is in view
 				if(i > 0) {
 					if(Book.absoluteDifference(cam.position.x, this.pages.get(i-1).endPositionX) < Book.cameraOffset.x*2 
 							|| Book.absoluteDifference(cam.position.y, this.pages.get(i-1).endPositionY) < Book.cameraOffset.y*2) {
-						pages.get(i - 1).updateFigures(progress);
+						pages.get(i - 1).updateFigures(progress, camPos);
 						pages.get(i - 1).renderSprites(sb);
 						
 					}
 				}	
 				
 				//chapter = i;
-				pages.get(i).updateFigures(progress);
+				pages.get(i).updateFigures(progress, camPos);
 				pages.get(i).renderSprites(sb);
 				
 				//If not last page, then check if next page is in view, and render.
 				if(i + 1 < pages.size) {
-					if(Book.absoluteDifference(cam.position.x, this.pages.get(i).endPositionX) < Book.cameraOffset.x*2 
-							|| Book.absoluteDifference(cam.position.y, this.pages.get(i).endPositionY) < Book.cameraOffset.y*2) {
-						pages.get(i + 1).updateFigures(progress);
+					if(Book.absoluteDifference(camPos.x, this.pages.get(i).endPositionX) < Book.cameraOffset.x*2 
+							|| Book.absoluteDifference(camPos.y, this.pages.get(i).endPositionY) < Book.cameraOffset.y*2) {
+						pages.get(i + 1).updateFigures(progress, camPos);
 						pages.get(i + 1).renderSprites(sb);
 					}
 				}				

@@ -57,9 +57,10 @@ public class Page {
 	 * For each figure, calls updateFigureAnim, which should take care of updates.
 	 * @param progress
 	 */
-	public void updateFigures(float progress) {
+	public void updateFigures(float progress, Vector2 pos) {
 		for(Figure f: figures) {
 			f.updateFigureAnim(progress);
+			f.updateFigureParallax(pos);
 		}
 	}
 	

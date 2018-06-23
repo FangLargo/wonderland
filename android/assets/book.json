@@ -17,6 +17,7 @@ pages: [
 				startX: 1290
 				startY: 200
 				startScale: 1
+				parallaxDist: 1
 			}
 		]
 	}
@@ -35,12 +36,14 @@ pages: [
 				startX: 1426
 				startY: 60
 				startScale: 1
+				parallaxDist: 0.3
 			}
 			{
 				regionName: shogatsu2015_girl
 				startX: 1325
 				startY: 50
 				startScale: 1
+				parallaxDist: 1
 			}
 		]
 	}
@@ -56,20 +59,23 @@ pages: [
 				regionName: dog_bird_bg
 				startY: -1440
 				startScale: 1
+				parallaxMode: 1
 			}
 			{
 				regionName: dog_bird_bird
 				startX: 1750
-				startY: -1370
+				startY: -1390
 				startScale: 1
+				parallaxDist: 1
+				parallaxMode: 1
 				anims: [
 					{
 						type: translate
 						startX: 2560
-						startY: -1370
+						startY: -1390
 						endScroll: 1440
 						endX: 1750
-						endY: -1370
+						endY: -1390
 					}
 					{
 						type: rotate
@@ -80,8 +86,10 @@ pages: [
 			}
 			{
 				regionName: dog_bird_dog
-				startY: -1380
+				startY: -1400
 				startScale: 1
+				parallaxDist: 1
+				parallaxMode: 1
 			}
 		]
 	}

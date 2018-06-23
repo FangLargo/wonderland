@@ -17,8 +17,8 @@ public class BookTest {
 	
 	public static Book jsonBookMaker() {
 		//Page1
-		FigureTemplate p1bg = new FigureTemplate("littledog_bg", 0, 0, 1, 0, 0);
-		FigureTemplate p1dog = new FigureTemplate("littledog_dog", 1290, 200, 1, 0, 0);
+		FigureTemplate p1bg = new FigureTemplate("littledog_bg", 0, 0, 1, 0, 0, Figure._X);
+		FigureTemplate p1dog = new FigureTemplate("littledog_dog", 1290, 200, 1, 0, 1, Figure._X);
 		
 		PageTemplate p1 = new PageTemplate("page1", 1440f, 0.75f, 2560, 0f, 0f, 2560f, 0f);
 		p1.atlas = "images/page1.atlas";
@@ -26,9 +26,9 @@ public class BookTest {
 		p1.figures.add(p1dog);
 		
 		//Page2
-		FigureTemplate p2bg = new FigureTemplate("shogatsu2015_bg", 0, 0, 1, 0, 0);
-		FigureTemplate p2matsu = new FigureTemplate("shogatsu2015_matsu", 1426, 60, 1, 0, 0);
-		FigureTemplate p2girl = new FigureTemplate("shogatsu2015_girl", 1325, 50, 1, 0, 0);
+		FigureTemplate p2bg = new FigureTemplate("shogatsu2015_bg", 0, 0, 1, 0, 0, Figure._X);
+		FigureTemplate p2matsu = new FigureTemplate("shogatsu2015_matsu", 1426, 60, 1, 0, 0.3f, Figure._X);
+		FigureTemplate p2girl = new FigureTemplate("shogatsu2015_girl", 1325, 50, 1, 0, 1, Figure._X);
 		
 		PageTemplate p2 = new PageTemplate("page2", 1440f, 0.75f, 0, 0f, 0f, 0f, 0f);
 		p2.atlas = "images/page2.atlas";
@@ -37,11 +37,11 @@ public class BookTest {
 		p2.figures.add(p2girl);
 		
 		//Page3
-		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0);
-		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1380, 1, 0, 0);
+		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0, Figure._Y);
+		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1400, 1, 0, 1, Figure._Y);
 		
-		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 1750, -1370, 1, 0, 0);
-		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 2560, -1370, 1750, -1370);
+		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 1750, -1390, 1, 0, 1, Figure._Y);
+		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 2560, -1390, 1750, -1390);
 		AnimTemplate p3birdanimrot = new AnimTemplate(Anim.ROTATE, 0, 1440, 0, 0, 360, 0);
 		p3bird.anims.add(p3birdanim);
 		p3bird.anims.add(p3birdanimrot);

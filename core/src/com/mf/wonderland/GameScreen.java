@@ -2,6 +2,7 @@ package com.mf.wonderland;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -83,15 +84,15 @@ public class GameScreen implements Screen {
 	    game.batch.end();
 	    
 	    //Render debug
-	    debugBatch.begin();
-	    font.draw(debugBatch, progress + " ", 0, 10);
-	    debugBatch.end();
+//	    debugBatch.begin();
+//	    font.draw(debugBatch, progress + " ", 0, 10);
+//	    debugBatch.end();
 	    
 	    //log.log();
 
 	}
 
-	//FPSLogger log = new FPSLogger();
+	FPSLogger log = new FPSLogger();
 	
 	@Override
 	public void resize(int width, int height) {
