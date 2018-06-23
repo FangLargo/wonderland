@@ -71,6 +71,11 @@ pages: [
 						endX: 1750
 						endY: -1370
 					}
+					{
+						type: rotate
+						endScroll: 1440
+						endX: 360
+					}
 				]
 			}
 			{

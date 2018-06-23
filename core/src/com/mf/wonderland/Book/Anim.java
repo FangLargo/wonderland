@@ -40,7 +40,6 @@ public class Anim {
 	}
 	
 	public static Vector2 interpolate(float mid, float startS, float endS, float sX, float sY, float eX, float eY) {
-		
 		float intervalX = eX - sX;
 		float intervalY = eY - sY;
 		float intervalScroll = endS - startS;

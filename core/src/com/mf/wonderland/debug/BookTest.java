@@ -42,7 +42,9 @@ public class BookTest {
 		
 		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 1750, -1370, 1, 0, 0);
 		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 2560, -1370, 1750, -1370);
+		AnimTemplate p3birdanimrot = new AnimTemplate(Anim.ROTATE, 0, 1440, 0, 0, 360, 0);
 		p3bird.anims.add(p3birdanim);
+		p3bird.anims.add(p3birdanimrot);
 		
 		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 1440f, 0f, 0f, 0f, -1440f);
 		p3.atlas = "images/page3.atlas";

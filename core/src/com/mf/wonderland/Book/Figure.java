@@ -1,5 +1,6 @@
 package com.mf.wonderland.Book;
 
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
@@ -37,11 +38,21 @@ public class Figure {
 		if(anims.size > 0) {
 			for(Anim a: anims) {
 				if(a.updateAnim(progress) != null) {
-					Vector2 pos = new Vector2(a.updateAnim(progress));
-					this.figureSprite.setPosition(pos.x, pos.y);
-					//System.out.println(progress + ": " + pos);
+					Vector2 val = new Vector2(a.updateAnim(progress));
+					
+					if(a.type.equals(Anim.TRANSLATE)) {
+						this.figureSprite.setPosition(val.x, val.y);
+					} else if(a.type.equals(Anim.ROTATE)) {
+						this.figureSprite.setOriginCenter();
+						this.figureSprite.setRotation(val.x);
+					}
+					
 				}
 			}
 		}
+	}
+	
+	public void updateFigureParallax(float progress, OrthographicCamera camera) {
+		
 	}
 }
