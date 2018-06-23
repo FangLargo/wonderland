@@ -39,8 +39,8 @@ public class Book {
 			this.pages.get(i).scrollStart = offset.z;
 			this.pages.get(i).scrollEnd = template.pages.get(i).scrollWidth/scale + offset.z;
 			
-			this.pages.get(i).startPositionX = template.pages.get(i).startPositionX/scale + offset.x;
-			this.pages.get(i).startPositionY = template.pages.get(i).startPositionY/scale + offset.y;
+			this.pages.get(i).startPositionX = offset.x;
+			this.pages.get(i).startPositionY = offset.y;
 			this.pages.get(i).endPositionX = template.pages.get(i).endPositionX/scale + offset.x;
 			this.pages.get(i).endPositionY = template.pages.get(i).endPositionY/scale + offset.y;
 			//System.out.println(offset.x + ": " + this.pages.get(i).startPositionX + ", " + this.pages.get(i).endPositionX);
@@ -65,24 +65,24 @@ public class Book {
 				for(int k = 0; k < template.pages.get(i).figures.get(j).anims.size; k++) {
 					this.pages.get(i).figures.get(j).anims.add(new Anim(
 							template.pages.get(i).figures.get(j).anims.get(k).type,
-							scale,
-							template.pages.get(i).figures.get(j).anims.get(k).startScroll + offset.z,
+							template.pages.get(i).figures.get(j).anims.get(k).startScroll/scale + offset.z,
 							template.pages.get(i).figures.get(j).anims.get(k).startX,
 							template.pages.get(i).figures.get(j).anims.get(k).startY,
-							template.pages.get(i).figures.get(j).anims.get(k).endScroll + offset.z,
+							template.pages.get(i).figures.get(j).anims.get(k).endScroll/scale + offset.z,
 							template.pages.get(i).figures.get(j).anims.get(k).endX,
 							template.pages.get(i).figures.get(j).anims.get(k).endY));
 					
-					if(template.pages.get(i).figures.get(j).anims.get(k).type == Anim.TRANSLATE) {
+					if(template.pages.get(i).figures.get(j).anims.get(k).type.equals(Anim.TRANSLATE)) {
 						this.pages.get(i).figures.get(j).anims.get(k).startX = 
-								this.pages.get(i).figures.get(j).anims.get(k).startX + offset.x;
+								template.pages.get(i).figures.get(j).anims.get(k).startX/scale + offset.x;
 						this.pages.get(i).figures.get(j).anims.get(k).startY =
-								this.pages.get(i).figures.get(j).anims.get(k).startY + offset.y;
+								template.pages.get(i).figures.get(j).anims.get(k).startY/scale + offset.y;
 						
 						this.pages.get(i).figures.get(j).anims.get(k).endX = 
-								this.pages.get(i).figures.get(j).anims.get(k).endX + offset.x;
+								template.pages.get(i).figures.get(j).anims.get(k).endX/scale + offset.x;
 						this.pages.get(i).figures.get(j).anims.get(k).endY = 
-								this.pages.get(i).figures.get(j).anims.get(k).endY + offset.y;
+								template.pages.get(i).figures.get(j).anims.get(k).endY/scale + offset.y;
+						System.out.println(this.pages.get(i).figures.get(j).anims.get(k).endX);
 					}
 				}
 			}
@@ -91,24 +91,23 @@ public class Book {
 			for(int k = 0; k < template.pages.get(i).cameraAnims.size; k++) {
 				this.pages.get(i).cameraAnims.add(new Anim(
 						template.pages.get(i).cameraAnims.get(k).type,
-						scale,
-						template.pages.get(i).cameraAnims.get(k).startScroll + offset.z,
+						template.pages.get(i).cameraAnims.get(k).startScroll/scale + offset.z,
 						template.pages.get(i).cameraAnims.get(k).startX,
 						template.pages.get(i).cameraAnims.get(k).startY,
-						template.pages.get(i).cameraAnims.get(k).endScroll + offset.z,
+						template.pages.get(i).cameraAnims.get(k).endScroll/scale + offset.z,
 						template.pages.get(i).cameraAnims.get(k).endX,
 						template.pages.get(i).cameraAnims.get(k).endY));
 				
 				if(template.pages.get(i).cameraAnims.get(k).type == Anim.TRANSLATE) {
 					this.pages.get(i).cameraAnims.get(k).startX = 
-							this.pages.get(i).cameraAnims.get(k).startX + offset.x;
+							this.pages.get(i).cameraAnims.get(k).startX/scale + offset.x;
 					this.pages.get(i).cameraAnims.get(k).startY =
-							this.pages.get(i).cameraAnims.get(k).startY + offset.y;
+							this.pages.get(i).cameraAnims.get(k).startY/scale + offset.y;
 					
 					this.pages.get(i).cameraAnims.get(k).endX = 
-							this.pages.get(i).cameraAnims.get(k).endX + offset.x;
+							this.pages.get(i).cameraAnims.get(k).endX/scale + offset.x;
 					this.pages.get(i).cameraAnims.get(k).endY = 
-							this.pages.get(i).cameraAnims.get(k).endY + offset.y;
+							this.pages.get(i).cameraAnims.get(k).endY/scale + offset.y;
 				}
 			}
 		}
@@ -143,17 +142,40 @@ public class Book {
 	 * @param progress Amount scrolled so far.
 	 * @param sb Spritebatch the sprites will be rendered on.
 	 */
-	public void renderBook(float progress, SpriteBatch sb) {
+	public void renderBook(float progress, SpriteBatch sb, OrthographicCamera cam) {
 		for(int i = 0; i < this.pages.size; i++) {
 			if(progress >= this.pages.get(i).scrollStart && progress < this.pages.get(i).scrollEnd) {
+				//If not first page, check if previous page is in view
+				if(i > 0) {
+					if(Book.absoluteDifference(cam.position.x, this.pages.get(i-1).endPositionX) < Book.cameraOffset.x*2 
+							|| Book.absoluteDifference(cam.position.y, this.pages.get(i-1).endPositionY) < Book.cameraOffset.y*2) {
+						pages.get(i - 1).updateFigures(progress);
+						pages.get(i - 1).renderSprites(sb);
+						
+					}
+				}	
+				
 				//chapter = i;
 				pages.get(i).updateFigures(progress);
 				pages.get(i).renderSprites(sb);
+				
+				//If not last page, then check if next page is in view, and render.
 				if(i + 1 < pages.size) {
-					pages.get(i + 1).updateFigures(progress);
-					pages.get(i + 1).renderSprites(sb);
-				}
+					if(Book.absoluteDifference(cam.position.x, this.pages.get(i).endPositionX) < Book.cameraOffset.x*2 
+							|| Book.absoluteDifference(cam.position.y, this.pages.get(i).endPositionY) < Book.cameraOffset.y*2) {
+						pages.get(i + 1).updateFigures(progress);
+						pages.get(i + 1).renderSprites(sb);
+					}
+				}				
 			}
+		}
+	}
+	
+	private static float absoluteDifference(float x, float y) {
+		if(x >= y) {
+			return x - y;
+		} else {
+			return y - x;
 		}
 	}
 

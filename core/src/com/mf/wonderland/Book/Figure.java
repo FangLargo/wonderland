@@ -23,7 +23,7 @@ public class Figure {
 
 		this.parallaxDist = parallax;
 		
-		System.out.println("name: " + regionName + " : di: " + this.figureSprite.getWidth() + ", " +  this.figureSprite.getHeight());
+		//System.out.println("name: " + regionName + " : di: " + this.figureSprite.getWidth() + ", " +  this.figureSprite.getHeight());
 		//System.out.println(stageScale + " : " + imageScale);
 	}
 	
@@ -39,6 +39,7 @@ public class Figure {
 				if(a.updateAnim(progress) != null) {
 					Vector2 pos = new Vector2(a.updateAnim(progress));
 					this.figureSprite.setPosition(pos.x, pos.y);
+					//System.out.println(progress + ": " + pos);
 				}
 			}
 		}

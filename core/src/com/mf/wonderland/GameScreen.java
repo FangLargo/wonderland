@@ -77,7 +77,7 @@ public class GameScreen implements Screen {
 	    game.batch.begin();
 
 	    //Send in game.batch, Book pulls out each sprite that needs rendering and renders.
-	    testBook.renderBook(progress, game.batch);
+	    testBook.renderBook(progress, game.batch, camera);
 	    //testBook.pages.get(0).figures.get(0).figureSprite.draw(game.batch);
 
 	    game.batch.end();

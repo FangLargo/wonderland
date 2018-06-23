@@ -44,5 +44,41 @@ pages: [
 			}
 		]
 	}
+	{
+		pageName: page3
+		stageHeight: 1440
+		figureScale: 0.75
+		scrollWidth: 1440
+		endPositionY: -1440
+		atlas: images/page3.atlas
+		figures: [
+			{
+				regionName: dog_bird_bg
+				startY: -1440
+				startScale: 1
+			}
+			{
+				regionName: dog_bird_bird
+				startX: 1750
+				startY: -1370
+				startScale: 1
+				anims: [
+					{
+						type: translate
+						startX: 2560
+						startY: -1370
+						endScroll: 1440
+						endX: 1750
+						endY: -1370
+					}
+				]
+			}
+			{
+				regionName: dog_bird_dog
+				startY: -1380
+				startScale: 1
+			}
+		]
+	}
 ]
 }

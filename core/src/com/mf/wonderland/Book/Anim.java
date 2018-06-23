@@ -8,7 +8,7 @@ public class Anim {
 		
 	}
 	
-	public Anim(String Type, float scale, float startPos, float sX, float sY, float endPos, float eX, float eY) {
+	public Anim(String Type, float startPos, float sX, float sY, float endPos, float eX, float eY) {
 		type = Type;
 		
 		startScroll = startPos;

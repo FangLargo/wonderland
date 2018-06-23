@@ -4,9 +4,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Json;
+import com.mf.wonderland.Book.Anim;
 import com.mf.wonderland.Book.Book;
 import com.mf.wonderland.Book.Figure;
 import com.mf.wonderland.Book.Page;
+import com.mf.wonderland.Book.Template.AnimTemplate;
 import com.mf.wonderland.Book.Template.BookTemplate;
 import com.mf.wonderland.Book.Template.FigureTemplate;
 import com.mf.wonderland.Book.Template.PageTemplate;
@@ -35,12 +37,24 @@ public class BookTest {
 		p2.figures.add(p2girl);
 		
 		//Page3
-		//TODO : Add page 3
+		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0);
+		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1380, 1, 0, 0);
+		
+		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 1750, -1370, 1, 0, 0);
+		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 2560, -1370, 1750, -1370);
+		p3bird.anims.add(p3birdanim);
+		
+		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 1440f, 0f, 0f, 0f, -1440f);
+		p3.atlas = "images/page3.atlas";
+		p3.figures.add(p3bg);
+		p3.figures.add(p3bird);
+		p3.figures.add(p3dog);
 		
 		BookTemplate book = new BookTemplate();
 		
 		book.pages.add(p1);
 		book.pages.add(p2);
+		book.pages.add(p3);
 		
 		
 		
