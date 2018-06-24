@@ -89,7 +89,7 @@ public class Page {
 						this.currentTransAnim = a;
 					} else if(a.type.equals(Anim.ROTATE)) {
 						cam.up.set(0, 1, 0);
-						cam.direction.set(0, 0, -1);
+						//cam.direction.set(0, 0, -1);
 						cam.rotate(pos.x);
 						this.currentRotAnim = a;
 					} else if(a.type.equals(Anim.SCALE)) {
@@ -109,11 +109,11 @@ public class Page {
 				if(this.currentRotAnim != null) {
 					if(progress > this.currentRotAnim.endScroll) {
 						cam.up.set(0, 1, 0);
-						cam.direction.set(0, 0, -1);
+						//cam.direction.set(0, 0, -1);
 						cam.rotate(this.currentRotAnim.endX);
 					} else if(progress < this.currentRotAnim.startScroll) {
 						cam.up.set(0, 1, 0);
-						cam.direction.set(0, 0, -1);
+						//cam.direction.set(0, 0, -1);
 						cam.rotate(this.currentRotAnim.startX);
 					}
 				}
