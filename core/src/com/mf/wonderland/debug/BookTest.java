@@ -37,8 +37,8 @@ public class BookTest {
 		AnimTemplate p2camPreCorrection = new AnimTemplate(Anim.SCALE, 2440, 2560, 1, 0, 1, 0);
 		p1.cameraAnims.add(p2camPreCorrection);
 		
-		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "Pretty_Little_Dog.mp3", 0, 2560, 1);
-		p1DogMusic.frames.add(new Vector2(0, 0));
+		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "Pretty_Little_Dog.mp3", -1, 2560, 1);
+		p1DogMusic.frames.add(new Vector2(-1, 0.4f));
 		p1DogMusic.frames.add(new Vector2(500, 1));
 		p1DogMusic.frames.add(new Vector2(2560, 1));
 		p1.audios.add(p1DogMusic);
@@ -114,7 +114,8 @@ public class BookTest {
 		p3.cameraAnims.add(p3camAnim);
 		p3.cameraAnims.add(p2camPostCorrection);
 		
-
+		AudioTemplate p3Whoosh = new AudioTemplate(AudioCue.SOUND, "bamboo-swing.wav", 1400, 1600, 1);
+		p3.audios.add(p3Whoosh);
 		
 		BookTemplate book = new BookTemplate();
 		

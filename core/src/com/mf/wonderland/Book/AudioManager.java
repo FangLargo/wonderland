@@ -12,7 +12,6 @@ public class AudioManager {
 	
 	public void updateAudioManager(float progress, int page, float delta) {
 		for(AudioCue a: this.audioCues) {
-
 			this.playCue(a, progress, delta);
 		}
 	}
@@ -42,8 +41,9 @@ public class AudioManager {
 	public void playCue(AudioCue cue, float progress, float delta) {
 		float vol = cue.getVolume(progress, delta);
 		int index = this.findReference(cue);
+		System.out.println(cue.reference + ": " + vol);
 		if(vol > 0) {
-
+			
 			if(cue.type == AudioCue.MUSIC) {
 
 				this.musicReferences.get(index).music.setVolume(vol);
@@ -52,6 +52,7 @@ public class AudioManager {
 			} else if(cue.type == AudioCue.SOUND) {
 				
 				this.soundReferences.get(index).sound.play(vol);
+				
 			}
 		} else {
 			if(cue.type == AudioCue.MUSIC) {
@@ -60,7 +61,7 @@ public class AudioManager {
 
 			} else if(cue.type == AudioCue.SOUND) {
 				
-				//this.soundReferences.get(index).sound.play(vol);
+				//this.soundReferences.get(index).sound.stop();
 			}
 		}
 	}
