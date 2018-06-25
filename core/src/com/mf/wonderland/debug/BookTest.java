@@ -3,12 +3,14 @@ package com.mf.wonderland.debug;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Json;
 import com.mf.wonderland.Book.Anim;
 import com.mf.wonderland.Book.Book;
 import com.mf.wonderland.Book.Figure;
 import com.mf.wonderland.Book.Page;
 import com.mf.wonderland.Book.Template.AnimTemplate;
+import com.mf.wonderland.Book.Template.AutoAnimTemplate;
 import com.mf.wonderland.Book.Template.BookTemplate;
 import com.mf.wonderland.Book.Template.FigureTemplate;
 import com.mf.wonderland.Book.Template.PageTemplate;
@@ -19,6 +21,11 @@ public class BookTest {
 		//Page1
 		FigureTemplate p1bg = new FigureTemplate("littledog_bg", 0, 0, 1, 0, 0, Figure._X);
 		FigureTemplate p1dog = new FigureTemplate("littledog_dog", 1290, 200, 1, 0, 2, Figure._X);
+		
+		AutoAnimTemplate autoAnimDog = new AutoAnimTemplate(Anim.TRANSLATE, 1000, 2560, 4);
+		autoAnimDog.frames.add(new Vector3(-200f, 0, 0f));
+		autoAnimDog.frames.add(new Vector3(200, 0, 2));
+		p1dog.autoAnims.add(autoAnimDog);
 		
 		PageTemplate p1 = new PageTemplate("page1", 1440f, 0.75f, 2560, 0f, 0f, 2560f, 0f);
 		p1.atlas = "images/page1.atlas";
@@ -57,7 +64,7 @@ public class BookTest {
 		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0, Figure._Y);
 		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1440, 1, 0, 0.4f, Figure._Y);
 		
-		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 2560, -1440, 1, 0, 0.4f, Figure._Y);
+		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 2500, -1440, 1, 0, 0.4f, Figure._Y);
 		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 1600, 1900, 2560, -1410, 1750, -1410);
 		AnimTemplate p3birdanimrot = new AnimTemplate(Anim.ROTATE, 1600, 1900, 0, 0, 360, 0);
 		AnimTemplate p3birdanimscale = new AnimTemplate(Anim.SCALE, 1600, 1900, 0.2f, 0.2f, 1, 1);
@@ -65,10 +72,28 @@ public class BookTest {
 		p3bird.anims.add(p3birdanimrot);
 		p3bird.anims.add(p3birdanimscale);
 		
+		AutoAnimTemplate autoAnimBird = new AutoAnimTemplate(Anim.ROTATE, 1901, 2501, 1);
+		autoAnimBird.frames.add(new Vector3(-30, 0, 0f));
+		autoAnimBird.frames.add(new Vector3(30, 0, 0.5f));
+		AutoAnimTemplate autoAnimBirdBounce = new AutoAnimTemplate(Anim.TRANSLATE, 1901, 2501, 1);
+		autoAnimBirdBounce.frames.add(new Vector3(50, 400, 0));
+		autoAnimBirdBounce.frames.add(new Vector3(0, -70, 0.25f));
+		autoAnimBirdBounce.frames.add(new Vector3(-50, 400, 0.5f));
+		autoAnimBirdBounce.frames.add(new Vector3(0, -70, 0.75f));
+		AutoAnimTemplate autoAnimScale = new AutoAnimTemplate(Anim.SCALE, 1901, 2501, 1);
+		autoAnimScale.frames.add(new Vector3(0.5f, 1, 0));
+		autoAnimScale.frames.add(new Vector3(1, 0.5f, 0.25f));
+		autoAnimScale.frames.add(new Vector3(0.5f, 1, 0.5f));
+		autoAnimScale.frames.add(new Vector3(1, 0.5f, 0.75f));
+		
+		p3bird.autoAnims.add(autoAnimBird);
+		p3bird.autoAnims.add(autoAnimBirdBounce);
+		p3bird.autoAnims.add(autoAnimScale);
+		
 		AnimTemplate p3camAnim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 0, 0, 0, -1440);
 		AnimTemplate p2camPostCorrection = new AnimTemplate(Anim.SCALE, 0, 100, 1, 0, 1, 0);
 		
-		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 2000f, 0f, 0f, 0f, -1440f);
+		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 2500f, 0f, 0f, 0f, -1440f);
 		p3.atlas = "images/page3.atlas";
 		p3.figures.add(p3bg);
 		p3.figures.add(p3bird);

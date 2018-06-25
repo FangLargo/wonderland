@@ -16,6 +16,8 @@ public class FigureTemplate {
 		this.startRotation = sR;
 		this.parallaxDist = parallax;
 		this.parallaxMode = paraMode;
+		
+		this.autoAnims = new Array<AutoAnimTemplate>();
 	}
 
 	public String regionName;
@@ -29,5 +31,6 @@ public class FigureTemplate {
 	public int parallaxMode;
 	
 	public Array<AnimTemplate> anims = new Array<AnimTemplate>();
+	public Array<AutoAnimTemplate> autoAnims = new Array<AutoAnimTemplate>();
 	
 }

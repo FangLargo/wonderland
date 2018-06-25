@@ -18,6 +18,23 @@ pages: [
 				startY: 200
 				startScale: 1
 				parallaxDist: 2
+				autoAnims: [
+					{
+						type: translate
+						startScroll: 1000
+						endScroll: 2560
+						length: 4
+						frames: [
+							{
+								x: -200
+							}
+							{
+								x: 200
+								z: 2
+							}
+						]
+					}
+				]
 			}
 		]
 		cameraAnims: [
@@ -104,7 +121,7 @@ pages: [
 		pageName: page3
 		stageHeight: 1440
 		figureScale: 0.75
-		scrollWidth: 2000
+		scrollWidth: 2500
 		endPositionY: -1440
 		atlas: images/page3.atlas
 		figures: [
@@ -116,7 +133,7 @@ pages: [
 			}
 			{
 				regionName: dog_bird_bird
-				startX: 2560
+				startX: 2500
 				startY: -1440
 				startScale: 1
 				parallaxDist: 0.4
@@ -145,6 +162,75 @@ pages: [
 						endScroll: 1900
 						endX: 1
 						endY: 1
+					}
+				]
+				autoAnims: [
+					{
+						type: rotate
+						startScroll: 1901
+						endScroll: 2501
+						length: 1
+						frames: [
+							{
+								x: -30
+							}
+							{
+								x: 30
+								z: 0.5
+							}
+						]
+					}
+					{
+						type: translate
+						startScroll: 1901
+						endScroll: 2501
+						length: 1
+						frames: [
+							{
+								x: 50
+								y: 400
+							}
+							{
+								y: -70
+								z: 0.25
+							}
+							{
+								x: -50
+								y: 400
+								z: 0.5
+							}
+							{
+								y: -70
+								z: 0.75
+							}
+						]
+					}
+					{
+						type: scale
+						startScroll: 1901
+						endScroll: 2501
+						length: 1
+						frames: [
+							{
+								x: 0.5
+								y: 1
+							}
+							{
+								x: 1
+								y: 0.5
+								z: 0.25
+							}
+							{
+								x: 0.5
+								y: 1
+								z: 0.5
+							}
+							{
+								x: 1
+								y: 0.5
+								z: 0.75
+							}
+						]
 					}
 				]
 			}

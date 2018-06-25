@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.mf.wonderland.Book.Template.AutoAnimTemplate;
 import com.mf.wonderland.Book.Template.BookTemplate;
 
 public class Book {
@@ -86,6 +87,29 @@ public class Book {
 						//System.out.println(this.pages.get(i).figures.get(j).anims.get(k).endX);
 					}
 				}
+				
+				//Include all AutoAnim in figure
+				for(AutoAnimTemplate a: template.pages.get(i).figures.get(j).autoAnims) {
+					AutoAnim tempAutoAnim = new AutoAnim(
+							a.type,
+							a.startScroll/scale + offset.z,
+							a.endScroll/scale + offset.z,
+							a.length);
+					if(!a.type.equals(Anim.TRANSLATE)) {
+						tempAutoAnim.frames = a.frames;
+					} else {
+						for(int k = 0; k < a.frames.size; k++) {
+							Vector3 val = new Vector3(
+									a.frames.get(k).x/scale, 
+									a.frames.get(k).y/scale,
+									a.frames.get(k).z);
+							tempAutoAnim.frames.add(val);
+						}
+					}
+					
+					this.pages.get(i).figures.get(j).autoAnims.add(tempAutoAnim);
+					//System.out.println("Adding Auto");
+				}
 			}
 			
 			//Include all camera anims
@@ -163,7 +187,7 @@ public class Book {
 	 * @param progress Amount scrolled so far.
 	 * @param sb Spritebatch the sprites will be rendered on.
 	 */
-	public void renderBook(float progress, SpriteBatch sb, OrthographicCamera cam) {
+	public void renderBook(float progress, SpriteBatch sb, OrthographicCamera cam, float delta) {
 		//camPos is (posX, posY, zoom)
 		Vector3 camPos = new Vector3(cam.position.x, cam.position.y, cam.zoom);
 		
@@ -173,21 +197,21 @@ public class Book {
 				if(i > 0) {
 					if(Book.absoluteDifference(cam.position.x, this.pages.get(i-1).endPositionX) < Book.cameraOffset.x*2 
 							|| Book.absoluteDifference(cam.position.y, this.pages.get(i-1).endPositionY) < Book.cameraOffset.y*2) {
-						pages.get(i - 1).updateFigures(progress, camPos);
+						pages.get(i - 1).updateFigures(progress, camPos, delta);
 						pages.get(i - 1).renderSprites(sb);
 						
 					}
 				}	
 				
 				//chapter = i;
-				pages.get(i).updateFigures(progress, camPos);
+				pages.get(i).updateFigures(progress, camPos, delta);
 				pages.get(i).renderSprites(sb);
 				
 				//If not last page, then check if next page is in view, and render.
 				if(i + 1 < pages.size) {
 					if(Book.absoluteDifference(camPos.x, this.pages.get(i).endPositionX) < Book.cameraOffset.x*2 
 							|| Book.absoluteDifference(camPos.y, this.pages.get(i).endPositionY) < Book.cameraOffset.y*2) {
-						pages.get(i + 1).updateFigures(progress, camPos);
+						pages.get(i + 1).updateFigures(progress, camPos, delta);
 						pages.get(i + 1).renderSprites(sb);
 					}
 				}				

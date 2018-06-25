@@ -38,6 +38,7 @@ public class Figure {
 	public float startY;
 	
 	public Array<Anim> anims = new Array<Anim>();
+	public Array<AutoAnim> autoAnims = new Array<AutoAnim>();
 	
 	private Anim currentTransAnim;
 	private Anim currentRotAnim;
@@ -91,6 +92,60 @@ public class Figure {
 			this.figureSprite.setPosition(this.startX, this.startY);
 			this.figureSprite.setOriginCenter();
 			this.figureSprite.setScale(1);
+		}
+	}
+	
+	public void updateFigureAutoAnim(float progress, float delta) {
+		if(autoAnims.size > 0) {
+			for(AutoAnim a: autoAnims) {
+				Vector2 val = new Vector2();
+				
+				if(a.updateAutoAnim(progress, delta) != null) {	
+					val = a.updateAutoAnim(progress, 0);
+//					System.out.println("Delta: " + delta + ", val: " + val);
+					if(a.type.equals(Anim.TRANSLATE)) {
+						this.figureSprite.translate(val.x, val.y);
+						//this.currentTransAnim = a.toAnimData();
+
+					} else if(a.type.equals(Anim.ROTATE)) {
+						this.figureSprite.setOriginCenter();
+						this.figureSprite.rotate(val.x);
+						//this.currentRotAnim = a.toAnimData();
+					} else if(a.type.equals(Anim.SCALE)) {
+						this.figureSprite.setScale(val.x, val.y);
+						//this.currentScaleAnim = a.toAnimData();
+					}
+				}
+				//System.out.println(val.y);
+			}
+			
+//			if(this.currentTransAnim != null) {
+//				if(progress > this.currentTransAnim.endScroll) {
+//					this.figureSprite.setPosition(this.currentTransAnim.endX, this.currentTransAnim.endY);
+//				} else if(progress < this.currentTransAnim.startScroll) {
+//					this.figureSprite.setPosition(this.currentTransAnim.startX, this.currentTransAnim.startY);
+//				}
+//			}
+//			
+//			if(this.currentRotAnim != null) {
+//				if(progress > this.currentRotAnim.endScroll) {
+//					this.figureSprite.setRotation(this.currentRotAnim.endX);
+//				} else if(progress < this.currentRotAnim.startScroll) {
+//					this.figureSprite.setRotation(this.currentRotAnim.startX);
+//				}
+//			}
+//			
+//			if(this.currentScaleAnim != null) {
+//				if(progress > this.currentScaleAnim.endScroll) {
+//					this.figureSprite.setScale(this.currentScaleAnim.endX, this.currentScaleAnim.endY);
+//				} else if(progress < this.currentScaleAnim.startScroll) {
+//					this.figureSprite.setScale(this.currentScaleAnim.startX, this.currentScaleAnim.startY);
+//				}
+//			}
+		} else {
+//			this.figureSprite.setPosition(this.startX, this.startY);
+//			this.figureSprite.setOriginCenter();
+//			this.figureSprite.setScale(1);
 		}
 	}
 	
