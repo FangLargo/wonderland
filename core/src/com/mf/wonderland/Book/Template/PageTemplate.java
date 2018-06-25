@@ -38,4 +38,6 @@ public class PageTemplate {
 	public Array<FigureTemplate> figures = new Array<FigureTemplate>();
 	
 	public Array<AnimTemplate> cameraAnims = new Array<AnimTemplate>();
+	
+	public Array<AudioTemplate> audios = new Array<AudioTemplate>();
 }

@@ -3,13 +3,16 @@ package com.mf.wonderland.debug;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Json;
 import com.mf.wonderland.Book.Anim;
+import com.mf.wonderland.Book.AudioCue;
 import com.mf.wonderland.Book.Book;
 import com.mf.wonderland.Book.Figure;
 import com.mf.wonderland.Book.Page;
 import com.mf.wonderland.Book.Template.AnimTemplate;
+import com.mf.wonderland.Book.Template.AudioTemplate;
 import com.mf.wonderland.Book.Template.AutoAnimTemplate;
 import com.mf.wonderland.Book.Template.BookTemplate;
 import com.mf.wonderland.Book.Template.FigureTemplate;
@@ -33,6 +36,12 @@ public class BookTest {
 		p1.figures.add(p1dog);
 		AnimTemplate p2camPreCorrection = new AnimTemplate(Anim.SCALE, 2440, 2560, 1, 0, 1, 0);
 		p1.cameraAnims.add(p2camPreCorrection);
+		
+		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "Pretty_Little_Dog.mp3", 0, 2560, 1);
+		p1DogMusic.frames.add(new Vector2(0, 0));
+		p1DogMusic.frames.add(new Vector2(500, 1));
+		p1DogMusic.frames.add(new Vector2(2560, 1));
+		p1.audios.add(p1DogMusic);
 		
 		//Page2
 		FigureTemplate p2bg = new FigureTemplate("shogatsu2015_bg", 0, 0, 1, 0, 0, Figure._X);
@@ -60,6 +69,10 @@ public class BookTest {
 		p2.cameraAnims.add(p2camMoveOut);
 		p2.cameraAnims.add(p2camPan);
 		
+		AudioTemplate p2Japan = new AudioTemplate(AudioCue.MUSIC, "Omoigawa.mp3", 0, 2880, 1);
+		//p2Japan.frames.add(new Vector2(0, 0));
+		p2.audios.add(p2Japan);
+		
 		//Page3
 		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0, Figure._Y);
 		FigureTemplate p3dog = new FigureTemplate("dog_bird_dog", 0, -1440, 1, 0, 0.4f, Figure._Y);
@@ -72,15 +85,15 @@ public class BookTest {
 		p3bird.anims.add(p3birdanimrot);
 		p3bird.anims.add(p3birdanimscale);
 		
-		AutoAnimTemplate autoAnimBird = new AutoAnimTemplate(Anim.ROTATE, 1901, 2501, 1);
+		AutoAnimTemplate autoAnimBird = new AutoAnimTemplate(Anim.ROTATE, 2301, 2501, 1);
 		autoAnimBird.frames.add(new Vector3(-30, 0, 0f));
 		autoAnimBird.frames.add(new Vector3(30, 0, 0.5f));
-		AutoAnimTemplate autoAnimBirdBounce = new AutoAnimTemplate(Anim.TRANSLATE, 1901, 2501, 1);
+		AutoAnimTemplate autoAnimBirdBounce = new AutoAnimTemplate(Anim.TRANSLATE, 2301, 2501, 1);
 		autoAnimBirdBounce.frames.add(new Vector3(50, 400, 0));
 		autoAnimBirdBounce.frames.add(new Vector3(0, -70, 0.25f));
 		autoAnimBirdBounce.frames.add(new Vector3(-50, 400, 0.5f));
 		autoAnimBirdBounce.frames.add(new Vector3(0, -70, 0.75f));
-		AutoAnimTemplate autoAnimScale = new AutoAnimTemplate(Anim.SCALE, 1901, 2501, 1);
+		AutoAnimTemplate autoAnimScale = new AutoAnimTemplate(Anim.SCALE, 2301, 2501, 1);
 		autoAnimScale.frames.add(new Vector3(0.5f, 1, 0));
 		autoAnimScale.frames.add(new Vector3(1, 0.5f, 0.25f));
 		autoAnimScale.frames.add(new Vector3(0.5f, 1, 0.5f));

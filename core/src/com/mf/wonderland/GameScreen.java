@@ -2,6 +2,7 @@ package com.mf.wonderland;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -52,6 +53,8 @@ public class GameScreen implements Screen {
 //        for(Page p: testBook.pages) {
 //        	System.out.println(p.scrollStart + " -> " + p.scrollEnd);
 //        }
+//      Music music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/Pretty_Little_Dog.mp3"));
+//	    music.play();
 	}
 
 	@Override
@@ -75,6 +78,7 @@ public class GameScreen implements Screen {
 		}
 			
 		testBook.updateCamera(camera, progress);
+		testBook.updateBook(progress, camera, game.batch, delta);
 
 		camera.update();
 		
@@ -97,6 +101,7 @@ public class GameScreen implements Screen {
 	    //log.log();
 	    //System.out.println(progress);
 	    //System.out.println(camera.zoom);
+
 	}
 
 	FPSLogger log = new FPSLogger();

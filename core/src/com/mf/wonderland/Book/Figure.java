@@ -119,33 +119,6 @@ public class Figure {
 				//System.out.println(val.y);
 			}
 			
-//			if(this.currentTransAnim != null) {
-//				if(progress > this.currentTransAnim.endScroll) {
-//					this.figureSprite.setPosition(this.currentTransAnim.endX, this.currentTransAnim.endY);
-//				} else if(progress < this.currentTransAnim.startScroll) {
-//					this.figureSprite.setPosition(this.currentTransAnim.startX, this.currentTransAnim.startY);
-//				}
-//			}
-//			
-//			if(this.currentRotAnim != null) {
-//				if(progress > this.currentRotAnim.endScroll) {
-//					this.figureSprite.setRotation(this.currentRotAnim.endX);
-//				} else if(progress < this.currentRotAnim.startScroll) {
-//					this.figureSprite.setRotation(this.currentRotAnim.startX);
-//				}
-//			}
-//			
-//			if(this.currentScaleAnim != null) {
-//				if(progress > this.currentScaleAnim.endScroll) {
-//					this.figureSprite.setScale(this.currentScaleAnim.endX, this.currentScaleAnim.endY);
-//				} else if(progress < this.currentScaleAnim.startScroll) {
-//					this.figureSprite.setScale(this.currentScaleAnim.startX, this.currentScaleAnim.startY);
-//				}
-//			}
-		} else {
-//			this.figureSprite.setPosition(this.startX, this.startY);
-//			this.figureSprite.setOriginCenter();
-//			this.figureSprite.setScale(1);
 		}
 	}
 	

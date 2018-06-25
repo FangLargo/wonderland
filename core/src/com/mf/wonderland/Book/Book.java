@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.mf.wonderland.Book.Template.AudioTemplate;
 import com.mf.wonderland.Book.Template.AutoAnimTemplate;
 import com.mf.wonderland.Book.Template.BookTemplate;
 
@@ -110,6 +111,71 @@ public class Book {
 					this.pages.get(i).figures.get(j).autoAnims.add(tempAutoAnim);
 					//System.out.println("Adding Auto");
 				}
+				
+				//Include all audio
+				for(AudioTemplate a: template.pages.get(i).audios) {
+					boolean exists = false;
+					
+					//Check if sound already exists in record.
+					if(a.type == AudioCue.MUSIC) {
+						for(MusicReference m: audioManager.musicReferences) {
+							if(m.ref.equals(a.name)) {
+								exists = true;
+							}
+						}
+						
+						if(!exists) {
+							MusicReference temp = new MusicReference();
+							temp.ref = a.name;
+							temp.music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/" + a.name));
+							temp.music.setLooping(true);
+							audioManager.musicReferences.add(temp);
+						}
+					} else if(a.type == AudioCue.SOUND) {
+						for(SoundReference s: audioManager.soundReferences) {
+							if(s.ref.equals(a.name)) {
+								exists = true;
+							}
+						}
+						
+						if(!exists) {
+							SoundReference temp = new SoundReference();
+							temp.ref = a.name;
+							temp.sound = Gdx.audio.newSound(Gdx.files.internal("audio/sound/" + a.name));
+							
+							this.audioManager.soundReferences.add(temp);
+						}
+					}
+					
+					//Add the Cue
+					AudioCue tempCue = new AudioCue();
+					tempCue.type = a.type;
+					tempCue.page = i;
+					tempCue.reference = a.name;
+					tempCue.start = a.start/scale + offset.z;
+					tempCue.end = a.end/scale + offset.z;
+					tempCue.maxVolume = a.maxVolume;
+					
+					//tempCue.frames.add(new Vector2(0, 0));
+					
+					if(a.frames.size >= 1) {
+						//tempCue.frames.add(new Vector2(0, 0));
+						for(Vector2 v: a.frames) {
+							tempCue.frames.add(new Vector2(v.x/scale, v.y));
+						}
+						//tempCue.frames.add(new Vector2(a.end, 0));
+					} 
+//					else {
+//						float interval = (a.end - a.start)*0.1f;
+//						Vector2 v1 = new Vector2(interval/scale, a.maxVolume);
+//						Vector2 v2 = new Vector2((a.end - interval)/scale, a.maxVolume);
+//						tempCue.frames.add(v1);
+//						tempCue.frames.add(v2);
+//						tempCue.frames.add(new Vector2(a.end/scale, 0));
+//					}
+					
+					this.audioManager.audioCues.add(tempCue);
+				}
 			}
 			
 			//Include all camera anims
@@ -164,8 +230,24 @@ public class Book {
 	float viewHeight;
 	public Array<Page> pages = new Array<Page>();
 	
+//	public Array<MusicReference> musicReferences = new Array<MusicReference>();
+//	public Array<SoundReference> soundReferences = new Array<SoundReference>();
+	AudioManager audioManager = new AudioManager();
+	
 	public static Vector2 cameraOffset = new Vector2(88.89f, 50f);
 	public static float viewH = 100f;
+
+	private int currentPage = 0;
+	
+	/**
+	 * Updates audio when called.
+	 * @param progress
+	 */
+	public void updateBook(float progress, OrthographicCamera cam, SpriteBatch sb, float delta) {
+		//this.updateCamera(cam, progress);
+		//this.renderBook(progress, sb, cam, delta);
+		audioManager.updateAudioManager(progress, currentPage, delta);
+	}
 	
 	/**
 	 * Updates position of camera according to how much has been scrolled. 
@@ -176,6 +258,7 @@ public class Book {
 		for(int i = 0; i < this.pages.size; i++) {
 			if(progress >= this.pages.get(i).scrollStart && progress < pages.get(i).scrollEnd) {
 				pages.get(i).updateCamera(cam, progress);
+				currentPage = i;
 			}
 		}
 	}

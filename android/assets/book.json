@@ -46,6 +46,25 @@ pages: [
 				endX: 1
 			}
 		]
+		audios: [
+			{
+				type: 1
+				name: Pretty_Little_Dog.mp3
+				end: 2560
+				frames: [
+					{}
+					{
+						x: 500
+						y: 1
+					}
+					{
+						x: 2560
+						y: 1
+					}
+				]
+				maxVolume: 1
+			}
+		]
 	}
 	{
 		pageName: page2
@@ -116,6 +135,14 @@ pages: [
 				endY: 300
 			}
 		]
+		audios: [
+			{
+				type: 1
+				name: Omoigawa.mp3
+				end: 2880
+				maxVolume: 1
+			}
+		]
 	}
 	{
 		pageName: page3
@@ -167,7 +194,7 @@ pages: [
 				autoAnims: [
 					{
 						type: rotate
-						startScroll: 1901
+						startScroll: 2301
 						endScroll: 2501
 						length: 1
 						frames: [
@@ -182,7 +209,7 @@ pages: [
 					}
 					{
 						type: translate
-						startScroll: 1901
+						startScroll: 2301
 						endScroll: 2501
 						length: 1
 						frames: [
@@ -207,7 +234,7 @@ pages: [
 					}
 					{
 						type: scale
-						startScroll: 1901
+						startScroll: 2301
 						endScroll: 2501
 						length: 1
 						frames: [
