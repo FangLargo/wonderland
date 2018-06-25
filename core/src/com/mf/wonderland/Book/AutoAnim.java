@@ -36,11 +36,11 @@ public class AutoAnim {
 			for(int i = 0; i < this.frames.size; i++) {
 				if(i < this.frames.size - 1) {
 					if(this.time >= this.frames.get(i).z && this.time < this.frames.get(i + 1).z) {
-						System.out.println(i + " : " + time + ", val: " + Anim.interpolate(this.time, this.frames.get(i).z, this.frames.get(i + 1).z,
-								this.frames.get(i).x,
-								this.frames.get(i).y,
-								this.frames.get(i + 1).x,
-								this.frames.get(i + 1).y));
+//						System.out.println(i + " : " + time + ", val: " + Anim.interpolate(this.time, this.frames.get(i).z, this.frames.get(i + 1).z,
+//								this.frames.get(i).x,
+//								this.frames.get(i).y,
+//								this.frames.get(i + 1).x,
+//								this.frames.get(i + 1).y));
 						
 						return Anim.interpolate(this.time, this.frames.get(i).z, this.frames.get(i + 1).z,
 								this.frames.get(i).x,
@@ -51,11 +51,11 @@ public class AutoAnim {
 				} else {
 					if(this.time > this.frames.get(i).z && this.time < this.length) {
 						
-						System.out.println(i+ " : " + time + ", val: " + Anim.interpolate(this.time, this.frames.get(i).z, this.length,
-								this.frames.get(i).x,
-								this.frames.get(i).y,
-								this.frames.get(0).x,
-								this.frames.get(0).y));
+//						System.out.println(i+ " : " + time + ", val: " + Anim.interpolate(this.time, this.frames.get(i).z, this.length,
+//								this.frames.get(i).x,
+//								this.frames.get(i).y,
+//								this.frames.get(0).x,
+//								this.frames.get(0).y));
 						
 						return Anim.interpolate(this.time, this.frames.get(i).z, this.length,
 								this.frames.get(i).x,
