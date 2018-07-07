@@ -51,7 +51,7 @@ pages: [
 				type: 1
 				name: Pretty_Little_Dog.mp3
 				start: -1
-				end: 2560
+				end: 2600
 				frames: [
 					{
 						x: -1
@@ -62,7 +62,7 @@ pages: [
 						y: 1
 					}
 					{
-						x: 2560
+						x: 2600
 						y: 1
 					}
 				]

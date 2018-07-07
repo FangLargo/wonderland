@@ -1,5 +1,7 @@
 package com.mf.wonderland.debug;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -37,10 +39,10 @@ public class BookTest {
 		AnimTemplate p2camPreCorrection = new AnimTemplate(Anim.SCALE, 2440, 2560, 1, 0, 1, 0);
 		p1.cameraAnims.add(p2camPreCorrection);
 		
-		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "Pretty_Little_Dog.mp3", -1, 2560, 1);
+		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "Pretty_Little_Dog.mp3", -1, 2600, 1);
 		p1DogMusic.frames.add(new Vector2(-1, 0.4f));
 		p1DogMusic.frames.add(new Vector2(500, 1));
-		p1DogMusic.frames.add(new Vector2(2560, 1));
+		p1DogMusic.frames.add(new Vector2(2600, 1));
 		p1.audios.add(p1DogMusic);
 		
 		//Page2
@@ -128,10 +130,14 @@ public class BookTest {
 		Json json = new Json();
 		//System.out.println(json.prettyPrint(book));
 		
-		FileHandle file = Gdx.files.local("book.json");
-		file.writeString(json.prettyPrint(book), false);
+		//For WRITING books: Only works on desktop/android.
+		//NOT HTML
+		if(Gdx.app.getType() != ApplicationType.WebGL) {
+			FileHandle file = Gdx.files.local("book.json");
+			file.writeString(json.prettyPrint(book), false);
+		}
 		
-		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.local("book.json"));
+		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal("book.json"));
 		//System.out.println(bookCopy.pages.get(1).figures.get(2).regionName);
 		
 		Book bookOb = new Book(bookCopy, 100f);
