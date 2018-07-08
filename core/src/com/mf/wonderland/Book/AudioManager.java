@@ -41,7 +41,7 @@ public class AudioManager {
 	public void playCue(AudioCue cue, float progress, float delta) {
 		float vol = cue.getVolume(progress, delta);
 		int index = this.findReference(cue);
-		System.out.println(cue.reference + ": " + vol);
+		//System.out.println(cue.reference + ": " + vol);
 		if(vol > 0) {
 			
 			if(cue.type == AudioCue.MUSIC) {
