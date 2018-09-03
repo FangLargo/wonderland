@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
 import com.mf.wonderland.Book.Template.AudioTemplate;
 import com.mf.wonderland.Book.Template.AutoAnimTemplate;
 import com.mf.wonderland.Book.Template.BookTemplate;
@@ -14,6 +15,14 @@ import com.mf.wonderland.Book.Template.BookTemplate;
 public class Book {
 	public Book() {
 		
+	}
+	
+	public static Book createNewBook(String title, float pageWidth) {
+		Json json = new Json();
+		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal(title));
+		Book bookOb = new Book(bookCopy, pageWidth);
+		
+		return bookOb;
 	}
 	
 	public Book(BookTemplate template, float viewH) {
@@ -117,7 +126,7 @@ public class Book {
 					boolean exists = false;
 					
 					//Check if sound already exists in record.
-					if(a.type == AudioCue.MUSIC) {
+					if(a.type.equals(AudioCue.MUSIC)) {
 						for(MusicReference m: audioManager.musicReferences) {
 							if(m.ref.equals(a.name)) {
 								exists = true;
@@ -129,9 +138,11 @@ public class Book {
 							temp.ref = a.name;
 							temp.music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/" + a.name));
 							temp.music.setLooping(true);
-							audioManager.musicReferences.add(temp);
+							this.audioManager.musicReferences.add(temp);
+							
+							System.out.println("addingMusic");
 						}
-					} else if(a.type == AudioCue.SOUND) {
+					} else if(a.type.equals(AudioCue.SOUND)) {
 						for(SoundReference s: audioManager.soundReferences) {
 							if(s.ref.equals(a.name)) {
 								exists = true;
@@ -144,6 +155,7 @@ public class Book {
 							temp.sound = Gdx.audio.newSound(Gdx.files.internal("audio/sound/" + a.name));
 							
 							this.audioManager.soundReferences.add(temp);
+							System.out.println("addingSound");
 						}
 					}
 					

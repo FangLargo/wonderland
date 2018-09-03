@@ -5,7 +5,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class AudioCue {
 	
-	public int type;
+	public String type;
 	public int page;
 	public String reference;
 	public float start;
@@ -19,7 +19,7 @@ public class AudioCue {
 	private boolean played = false;
 	
 	public float getVolume(float progress, float delta) {
-		if(this.type == AudioCue.SOUND) {
+		if(this.type.equals(AudioCue.SOUND)) {
 			if(played == false) {
 				if(progress > this.start && progress < this.end) {
 					played = true;
@@ -32,7 +32,7 @@ public class AudioCue {
 					played = false;
 				}
 			}
-		} else if(this.type == AudioCue.MUSIC) {
+		} else if(this.type.equals(AudioCue.MUSIC)) {
 			if(this.frames.size > 0) {
 				//IF THERE ARE FRAMES, CHECK WHICH FRAME IS RELEVANT
 				for(int i = 0; i < this.frames.size; i++) {
@@ -93,6 +93,6 @@ public class AudioCue {
 		return -1;
 	}
 	
-	public static int MUSIC = 1;
-	public static int SOUND = 2;
+	public static String MUSIC = "music";
+	public static String SOUND = "sound";
 }

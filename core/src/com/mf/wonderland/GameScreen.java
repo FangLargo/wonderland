@@ -36,8 +36,9 @@ public class GameScreen implements Screen {
     SpriteBatch debugBatch = new SpriteBatch();
     BitmapFont font = new BitmapFont();
     
-    String bookName = "book.json";
-    Book testBook;
+    String bookName = "testbook.json";
+    float pageWidth = 100f;
+    Book book;
 
 	public GameScreen(final Wonderland gam) {
 		this.game = gam;
@@ -49,9 +50,10 @@ public class GameScreen implements Screen {
         Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
         
         //debugs        
-        testBook = BookTest.jsonBookMaker();
+        book = BookTest.jsonBookMaker();
         
         //Open Book:
+        //book = Book.createNewBook(bookName, pageWidth);
         
 	}
 
@@ -71,12 +73,12 @@ public class GameScreen implements Screen {
 		
 		if(progress < 0) {
 			progress = 0;
-		} else if (progress >= testBook.totalScrollWidth) {
-			progress = testBook.totalScrollWidth - 0.01f;
+		} else if (progress >= book.totalScrollWidth) {
+			progress = book.totalScrollWidth - 0.01f;
 		}
 			
-		testBook.updateCamera(camera, progress);
-		testBook.updateBook(progress, camera, game.batch, delta);
+		book.updateCamera(camera, progress);
+		book.updateBook(progress, camera, game.batch, delta);
 
 		camera.update();
 		
@@ -84,7 +86,7 @@ public class GameScreen implements Screen {
 	    game.batch.begin();
 
 	    //Send in game.batch, Book pulls out each sprite that needs rendering and renders.
-	    testBook.renderBook(progress, game.batch, camera, delta);
+	    book.renderBook(progress, game.batch, camera, delta);
 	    //testBook.pages.get(0).figures.get(0).figureSprite.draw(game.batch);
 
 	    game.batch.end();

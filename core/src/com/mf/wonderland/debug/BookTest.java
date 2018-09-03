@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.JsonWriter.OutputType;
 import com.mf.wonderland.Book.Anim;
 import com.mf.wonderland.Book.AudioCue;
 import com.mf.wonderland.Book.Book;
@@ -133,6 +134,7 @@ public class BookTest {
 		
 		
 		Json json = new Json();
+		json.setOutputType(OutputType.json);
 		//System.out.println(json.prettyPrint(book));
 		
 		//For WRITING books: Only works on desktop/android.
@@ -142,24 +144,16 @@ public class BookTest {
 			file.writeString(json.prettyPrint(book), false);
 		}
 		
-		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal("testbook.json"));
-		//System.out.println(bookCopy.pages.get(1).figures.get(2).regionName);
 		
-		Book bookOb = new Book(bookCopy, 100f);
+		//BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal("testbook.json"));		
+		//Book bookOb = new Book(bookCopy, 100f);
+		
+		
 		//System.out.println(bookOb.totalScrollWidth);
 		//System.out.println(json.prettyPrint(bookOb));
 		
-		return bookOb;
-	}
-	
-	public static Book createNewBook(String title) {
-		Json json = new Json();
-		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal(title));
-		Book bookOb = new Book(bookCopy, 100f);
-		
-		return bookOb;
-	}
-	
+		return Book.createNewBook("testbook.json", 100f);
+	}	
 	
 	public static void nullCheck() {
 		Object x = null;
