@@ -35,7 +35,8 @@ public class GameScreen implements Screen {
     //For debug
     SpriteBatch debugBatch = new SpriteBatch();
     BitmapFont font = new BitmapFont();
-
+    
+    String bookName = "book.json";
     Book testBook;
 
 	public GameScreen(final Wonderland gam) {
@@ -50,11 +51,8 @@ public class GameScreen implements Screen {
         //debugs        
         testBook = BookTest.jsonBookMaker();
         
-//        for(Page p: testBook.pages) {
-//        	System.out.println(p.scrollStart + " -> " + p.scrollEnd);
-//        }
-//      Music music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/Pretty_Little_Dog.mp3"));
-//	    music.play();
+        //Open Book:
+        
 	}
 
 	@Override

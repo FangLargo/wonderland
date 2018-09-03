@@ -6,7 +6,7 @@ pages: [
 		figureScale: 0.75
 		scrollWidth: 2560
 		endPositionX: 2560
-		atlas: images/page1.atlas
+		atlas: images/test/page1.atlas
 		figures: [
 			{
 				regionName: littledog_bg
@@ -49,7 +49,7 @@ pages: [
 		audios: [
 			{
 				type: 1
-				name: Pretty_Little_Dog.mp3
+				name: test/Pretty_Little_Dog.mp3
 				start: -1
 				end: 2600
 				frames: [
@@ -75,7 +75,7 @@ pages: [
 		stageHeight: 1440
 		figureScale: 0.75
 		scrollWidth: 2880
-		atlas: images/page2.atlas
+		atlas: images/test/page2.atlas
 		figures: [
 			{
 				regionName: shogatsu2015_bg
@@ -142,7 +142,7 @@ pages: [
 		audios: [
 			{
 				type: 1
-				name: Omoigawa.mp3
+				name: test/Omoigawa.mp3
 				end: 2880
 				maxVolume: 1
 			}
@@ -154,7 +154,7 @@ pages: [
 		figureScale: 0.75
 		scrollWidth: 2500
 		endPositionY: -1440
-		atlas: images/page3.atlas
+		atlas: images/test/page3.atlas
 		figures: [
 			{
 				regionName: dog_bird_bg
@@ -303,7 +303,7 @@ pages: [
 		audios: [
 			{
 				type: 2
-				name: bamboo-swing.wav
+				name: test/bamboo-swing.wav
 				start: 1400
 				end: 1600
 				maxVolume: 1

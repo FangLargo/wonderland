@@ -33,13 +33,13 @@ public class BookTest {
 		p1dog.autoAnims.add(autoAnimDog);
 		
 		PageTemplate p1 = new PageTemplate("page1", 1440f, 0.75f, 2560, 0f, 0f, 2560f, 0f);
-		p1.atlas = "images/page1.atlas";
+		p1.atlas = "images/test/page1.atlas";
 		p1.figures.add(p1bg);
 		p1.figures.add(p1dog);
 		AnimTemplate p2camPreCorrection = new AnimTemplate(Anim.SCALE, 2440, 2560, 1, 0, 1, 0);
 		p1.cameraAnims.add(p2camPreCorrection);
 		
-		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "Pretty_Little_Dog.mp3", -1, 2600, 1);
+		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "test/Pretty_Little_Dog.mp3", -1, 2600, 1);
 		p1DogMusic.frames.add(new Vector2(-1, 0.4f));
 		p1DogMusic.frames.add(new Vector2(500, 1));
 		p1DogMusic.frames.add(new Vector2(2600, 1));
@@ -59,7 +59,7 @@ public class BookTest {
 		
 		
 		PageTemplate p2 = new PageTemplate("page2", 1440f, 0.75f, 2880, 0f, 0f, 0f, 0f);
-		p2.atlas = "images/page2.atlas";
+		p2.atlas = "images/test/page2.atlas";
 		p2.figures.add(p2bg);
 		p2.figures.add(p2matsu);
 		p2.figures.add(p2girl);
@@ -71,7 +71,7 @@ public class BookTest {
 		p2.cameraAnims.add(p2camMoveOut);
 		p2.cameraAnims.add(p2camPan);
 		
-		AudioTemplate p2Japan = new AudioTemplate(AudioCue.MUSIC, "Omoigawa.mp3", 0, 2880, 1);
+		AudioTemplate p2Japan = new AudioTemplate(AudioCue.MUSIC, "test/Omoigawa.mp3", 0, 2880, 1);
 		//p2Japan.frames.add(new Vector2(0, 0));
 		p2.audios.add(p2Japan);
 		
@@ -101,22 +101,27 @@ public class BookTest {
 		autoAnimScale.frames.add(new Vector3(0.5f, 1, 0.5f));
 		autoAnimScale.frames.add(new Vector3(1, 0.5f, 0.75f));
 		
+		AutoAnimTemplate autoAnimAlpha = new AutoAnimTemplate(Anim.ALPHA, 2301, 2501, 1);
+		autoAnimAlpha.frames.add(new Vector3(1f, 0, 0f));
+		autoAnimAlpha.frames.add(new Vector3(0f, 0, 0.5f));
+		
 		p3bird.autoAnims.add(autoAnimBird);
 		p3bird.autoAnims.add(autoAnimBirdBounce);
 		p3bird.autoAnims.add(autoAnimScale);
+		p3bird.autoAnims.add(autoAnimAlpha);
 		
 		AnimTemplate p3camAnim = new AnimTemplate(Anim.TRANSLATE, 0, 1440, 0, 0, 0, -1440);
 		AnimTemplate p2camPostCorrection = new AnimTemplate(Anim.SCALE, 0, 100, 1, 0, 1, 0);
 		
 		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 2500f, 0f, 0f, 0f, -1440f);
-		p3.atlas = "images/page3.atlas";
+		p3.atlas = "images/test/page3.atlas";
 		p3.figures.add(p3bg);
 		p3.figures.add(p3bird);
 		p3.figures.add(p3dog);
 		p3.cameraAnims.add(p3camAnim);
 		p3.cameraAnims.add(p2camPostCorrection);
 		
-		AudioTemplate p3Whoosh = new AudioTemplate(AudioCue.SOUND, "bamboo-swing.wav", 1400, 1600, 1);
+		AudioTemplate p3Whoosh = new AudioTemplate(AudioCue.SOUND, "test/bamboo-swing.wav", 1400, 1600, 1);
 		p3.audios.add(p3Whoosh);
 		
 		BookTemplate book = new BookTemplate();
@@ -133,16 +138,24 @@ public class BookTest {
 		//For WRITING books: Only works on desktop/android.
 		//NOT HTML
 		if(Gdx.app.getType() != ApplicationType.WebGL) {
-			FileHandle file = Gdx.files.local("book.json");
+			FileHandle file = Gdx.files.local("testbook.json");
 			file.writeString(json.prettyPrint(book), false);
 		}
 		
-		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal("book.json"));
+		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal("testbook.json"));
 		//System.out.println(bookCopy.pages.get(1).figures.get(2).regionName);
 		
 		Book bookOb = new Book(bookCopy, 100f);
 		//System.out.println(bookOb.totalScrollWidth);
 		//System.out.println(json.prettyPrint(bookOb));
+		
+		return bookOb;
+	}
+	
+	public static Book createNewBook(String title) {
+		Json json = new Json();
+		BookTemplate bookCopy = json.fromJson(BookTemplate.class, Gdx.files.internal(title));
+		Book bookOb = new Book(bookCopy, 100f);
 		
 		return bookOb;
 	}

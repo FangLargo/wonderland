@@ -1,6 +1,5 @@
 package com.mf.wonderland.Book;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
@@ -43,6 +42,7 @@ public class Figure {
 	private Anim currentTransAnim;
 	private Anim currentRotAnim;
 	private Anim currentScaleAnim;
+	private Anim currentAlphaAnim;
 	
 	public void updateFigureAnim(float progress) {
 		if(anims.size > 0) {
@@ -61,6 +61,9 @@ public class Figure {
 					} else if(a.type.equals(Anim.SCALE)) {
 						this.figureSprite.setScale(val.x, val.y);
 						this.currentScaleAnim = a;
+					} else if(a.type.equals(Anim.ALPHA)) {
+						this.figureSprite.setAlpha(val.x);
+						this.currentAlphaAnim = a;
 					}
 				}
 			}
@@ -86,6 +89,14 @@ public class Figure {
 					this.figureSprite.setScale(this.currentScaleAnim.endX, this.currentScaleAnim.endY);
 				} else if(progress < this.currentScaleAnim.startScroll) {
 					this.figureSprite.setScale(this.currentScaleAnim.startX, this.currentScaleAnim.startY);
+				}
+			}
+			
+			if(this.currentAlphaAnim != null) {
+				if(progress > this.currentAlphaAnim.endScroll) {
+					this.figureSprite.setAlpha(this.currentAlphaAnim.endX);
+				} else if(progress < this.currentAlphaAnim.startScroll) {
+					this.figureSprite.setAlpha(this.currentAlphaAnim.startX);
 				}
 			}
 		} else {
@@ -114,6 +125,8 @@ public class Figure {
 					} else if(a.type.equals(Anim.SCALE)) {
 						this.figureSprite.setScale(val.x, val.y);
 						//this.currentScaleAnim = a.toAnimData();
+					} else if(a.type.equals(Anim.ALPHA)) {
+						this.figureSprite.setAlpha(val.x);
 					}
 				}
 				//System.out.println(val.y);
