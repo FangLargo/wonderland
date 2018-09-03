@@ -18,7 +18,7 @@ public class AudioManager {
 	
 	public int findReference(AudioCue cue) {
 		//System.out.println(cue.type);
-		if(cue.type == AudioCue.MUSIC) {
+		if(cue.type.equals(AudioCue.MUSIC)) {
 
 			for(int i = 0; i < this.musicReferences.size; i++) {
 
@@ -27,7 +27,7 @@ public class AudioManager {
 					return i;
 				}
 			}
-		} else if(cue.type == AudioCue.SOUND) {
+		} else if(cue.type.equals(AudioCue.SOUND)) {
 			for(int i = 0; i < this.soundReferences.size; i++) {
 				if(cue.reference.equals(this.soundReferences.get(i).ref)) {
 					return i;
@@ -44,22 +44,22 @@ public class AudioManager {
 		//System.out.println(cue.reference + ": " + vol);
 		if(vol > 0) {
 			
-			if(cue.type == AudioCue.MUSIC) {
+			if(cue.type.equals(AudioCue.MUSIC)) {
 
 				this.musicReferences.get(index).music.setVolume(vol);
 				this.musicReferences.get(index).music.play();
 
-			} else if(cue.type == AudioCue.SOUND) {
+			} else if(cue.type.equals(AudioCue.SOUND)) {
 				
 				this.soundReferences.get(index).sound.play(vol);
 				
 			}
 		} else {
-			if(cue.type == AudioCue.MUSIC) {
+			if(cue.type.equals(AudioCue.MUSIC)) {
 
 				this.musicReferences.get(index).music.stop();
 
-			} else if(cue.type == AudioCue.SOUND) {
+			} else if(cue.type.equals(AudioCue.SOUND)) {
 				
 				//this.soundReferences.get(index).sound.stop();
 			}

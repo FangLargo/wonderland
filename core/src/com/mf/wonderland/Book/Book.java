@@ -140,7 +140,7 @@ public class Book {
 							temp.music.setLooping(true);
 							this.audioManager.musicReferences.add(temp);
 							
-							System.out.println("addingMusic");
+							//System.out.println("addingMusic");
 						}
 					} else if(a.type.equals(AudioCue.SOUND)) {
 						for(SoundReference s: audioManager.soundReferences) {
@@ -155,7 +155,7 @@ public class Book {
 							temp.sound = Gdx.audio.newSound(Gdx.files.internal("audio/sound/" + a.name));
 							
 							this.audioManager.soundReferences.add(temp);
-							System.out.println("addingSound");
+							//System.out.println("addingSound");
 						}
 					}
 					
