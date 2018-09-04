@@ -155,6 +155,63 @@ public class BookTest {
 		return Book.createNewBook("testbook.json", 100f);
 	}	
 	
+	public static Book templateMaker() {		
+		//Page3
+		FigureTemplate p3bg = new FigureTemplate("dog_bird_bg", -1, -1, 1, 0.1f, 0, Figure._X);
+		
+		FigureTemplate p3bird = new FigureTemplate("dog_bird_bird", 1250f, 50f, 1, 0.1f, 0f, Figure._Y);
+		AnimTemplate p3birdanim = new AnimTemplate(Anim.TRANSLATE, 1, 1900, 1250f, 50f, 1250f, -1410);
+		p3bird.anims.add(p3birdanim);
+		
+		AutoAnimTemplate autoAnimBird = new AutoAnimTemplate(Anim.ROTATE, -1, 2501, 1);
+		autoAnimBird.frames.add(new Vector3(-30, 1, 0.001f));
+		autoAnimBird.frames.add(new Vector3(30, 1, 0.5f));
+		
+		p3bird.autoAnims.add(autoAnimBird);
+		
+		AnimTemplate p3camAnim = new AnimTemplate(Anim.TRANSLATE, -1, 1900, 1, 1, 1, -1440);
+		
+		PageTemplate p3 = new PageTemplate("page3", 1440f, 0.75f, 1900f, 1f, 1f, 1f, -1440f);
+		p3.atlas = "images/test/page3.atlas";
+		p3.figures.add(p3bg);
+		//p3.figures.add(p3bird);
+		p3.cameraAnims.add(p3camAnim);
+		
+		AudioTemplate p3Whoosh = new AudioTemplate(AudioCue.SOUND, "test/bamboo-swing.wav", 1400, 1600, 1);
+		p3.audios.add(p3Whoosh);
+		
+		//____________________
+		
+		FigureTemplate p1bg = new FigureTemplate("dog_bird_bg", 0, -1440, 1, 0, 0, Figure._X);
+		p3.figures.add(p1bg);
+		p3.figures.add(p3bird);
+		
+		AudioTemplate p1DogMusic = new AudioTemplate(AudioCue.MUSIC, "test/Pretty_Little_Dog.mp3", -1, 1900f, 1);
+		p1DogMusic.frames.add(new Vector2(-1, 0.4f));
+		p1DogMusic.frames.add(new Vector2(500, 1));
+		p1DogMusic.frames.add(new Vector2(1900f, 1));
+		p3.audios.add(p1DogMusic);
+		
+		BookTemplate book = new BookTemplate();
+		
+		book.pages.add(p3);
+		
+		Json json = new Json();
+		json.setOutputType(OutputType.json);
+		//System.out.println(json.prettyPrint(book));
+		
+		//For WRITING books: Only works on desktop/android.
+		//NOT HTML
+		if(Gdx.app.getType() != ApplicationType.WebGL) {
+			FileHandle file = Gdx.files.local("template.json");
+			file.writeString(json.prettyPrint(book), false);
+		}
+		
+		return new Book(book, 100f);
+		
+		
+	}
+	
 	public static void nullCheck() {
 		Object x = null;
 		float p = 5;

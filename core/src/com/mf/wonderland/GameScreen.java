@@ -50,7 +50,8 @@ public class GameScreen implements Screen {
         Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
         
         //debugs        
-        book = BookTest.jsonBookMaker();
+        //book = BookTest.jsonBookMaker();
+        book = BookTest.templateMaker();
         
         //Open Book:
         //book = Book.createNewBook(bookName, pageWidth);

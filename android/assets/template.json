@@ -1,0 +1,109 @@
+{
+"pages": [
+	{
+		"pageName": "page3",
+		"stageHeight": 1440,
+		"figureScale": 0.75,
+		"scrollWidth": 1900,
+		"startPositionX": 1,
+		"startPositionY": 1,
+		"endPositionX": 1,
+		"endPositionY": -1440,
+		"atlas": "images/test/page3.atlas",
+		"figures": [
+			{
+				"regionName": "dog_bird_bg",
+				"startX": -1,
+				"startY": -1,
+				"startScale": 1,
+				"startRotation": 0.1
+			},
+			{
+				"regionName": "dog_bird_bg",
+				"startY": -1440,
+				"startScale": 1
+			},
+			{
+				"regionName": "dog_bird_bird",
+				"startX": 1250,
+				"startY": 50,
+				"startScale": 1,
+				"startRotation": 0.1,
+				"parallaxMode": 1,
+				"anims": [
+					{
+						"type": "translate",
+						"startScroll": 1,
+						"startX": 1250,
+						"startY": 50,
+						"endScroll": 1900,
+						"endX": 1250,
+						"endY": -1410
+					}
+				],
+				"autoAnims": [
+					{
+						"type": "rotate",
+						"startScroll": -1,
+						"endScroll": 2501,
+						"length": 1,
+						"frames": [
+							{
+								"x": -30,
+								"y": 1,
+								"z": 0.001
+							},
+							{
+								"x": 30,
+								"y": 1,
+								"z": 0.5
+							}
+						]
+					}
+				]
+			}
+		],
+		"cameraAnims": [
+			{
+				"type": "translate",
+				"startScroll": -1,
+				"startX": 1,
+				"startY": 1,
+				"endScroll": 1900,
+				"endX": 1,
+				"endY": -1440
+			}
+		],
+		"audios": [
+			{
+				"type": "sound",
+				"name": "test/bamboo-swing.wav",
+				"start": 1400,
+				"end": 1600,
+				"maxVolume": 1
+			},
+			{
+				"type": "music",
+				"name": "test/Pretty_Little_Dog.mp3",
+				"start": -1,
+				"end": 1900,
+				"frames": [
+					{
+						"x": -1,
+						"y": 0.4
+					},
+					{
+						"x": 500,
+						"y": 1
+					},
+					{
+						"x": 1900,
+						"y": 1
+					}
+				],
+				"maxVolume": 1
+			}
+		]
+	}
+]
+}

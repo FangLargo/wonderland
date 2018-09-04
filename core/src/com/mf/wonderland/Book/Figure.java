@@ -120,7 +120,7 @@ public class Figure {
 
 					} else if(a.type.equals(Anim.ROTATE)) {
 						this.figureSprite.setOriginCenter();
-						this.figureSprite.rotate(val.x);
+						this.figureSprite.setRotation(val.x);
 						//this.currentRotAnim = a.toAnimData();
 					} else if(a.type.equals(Anim.SCALE)) {
 						this.figureSprite.setScale(val.x, val.y);
