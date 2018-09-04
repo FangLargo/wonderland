@@ -1,0 +1,97 @@
+{
+  "pages": [
+    {
+      "pageName": "page1",
+      "stageHeight": 1080,
+      "figureScale": 0.75,
+      "scrollWidth": 1920,
+      "startPositionX": 0,
+      "startPositionY": 0,
+      "endPositionX": 1920,
+      "endPositionY": 0,
+      "atlas": "images/page1.atlas",
+      "figures": [
+        {
+          "regionName": "back",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 1,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 0,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 1900,
+              "endX": 0,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cameraAnims": [
+        {
+          "type": "translate",
+          "startScroll": 0,
+          "startX": 0,
+          "endScroll": 1920,
+          "endX": 1920,
+          "startY": 0,
+          "endY": 0
+        }
+      ],
+      "audios": [
+        {
+          "type": "sound",
+          "name": "test/bamboo-swing.wav",
+          "start": 1400,
+          "end": 1600,
+          "maxVolume": 1
+        },
+        {
+          "type": "music",
+          "name": "test/Pretty_Little_Dog.mp3",
+          "start": -1,
+          "end": 1920,
+          "frames": [
+            {
+              "x": -1,
+              "y": 0.4
+            },
+            {
+              "x": 500,
+              "y": 1
+            },
+            {
+              "x": 1920,
+              "y": 1
+            }
+          ],
+          "maxVolume": 1
+        }
+      ]
+    }
+  ]
+}

@@ -36,7 +36,7 @@ public class GameScreen implements Screen {
     SpriteBatch debugBatch = new SpriteBatch();
     BitmapFont font = new BitmapFont();
     
-    String bookName = "testbook.json";
+    String bookName = "book.json";
     float pageWidth = 100f;
     Book book;
 
@@ -51,10 +51,10 @@ public class GameScreen implements Screen {
         
         //debugs        
         //book = BookTest.jsonBookMaker();
-        book = BookTest.templateMaker();
+        //book = BookTest.templateMaker();
         
         //Open Book:
-        //book = Book.createNewBook(bookName, pageWidth);
+        book = Book.createNewBook(bookName, pageWidth);
         
 	}
 
