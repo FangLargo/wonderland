@@ -63,6 +63,7 @@ public class Figure {
 						this.currentScaleAnim = a;
 					} else if(a.type.equals(Anim.ALPHA)) {
 						this.figureSprite.setAlpha(val.x);
+						//System.out.println("Adjust Alpha" + val.x);
 						this.currentAlphaAnim = a;
 					}
 				}

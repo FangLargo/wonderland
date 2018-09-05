@@ -46,6 +46,7 @@ public class Book {
 			if(i > 0) {
 				offset.set(this.pages.get(i-1).endPositionX, this.pages.get(i-1).endPositionY, this.pages.get(i-1).scrollEnd);
 			}
+			//Offset becomes last positions X and Y and scrollEnd
 			
 			this.pages.get(i).scrollStart = offset.z;
 			this.pages.get(i).scrollEnd = template.pages.get(i).scrollWidth/scale + offset.z;
@@ -54,7 +55,7 @@ public class Book {
 			this.pages.get(i).startPositionY = offset.y;
 			this.pages.get(i).endPositionX = template.pages.get(i).endPositionX/scale + offset.x;
 			this.pages.get(i).endPositionY = template.pages.get(i).endPositionY/scale + offset.y;
-			//System.out.println(offset.x + ": " + this.pages.get(i).startPositionX + ", " + this.pages.get(i).endPositionX);
+			//
 			
 			TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(template.pages.get(i).atlas));
 			
