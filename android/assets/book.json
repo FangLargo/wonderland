@@ -1,7 +1,7 @@
 {
   "pages": [
     {
-      "pageName": "page1",
+      "pageName": "page1-fall",
       "stageHeight": 1080,
       "figureScale": 0.75,
       "scrollWidth": 1920,
@@ -114,8 +114,8 @@
           "anims": [
             {
               "type": "alpha",
-              "startScroll": -1,
-              "startX": 1,
+              "startScroll": 0,
+              "startX": 0.8,
               "startY": 0,
               "endScroll": 800,
               "endX": 0,
@@ -187,13 +187,13 @@
       ]
     },
     {
-      "pageName": "page2",
+      "pageName": "page2-splash",
       "stageHeight": 1080,
       "figureScale": 0.75,
       "scrollWidth": 7000,
       "startPositionX": 0,
       "startPositionY": 7346,
-      "endPositionX": 1920,
+      "endPositionX": 3000,
       "endPositionY": 0,
       "atlas": "images/page2.atlas",
       "figures": [
@@ -204,15 +204,343 @@
           "startScale": 1,
           "startRotation": 0,
           "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_02",
+          "startX": 0,
+          "startY": 6894,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_03",
+          "startX": 0,
+          "startY": 6128,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_04",
+          "startX": 0,
+          "startY": 5362,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_05",
+          "startX": 0,
+          "startY": 4596,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_06",
+          "startX": 0,
+          "startY": 3830,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_07",
+          "startX": 0,
+          "startY": 3064,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_08",
+          "startX": 0,
+          "startY": 2298,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_09",
+          "startX": 0,
+          "startY": 1532,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_10",
+          "startX": 0,
+          "startY": 766,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "splash_11",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "infant",
+          "startX": 700,
+          "startY": 2000,
+          "startScale": 0.3,
+          "startRotation": 0,
+          "parallaxMode": 0,
           "anims": [
             {
-              "type": "translate",
+              "type": "scale",
               "startScroll": 0,
-              "startX": 0,
-              "startY": 0,
-              "endScroll": 1900,
-              "endX": 0,
-              "endY": 0
+              "startX": 0.5,
+              "startY": 0.5,
+              "endScroll": 7000,
+              "endX": 0.5,
+              "endY": 0.5
+            },
+            {
+              "type": "translate",
+              "startScroll": 4000,
+              "startX": 700,
+              "startY": 2200,
+              "endScroll": 7000,
+              "endX": 700,
+              "endY": 800
             }
           ],
           "autoAnims": [
@@ -245,21 +573,30 @@
           "parallaxMode": 0,
           "anims": [
             {
-              "type": "alpha",
+              "type": "translate",
               "startScroll": 0,
               "startX": 0,
-              "startY": 0,
-              "endScroll": 1500,
+              "startY": 7346,
+              "endScroll": 7000,
               "endX": 0,
               "endY": 0
             },
             {
               "type": "alpha",
-              "startScroll": 1500,
+              "startScroll": 0,
               "startX": 0,
               "startY": 0,
-              "endScroll": 1920,
+              "endScroll": 1000,
               "endX": 0,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 6000,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 6500,
+              "endX": 1,
               "endY": 0
             }
           ],
@@ -299,10 +636,10 @@
       "audios": []
     },
     {
-      "pageName": "page3",
+      "pageName": "page3-frames",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 1920,
+      "scrollWidth": 10000,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -316,14 +653,52 @@
           "startScale": 1,
           "startRotation": 0,
           "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "sky_evening",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
           "anims": [
             {
-              "type": "translate",
+              "type": "alpha",
               "startScroll": 0,
               "startX": 0,
               "startY": 0,
-              "endScroll": 1900,
+              "endScroll": 6000,
               "endX": 0,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 6000,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 6500,
+              "endX": 1,
               "endY": 0
             }
           ],
@@ -347,6 +722,403 @@
               ]
             }
           ]
+        },
+        {
+          "regionName": "sky_night",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 0,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 8000,
+              "endX": 0,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 8000,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 8500,
+              "endX": 1,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "wave2",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "scale",
+              "startScroll": 0,
+              "startX": 1.2,
+              "startY": 1,
+              "endScroll": 7000,
+              "endX": 1.2,
+              "endY": 1
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "translate",
+              "startScroll": 0,
+              "endScroll": 10000,
+              "length": 10,
+              "frames": [
+                {
+                  "x": 70,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "sailing_boat",
+          "startX": 1600,
+          "startY": 120,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 0,
+              "startX": 1600,
+              "startY": 110,
+              "endScroll": 10000,
+              "endX": 0,
+              "endY": 80
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 10000,
+              "length": 4,
+              "frames": [
+                {
+                  "x": 15,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "wave1",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "scale",
+              "startScroll": 0,
+              "startX": 1.2,
+              "startY": 1,
+              "endScroll": 7000,
+              "endX": 1.2,
+              "endY": 1
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "translate",
+              "startScroll": 0,
+              "endScroll": 10000,
+              "length": 7,
+              "frames": [
+                {
+                  "x": -150,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "black",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 0,
+              "startX": 0,
+              "startY": 1,
+              "endScroll": 5000,
+              "endX": 0.2,
+              "endY": 1
+            },
+            {
+              "type": "alpha",
+              "startScroll": 5000,
+              "startX": 0.2,
+              "startY": 1,
+              "endScroll": 8000,
+              "endX": 0.4,
+              "endY": 1
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-01_sit1",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 1000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 1400,
+              "endX": 600,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 1600,
+              "startX": 600,
+              "startY": 240,
+              "endScroll": 2000,
+              "endX": -800,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-02_sit2",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 2000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 2400,
+              "endX": 600,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 2600,
+              "startX": 600,
+              "startY": 240,
+              "endScroll": 3000,
+              "endX": -800,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-03_things",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 3000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 3400,
+              "endX": 580,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 3600,
+              "startX": 580,
+              "startY": 240,
+              "endScroll": 4000,
+              "endX": -850,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-04_telescope",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 4000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 4400,
+              "endX": 500,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 4600,
+              "startX": 500,
+              "startY": 240,
+              "endScroll": 5000,
+              "endX": -920,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-05_blanket",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 5000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 5400,
+              "endX": 600,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 5600,
+              "startX": 600,
+              "startY": 240,
+              "endScroll": 6000,
+              "endX": -820,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-06_hat",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 6000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 6400,
+              "endX": 600,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 6600,
+              "startX": 600,
+              "startY": 240,
+              "endScroll": 7000,
+              "endX": -800,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
+        },
+        {
+          "regionName": "frames-07_book",
+          "startX": 1950,
+          "startY": 240,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "translate",
+              "startScroll": 7000,
+              "startX": 1950,
+              "startY": 240,
+              "endScroll": 7400,
+              "endX": 600,
+              "endY": 240
+            },
+            {
+              "type": "translate",
+              "startScroll": 7600,
+              "startX": 600,
+              "startY": 240,
+              "endScroll": 8000,
+              "endX": -820,
+              "endY": 240
+            }
+          ],
+          "autoAnims": []
         }
       ],
       "cameraAnims": [
@@ -355,7 +1127,16 @@
           "startScroll": 0,
           "startX": 0,
           "startY": 0,
-          "endScroll": 1920,
+          "endScroll": 9500,
+          "endX": 0,
+          "endY": 0
+        },
+        {
+          "type": "translate",
+          "startScroll": 9400,
+          "startX": 0,
+          "startY": 0,
+          "endScroll": 9800,
           "endX": 1920,
           "endY": 0
         }
@@ -366,7 +1147,7 @@
       "pageName": "page4",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 1920,
+      "scrollWidth": 4000,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -416,18 +1197,36 @@
           "regionName": "map",
           "startX": 0,
           "startY": 0,
-          "startScale": 1,
+          "startScale": 1.5,
           "startRotation": 0,
           "parallaxMode": 0,
           "anims": [
             {
-              "type": "translate",
+              "type": "scale",
               "startScroll": 0,
+              "startX": 1,
+              "startY": 1,
+              "endScroll": 500,
+              "endX": 1.4,
+              "endY": 1.4
+            },
+            {
+              "type": "scale",
+              "startScroll": 500,
+              "startX": 1.4,
+              "startY": 1.4,
+              "endScroll": 1000,
+              "endX": 1,
+              "endY": 1
+            },
+            {
+              "type": "translate",
+              "startScroll": 500,
               "startX": 0,
               "startY": 0,
-              "endScroll": 1900,
+              "endScroll": 1000,
               "endX": 0,
-              "endY": 0
+              "endY": -1080
             }
           ],
           "autoAnims": [
@@ -455,10 +1254,10 @@
       "cameraAnims": [
         {
           "type": "translate",
-          "startScroll": 0,
+          "startScroll": 2080,
           "startX": 0,
           "startY": 0,
-          "endScroll": 1920,
+          "endScroll": 4000,
           "endX": 1920,
           "endY": 0
         }
@@ -541,6 +1340,83 @@
       "atlas": "images/page6.atlas",
       "figures": [
         {
+          "regionName": "white",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "rain2",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 0,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 1800,
+              "endX": 1,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 1800,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 1900,
+              "endX": 0,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
           "regionName": "rain1",
           "startX": 0,
           "startY": 0,
@@ -549,11 +1425,20 @@
           "parallaxMode": 0,
           "anims": [
             {
-              "type": "translate",
+              "type": "alpha",
               "startScroll": 0,
-              "startX": 0,
+              "startX": 1,
               "startY": 0,
-              "endScroll": 1900,
+              "endScroll": 900,
+              "endX": 1,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 900,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 1000,
               "endX": 0,
               "endY": 0
             }

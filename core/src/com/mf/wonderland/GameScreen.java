@@ -95,7 +95,7 @@ public class GameScreen implements Screen {
 	    //Render debug
 	    debugBatch.begin();
 	    font.draw(debugBatch, camera.zoom + " ", 0, 60);
-	    font.draw(debugBatch, progress + " ", 0, 40);
+	    font.draw(debugBatch, book.uncorrectedProgress + " ", 0, 40);
 	    font.draw(debugBatch, camera.position.x + ", " + camera.position.y, 0, 20);
 	    debugBatch.end();
 	    

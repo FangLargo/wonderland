@@ -51,8 +51,8 @@ public class Book {
 			this.pages.get(i).scrollStart = offset.z;
 			this.pages.get(i).scrollEnd = template.pages.get(i).scrollWidth/scale + offset.z;
 			
-			this.pages.get(i).startPositionX = offset.x;
-			this.pages.get(i).startPositionY = offset.y;
+			this.pages.get(i).startPositionX = template.pages.get(i).startPositionX/scale + offset.x;
+			this.pages.get(i).startPositionY = template.pages.get(i).startPositionY/scale + offset.y;
 			this.pages.get(i).endPositionX = template.pages.get(i).endPositionX/scale + offset.x;
 			this.pages.get(i).endPositionY = template.pages.get(i).endPositionY/scale + offset.y;
 			//
@@ -111,8 +111,8 @@ public class Book {
 					} else {
 						for(int k = 0; k < a.frames.size; k++) {
 							Vector3 val = new Vector3(
-									a.frames.get(k).x/scale, 
-									a.frames.get(k).y/scale,
+									a.frames.get(k).x/scale  + offset.x, 
+									a.frames.get(k).y/scale + offset.y,
 									a.frames.get(k).z);
 							tempAutoAnim.frames.add(val);
 						}
@@ -262,6 +262,8 @@ public class Book {
 		audioManager.updateAudioManager(progress, currentPage, delta);
 	}
 	
+	public float  uncorrectedProgress = 0;
+	
 	/**
 	 * Updates position of camera according to how much has been scrolled. 
 	 * @param cam The camera to be updated.
@@ -272,6 +274,8 @@ public class Book {
 			if(progress >= this.pages.get(i).scrollStart && progress < pages.get(i).scrollEnd) {
 				pages.get(i).updateCamera(cam, progress);
 				currentPage = i;
+				
+				uncorrectedProgress = progress;
 			}
 		}
 	}

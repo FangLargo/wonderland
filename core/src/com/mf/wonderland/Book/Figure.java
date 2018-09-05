@@ -24,6 +24,7 @@ public class Figure {
 
 		this.startX = xT;
 		this.startY = yT;
+		this.startScale = startScale;
 		this.parallaxDist = parallax;
 		this.parallaxMode = paraMode;
 	}
@@ -35,6 +36,7 @@ public class Figure {
 	
 	public float startX;
 	public float startY;
+	public float startScale;
 	
 	public Array<Anim> anims = new Array<Anim>();
 	public Array<AutoAnim> autoAnims = new Array<AutoAnim>();
@@ -103,7 +105,7 @@ public class Figure {
 		} else {
 			this.figureSprite.setPosition(this.startX, this.startY);
 			this.figureSprite.setOriginCenter();
-			this.figureSprite.setScale(1);
+			this.figureSprite.setScale(this.startScale);
 		}
 	}
 	
@@ -116,7 +118,8 @@ public class Figure {
 					val = a.updateAutoAnim(progress, 0);
 //					System.out.println("Delta: " + delta + ", val: " + val);
 					if(a.type.equals(Anim.TRANSLATE)) {
-						this.figureSprite.translate(val.x, val.y);
+						//this.figureSprite.translate(val.x, val.y);
+						this.figureSprite.setPosition(val.x, val.y);
 						//this.currentTransAnim = a.toAnimData();
 
 					} else if(a.type.equals(Anim.ROTATE)) {
