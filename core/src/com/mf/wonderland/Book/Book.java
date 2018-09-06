@@ -122,77 +122,71 @@ public class Book {
 					//System.out.println("Adding Auto");
 				}
 				
-				//Include all audio
-				for(AudioTemplate a: template.pages.get(i).audios) {
-					boolean exists = false;
-					
-					System.out.println(a.name);
-					
-					//Check if sound already exists in record.
-					if(a.type.equals(AudioCue.MUSIC)) {
-						for(MusicReference m: audioManager.musicReferences) {
-							if(m.ref.equals(a.name)) {
-								exists = true;
-							}
-						}
-						
-						if(!exists) {
-							MusicReference temp = new MusicReference();
-							temp.ref = a.name;
-							temp.music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/" + a.name));
-							temp.music.setLooping(true);
-							this.audioManager.musicReferences.add(temp);
-							
-							//System.out.println("addingMusic");
-						}
-					} else if(a.type.equals(AudioCue.SOUND)) {
-						for(SoundReference s: audioManager.soundReferences) {
-							if(s.ref.equals(a.name)) {
-								exists = true;
-							}
-						}
-						
-						if(!exists) {
-							SoundReference temp = new SoundReference();
-							temp.ref = a.name;
-							temp.sound = Gdx.audio.newSound(Gdx.files.internal("audio/sound/" + a.name));
-							
-							this.audioManager.soundReferences.add(temp);
-							//System.out.println("addingSound");
+			}
+			
+			//Include all audio
+			for(AudioTemplate a: template.pages.get(i).audios) {
+				boolean exists = false;
+				
+				//System.out.println(a.name);
+				
+				//Check if sound already exists in record.
+				if(a.type.equals(AudioCue.MUSIC)) {
+					for(MusicReference m: audioManager.musicReferences) {
+						if(m.ref.equals(a.name)) {
+							exists = true;
 						}
 					}
 					
-					//Add the Cue
-					AudioCue tempCue = new AudioCue();
-					tempCue.type = a.type;
-					tempCue.page = i;
-					tempCue.reference = a.name;
-					tempCue.start = a.start/scale + offset.z;
-					tempCue.end = a.end/scale + offset.z;
-					tempCue.maxVolume = a.maxVolume;
-					
-					//System.out.println(a.name + ", " + tempCue.start);
-					//tempCue.frames.add(new Vector2(0, 0));
-					
-					if(a.frames.size >= 1) {
-						//tempCue.frames.add(new Vector2(0, 0));
-						for(Vector2 v: a.frames) {
-							tempCue.frames.add(new Vector2(v.x/scale + offset.z, v.y));
+					if(!exists) {
+						MusicReference temp = new MusicReference();
+						temp.ref = a.name;
+						temp.music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/" + a.name));
+						temp.music.setLooping(true);
+						this.audioManager.musicReferences.add(temp);
+						
+						//System.out.println("addingMusic");
+					}
+				} else if(a.type.equals(AudioCue.SOUND)) {
+					for(SoundReference s: audioManager.soundReferences) {
+						if(s.ref.equals(a.name)) {
+							exists = true;
 						}
-						//tempCue.frames.add(new Vector2(a.end, 0));
-					} 
-//					else {
-//						float interval = (a.end - a.start)*0.1f;
-//						Vector2 v1 = new Vector2(interval/scale, a.maxVolume);
-//						Vector2 v2 = new Vector2((a.end - interval)/scale, a.maxVolume);
-//						tempCue.frames.add(v1);
-//						tempCue.frames.add(v2);
-//						tempCue.frames.add(new Vector2(a.end/scale, 0));
-//					}
-					//System.out.println(tempCue.reference + ", " + tempCue.page + ", " + tempCue.start);
+					}
 					
-					this.audioManager.audioCues.add(tempCue);
+					if(!exists) {
+						SoundReference temp = new SoundReference();
+						temp.ref = a.name;
+						temp.sound = Gdx.audio.newSound(Gdx.files.internal("audio/sound/" + a.name));
+						
+						this.audioManager.soundReferences.add(temp);
+						//System.out.println("addingSound");
+					}
 				}
+				
+				//Add the Cue
+				AudioCue tempCue = new AudioCue();
+				tempCue.type = a.type;
+				tempCue.page = i;
+				tempCue.reference = a.name;
+				tempCue.start = a.start/scale + offset.z;
+				tempCue.end = a.end/scale + offset.z;
+				tempCue.maxVolume = a.maxVolume;
+				
+				//System.out.println(a.name + ", " + tempCue.start);
+				//tempCue.frames.add(new Vector2(0, 0));
+				
+				if(a.frames.size >= 1) {
+					//tempCue.frames.add(new Vector2(0, 0));
+					for(Vector2 v: a.frames) {
+						tempCue.frames.add(new Vector2(v.x/scale + offset.z, v.y));
+					}
+					//tempCue.frames.add(new Vector2(a.end, 0));
+				} 
+
+				//System.out.println(tempCue.reference + ", " + tempCue.page + ", " + tempCue.start);
+				
+				this.audioManager.audioCues.add(tempCue);
 			}
 			
 			//Include all camera anims

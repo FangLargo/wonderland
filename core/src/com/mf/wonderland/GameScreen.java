@@ -73,7 +73,7 @@ public class GameScreen implements Screen {
 		progress = progress - scrollHandler.dx/pixelsPerUnit;
 		
 		if(progress < 0) {
-			progress = 0;
+			progress = 0f;
 		} else if (progress >= book.totalScrollWidth) {
 			progress = book.totalScrollWidth - 0.01f;
 		}

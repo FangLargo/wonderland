@@ -11,6 +11,7 @@ public class AudioCue {
 	public float start;
 	public float end;
 	
+	//x is frames, y is volume
 	public Array<Vector2> frames = new Array<Vector2>();
 	public float maxVolume;
 	
@@ -21,7 +22,7 @@ public class AudioCue {
 	public float getVolume(float progress, float delta) {
 		if(this.type.equals(AudioCue.SOUND)) {
 			if(played == false) {
-				if(progress > this.start && progress < this.end) {
+				if(progress >= this.start && progress < this.end) {
 					played = true;
 					return this.maxVolume;
 				} else {
@@ -38,14 +39,14 @@ public class AudioCue {
 				for(int i = 0; i < this.frames.size; i++) {
 					if(i != 0 && i != this.frames.size - 1) {
 						//System.out.println(i);
-						if(progress > this.frames.get(i).x && progress < this.frames.get(i + 1).x) {
+						if(progress >= this.frames.get(i).x && progress < this.frames.get(i + 1).x) {
 							this.currentVolume = Anim.interpolate(progress, this.frames.get(i).x, this.frames.get(i + 1).x, 
 									this.frames.get(i).y, 0f, 
 									this.frames.get(i + 1).y, 0f).x;
 							return this.currentVolume;
 						}
 					} else if(i == 0) {
-						if(progress > this.frames.get(i).x && progress < this.frames.get(i + 1).x) {
+						if(progress >= this.frames.get(i).x && progress < this.frames.get(i + 1).x) {
 							this.currentVolume = Anim.interpolate(progress, this.frames.get(i).x, this.frames.get(i + 1).x, 
 									this.frames.get(i).y, 0f, 
 									this.frames.get(i + 1).y, 0f).x;
@@ -57,11 +58,12 @@ public class AudioCue {
 							return this.currentVolume;
 						}
 					} else if(i == this.frames.size - 1) {
-						if(progress > this.frames.get(i).x) {
+						if(progress >= this.frames.get(i).x) {
 							this.currentVolume = Anim.interpolate(progress, this.frames.get(i).x, this.end, 
 									this.frames.get(i).y, 0f, 
 									0, 0f).x;
 							return this.currentVolume;
+							//return 0;
 						}
 					}
 				}

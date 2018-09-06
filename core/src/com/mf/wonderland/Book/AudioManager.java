@@ -12,7 +12,50 @@ public class AudioManager {
 	
 	public void updateAudioManager(float progress, int page, float delta) {
 		for(AudioCue a: this.audioCues) {
-			this.playCue(a, progress, delta);
+			//this.playCue(a, progress, delta);
+			
+			float vol = a.getVolume(progress, delta);
+			int index = this.findReference(a);
+			System.out.println(a.reference + ": " + a.page + ", "  + page);
+			
+			
+			
+			if(vol > 0 && a.page == page) {
+				
+				if(a.type.equals(AudioCue.MUSIC) && a.page == page) {
+					this.musicReferences.get(index).music.setVolume(vol);
+					this.musicReferences.get(index).music.play();
+
+					this.musicReferences.get(index).checkOut = a;
+
+					System.out.println(a.reference + ", " + a.page + ", " + page);
+
+				} 
+				else if(a.type.equals(AudioCue.MUSIC) && a.page != page) {
+					this.musicReferences.get(index).music.stop();
+					this.musicReferences.get(index).checkOut = null;
+				}
+				else if(a.type.equals(AudioCue.SOUND)) {
+					
+					this.soundReferences.get(index).sound.play(vol);
+					
+				} 
+				
+			} else {
+				if(a.type.equals(AudioCue.MUSIC)) {
+					
+					if(this.musicReferences.get(index).checkOut != null 
+							&& this.musicReferences.get(index).checkOut.equals(a)) {
+						this.musicReferences.get(index).music.stop();
+						this.musicReferences.get(index).checkOut = null;
+					}
+
+				} else if(a.type.equals(AudioCue.SOUND)) {
+					
+					//this.soundReferences.get(index).sound.stop();
+				}
+			}
+			
 		}
 	}
 	
@@ -38,6 +81,8 @@ public class AudioManager {
 		return -1;
 	}
 	
+	
+	//To be deprecated.
 	public void playCue(AudioCue cue, float progress, float delta) {
 		float vol = cue.getVolume(progress, delta);
 		int index = this.findReference(cue);
