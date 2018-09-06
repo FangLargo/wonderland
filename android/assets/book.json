@@ -157,32 +157,46 @@
       ],
       "audios": [
         {
-          "type": "sound",
-          "name": "test/bamboo-swing.wav",
-          "start": 1400,
-          "end": 1600,
-          "maxVolume": 0
+          "type": "music",
+          "name": "gentle_ocean.mp3",
+          "start": 0,
+          "end": 3000,
+          "frames": [
+            {
+              "x": -1,
+              "y": 0.1
+            },
+            {
+              "x": 1200,
+              "y": 0.2
+            },
+            {
+              "x": 2500,
+              "y": 0.2
+            },
+            {
+              "x": 3000,
+              "y": 0.3
+            }
+          ],
+          "maxVolume": 1
         },
         {
           "type": "music",
-          "name": "test/Pretty_Little_Dog.mp3",
-          "start": -1,
-          "end": 1920,
+          "name": "fall.mp3",
+          "start": 0,
+          "end": 3000,
           "frames": [
             {
               "x": -1,
               "y": 0
             },
             {
-              "x": 500,
-              "y": 0
-            },
-            {
-              "x": 1900,
-              "y": 0
+              "x": 3000,
+              "y": 0.2
             }
           ],
-          "maxVolume": 0
+          "maxVolume": 1
         }
       ]
     },
@@ -633,7 +647,32 @@
           "endY": 0
         }
       ],
-      "audios": []
+      "audios": [
+        {
+          "type": "music",
+          "name": "fall.mp3",
+          "start": 0,
+          "end": 3000,
+          "frames": [
+            {
+              "x": 0,
+              "y": 1
+            },
+            {
+              "x": 6000,
+              "y": 0.2
+            }
+          ],
+          "maxVolume": 1
+        },
+        {
+          "type": "sound",
+          "name": "splash.mp3",
+          "start": 0,
+          "end": 200,
+          "maxVolume": 1
+        }
+      ]
     },
     {
       "pageName": "page3-frames",

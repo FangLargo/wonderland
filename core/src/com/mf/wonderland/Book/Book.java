@@ -73,7 +73,7 @@ public class Book {
 						template.pages.get(i).figures.get(j).parallaxDist,
 						template.pages.get(i).figures.get(j).parallaxMode
 						));
-				
+				//System.out.println(template.pages.get(i).figures.get(j).regionName);
 				// Including all anim in figure
 				for(int k = 0; k < template.pages.get(i).figures.get(j).anims.size; k++) {
 					this.pages.get(i).figures.get(j).anims.add(new Anim(
@@ -126,6 +126,8 @@ public class Book {
 				for(AudioTemplate a: template.pages.get(i).audios) {
 					boolean exists = false;
 					
+					System.out.println(a.name);
+					
 					//Check if sound already exists in record.
 					if(a.type.equals(AudioCue.MUSIC)) {
 						for(MusicReference m: audioManager.musicReferences) {
@@ -169,12 +171,13 @@ public class Book {
 					tempCue.end = a.end/scale + offset.z;
 					tempCue.maxVolume = a.maxVolume;
 					
+					//System.out.println(a.name + ", " + tempCue.start);
 					//tempCue.frames.add(new Vector2(0, 0));
 					
 					if(a.frames.size >= 1) {
 						//tempCue.frames.add(new Vector2(0, 0));
 						for(Vector2 v: a.frames) {
-							tempCue.frames.add(new Vector2(v.x/scale, v.y));
+							tempCue.frames.add(new Vector2(v.x/scale + offset.z, v.y));
 						}
 						//tempCue.frames.add(new Vector2(a.end, 0));
 					} 
@@ -186,6 +189,7 @@ public class Book {
 //						tempCue.frames.add(v2);
 //						tempCue.frames.add(new Vector2(a.end/scale, 0));
 //					}
+					//System.out.println(tempCue.reference + ", " + tempCue.page + ", " + tempCue.start);
 					
 					this.audioManager.audioCues.add(tempCue);
 				}
