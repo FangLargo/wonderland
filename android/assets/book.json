@@ -4,7 +4,7 @@
       "pageName": "page1-fall",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 1920,
+      "scrollWidth": 3000,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -53,7 +53,7 @@
               "startScroll": 0,
               "startX": 900,
               "startY": 1100,
-              "endScroll": 1920,
+              "endScroll": 3000,
               "endX": 900,
               "endY": 250
             }
@@ -62,7 +62,7 @@
             {
               "type": "alpha",
               "startScroll": 0,
-              "endScroll": 1920,
+              "endScroll": 3000,
               "length": 0.4,
               "frames": [
                 {
@@ -117,7 +117,7 @@
               "startScroll": 0,
               "startX": 0.8,
               "startY": 0,
-              "endScroll": 800,
+              "endScroll": 1200,
               "endX": 0,
               "endY": 0
             }
@@ -536,11 +536,11 @@
             {
               "type": "translate",
               "startScroll": 4000,
-              "startX": 700,
-              "startY": 2200,
+              "startX": 750,
+              "startY": 2300,
               "endScroll": 7000,
-              "endX": 700,
-              "endY": 800
+              "endX": 750,
+              "endY": 900
             }
           ],
           "autoAnims": [
@@ -639,7 +639,7 @@
       "pageName": "page3-frames",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 10000,
+      "scrollWidth": 30000,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -694,10 +694,10 @@
             },
             {
               "type": "alpha",
-              "startScroll": 6000,
+              "startScroll": 20000,
               "startX": 0,
               "startY": 0,
-              "endScroll": 6500,
+              "endScroll": 21000,
               "endX": 1,
               "endY": 0
             }
@@ -742,10 +742,10 @@
             },
             {
               "type": "alpha",
-              "startScroll": 8000,
+              "startScroll": 28000,
               "startX": 0,
               "startY": 0,
-              "endScroll": 8500,
+              "endScroll": 29000,
               "endX": 1,
               "endY": 0
             }
@@ -793,7 +793,7 @@
             {
               "type": "translate",
               "startScroll": 0,
-              "endScroll": 10000,
+              "endScroll": 30000,
               "length": 10,
               "frames": [
                 {
@@ -823,7 +823,7 @@
               "startScroll": 0,
               "startX": 1600,
               "startY": 110,
-              "endScroll": 10000,
+              "endScroll": 30000,
               "endX": 0,
               "endY": 80
             }
@@ -832,7 +832,7 @@
             {
               "type": "rotate",
               "startScroll": 0,
-              "endScroll": 10000,
+              "endScroll": 30000,
               "length": 4,
               "frames": [
                 {
@@ -871,7 +871,7 @@
             {
               "type": "translate",
               "startScroll": 0,
-              "endScroll": 10000,
+              "endScroll": 30000,
               "length": 7,
               "frames": [
                 {
@@ -901,16 +901,16 @@
               "startScroll": 0,
               "startX": 0,
               "startY": 1,
-              "endScroll": 5000,
+              "endScroll": 20000,
               "endX": 0.2,
               "endY": 1
             },
             {
               "type": "alpha",
-              "startScroll": 5000,
+              "startScroll": 20000,
               "startX": 0.2,
               "startY": 1,
-              "endScroll": 8000,
+              "endScroll": 30000,
               "endX": 0.4,
               "endY": 1
             }
@@ -930,16 +930,16 @@
               "startScroll": 1000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 1400,
+              "endScroll": 2500,
               "endX": 600,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 1600,
+              "startScroll": 3500,
               "startX": 600,
               "startY": 240,
-              "endScroll": 2000,
+              "endScroll": 5000,
               "endX": -800,
               "endY": 240
             }
@@ -956,19 +956,19 @@
           "anims": [
             {
               "type": "translate",
-              "startScroll": 2000,
+              "startScroll": 5000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 2400,
+              "endScroll": 6500,
               "endX": 600,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 2600,
+              "startScroll": 7500,
               "startX": 600,
               "startY": 240,
-              "endScroll": 3000,
+              "endScroll": 9000,
               "endX": -800,
               "endY": 240
             }
@@ -985,19 +985,19 @@
           "anims": [
             {
               "type": "translate",
-              "startScroll": 3000,
+              "startScroll": 9000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 3400,
+              "endScroll": 10500,
               "endX": 580,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 3600,
+              "startScroll": 11500,
               "startX": 580,
               "startY": 240,
-              "endScroll": 4000,
+              "endScroll": 13000,
               "endX": -850,
               "endY": 240
             }
@@ -1014,19 +1014,19 @@
           "anims": [
             {
               "type": "translate",
-              "startScroll": 4000,
+              "startScroll": 13000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 4400,
+              "endScroll": 14500,
               "endX": 500,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 4600,
+              "startScroll": 15500,
               "startX": 500,
               "startY": 240,
-              "endScroll": 5000,
+              "endScroll": 17000,
               "endX": -920,
               "endY": 240
             }
@@ -1043,19 +1043,19 @@
           "anims": [
             {
               "type": "translate",
-              "startScroll": 5000,
+              "startScroll": 17000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 5400,
+              "endScroll": 18500,
               "endX": 600,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 5600,
+              "startScroll": 19500,
               "startX": 600,
               "startY": 240,
-              "endScroll": 6000,
+              "endScroll": 21000,
               "endX": -820,
               "endY": 240
             }
@@ -1072,19 +1072,19 @@
           "anims": [
             {
               "type": "translate",
-              "startScroll": 6000,
+              "startScroll": 21000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 6400,
+              "endScroll": 22500,
               "endX": 600,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 6600,
+              "startScroll": 23500,
               "startX": 600,
               "startY": 240,
-              "endScroll": 7000,
+              "endScroll": 25000,
               "endX": -800,
               "endY": 240
             }
@@ -1101,19 +1101,19 @@
           "anims": [
             {
               "type": "translate",
-              "startScroll": 7000,
+              "startScroll": 25000,
               "startX": 1950,
               "startY": 240,
-              "endScroll": 7400,
+              "endScroll": 26500,
               "endX": 600,
               "endY": 240
             },
             {
               "type": "translate",
-              "startScroll": 7600,
+              "startScroll": 27500,
               "startX": 600,
               "startY": 240,
-              "endScroll": 8000,
+              "endScroll": 29000,
               "endX": -820,
               "endY": 240
             }
@@ -1133,10 +1133,10 @@
         },
         {
           "type": "translate",
-          "startScroll": 9400,
+          "startScroll": 29000,
           "startX": 0,
           "startY": 0,
-          "endScroll": 9800,
+          "endScroll": 30000,
           "endX": 1920,
           "endY": 0
         }
@@ -1144,10 +1144,10 @@
       "audios": []
     },
     {
-      "pageName": "page4",
+      "pageName": "page4-map",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 4000,
+      "scrollWidth": 5000,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -1212,19 +1212,19 @@
             },
             {
               "type": "scale",
-              "startScroll": 500,
+              "startScroll": 1500,
               "startX": 1.4,
               "startY": 1.4,
-              "endScroll": 1000,
+              "endScroll": 2300,
               "endX": 1,
               "endY": 1
             },
             {
               "type": "translate",
-              "startScroll": 500,
+              "startScroll": 1800,
               "startX": 0,
               "startY": 0,
-              "endScroll": 1000,
+              "endScroll": 2500,
               "endX": 0,
               "endY": -1080
             }
@@ -1254,10 +1254,19 @@
       "cameraAnims": [
         {
           "type": "translate",
-          "startScroll": 2080,
+          "startScroll": 0,
           "startX": 0,
           "startY": 0,
-          "endScroll": 4000,
+          "endScroll": 1000,
+          "endX": 0,
+          "endY": 0
+        },
+        {
+          "type": "translate",
+          "startScroll": 3080,
+          "startX": 0,
+          "startY": 0,
+          "endScroll": 5000,
           "endX": 1920,
           "endY": 0
         }
@@ -1265,10 +1274,10 @@
       "audios": []
     },
     {
-      "pageName": "page5",
+      "pageName": "page5-lie",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 1920,
+      "scrollWidth": 2920,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -1321,7 +1330,25 @@
           "startScroll": 0,
           "startX": 0,
           "startY": 0,
-          "endScroll": 1920,
+          "endScroll": 500,
+          "endX": 0,
+          "endY": 0
+        },
+        {
+          "type": "translate",
+          "startScroll": 0,
+          "startX": 0,
+          "startY": 0,
+          "endScroll": 1000,
+          "endX": 0,
+          "endY": 0
+        },
+        {
+          "type": "translate",
+          "startScroll": 1000,
+          "startX": 0,
+          "startY": 0,
+          "endScroll": 2920,
           "endX": 1920,
           "endY": 0
         }
@@ -1329,10 +1356,10 @@
       "audios": []
     },
     {
-      "pageName": "page6",
+      "pageName": "page6-raining",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 1920,
+      "scrollWidth": 4500,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -1387,10 +1414,10 @@
             },
             {
               "type": "alpha",
-              "startScroll": 1800,
+              "startScroll": 4300,
               "startX": 1,
               "startY": 0,
-              "endScroll": 1900,
+              "endScroll": 4500,
               "endX": 0,
               "endY": 0
             }
@@ -1435,10 +1462,10 @@
             },
             {
               "type": "alpha",
-              "startScroll": 900,
+              "startScroll": 1700,
               "startX": 1,
               "startY": 0,
-              "endScroll": 1000,
+              "endScroll": 2500,
               "endX": 0,
               "endY": 0
             }
@@ -1479,10 +1506,10 @@
       "audios": []
     },
     {
-      "pageName": "page7",
+      "pageName": "page7-storms",
       "stageHeight": 1080,
       "figureScale": 0.75,
-      "scrollWidth": 1920,
+      "scrollWidth": 7000,
       "startPositionX": 0,
       "startPositionY": 0,
       "endPositionX": 1920,
@@ -1490,7 +1517,242 @@
       "atlas": "images/page7.atlas",
       "figures": [
         {
+          "regionName": "white",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 6800,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 7000,
+              "endX": 0,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "storm3",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 0,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 3000,
+              "endX": 0,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 4400,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 4500,
+              "endX": 1,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 4500,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 6400,
+              "endX": 1,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 6400,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 6600,
+              "endX": 0,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "regionName": "storm2",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 0,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 2000,
+              "endX": 0,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 2600,
+              "startX": 0,
+              "startY": 0,
+              "endScroll": 2700,
+              "endX": 1,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 2700,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 4200,
+              "endX": 1,
+              "endY": 0
+            },
+            {
+              "type": "alpha",
+              "startScroll": 4200,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 4400,
+              "endX": 0,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        },
+        {
           "regionName": "storm1",
+          "startX": 0,
+          "startY": 0,
+          "startScale": 1,
+          "startRotation": 0,
+          "parallaxMode": 0,
+          "anims": [
+            {
+              "type": "alpha",
+              "startScroll": 2400,
+              "startX": 1,
+              "startY": 0,
+              "endScroll": 2600,
+              "endX": 0,
+              "endY": 0
+            }
+          ],
+          "autoAnims": [
+            {
+              "type": "rotate",
+              "startScroll": 0,
+              "endScroll": 2501,
+              "length": 1,
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.5
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cameraAnims": [
+        {
+          "type": "translate",
+          "startScroll": 0,
+          "startX": 0,
+          "startY": 0,
+          "endScroll": 1920,
+          "endX": 0,
+          "endY": 0
+        }
+      ],
+      "audios": []
+    },
+    {
+      "pageName": "page8-end",
+      "stageHeight": 1080,
+      "figureScale": 0.75,
+      "scrollWidth": 1920,
+      "startPositionX": 0,
+      "startPositionY": 0,
+      "endPositionX": 1920,
+      "endPositionY": 0,
+      "atlas": "images/page8.atlas",
+      "figures": [
+        {
+          "regionName": "end",
           "startX": 0,
           "startY": 0,
           "startScale": 1,
@@ -1527,34 +1789,9 @@
               ]
             }
           ]
-        }
-      ],
-      "cameraAnims": [
+        },
         {
-          "type": "translate",
-          "startScroll": 0,
-          "startX": 0,
-          "startY": 0,
-          "endScroll": 1920,
-          "endX": 0,
-          "endY": 0
-        }
-      ],
-      "audios": []
-    },
-    {
-      "pageName": "page8",
-      "stageHeight": 1080,
-      "figureScale": 0.75,
-      "scrollWidth": 1920,
-      "startPositionX": 0,
-      "startPositionY": 0,
-      "endPositionX": 1920,
-      "endPositionY": 0,
-      "atlas": "images/page8.atlas",
-      "figures": [
-        {
-          "regionName": "end",
+          "regionName": "black",
           "startX": 0,
           "startY": 0,
           "startScale": 1,
@@ -1562,9 +1799,9 @@
           "parallaxMode": 0,
           "anims": [
             {
-              "type": "translate",
+              "type": "alpha",
               "startScroll": 0,
-              "startX": 0,
+              "startX": 1,
               "startY": 0,
               "endScroll": 1900,
               "endX": 0,
