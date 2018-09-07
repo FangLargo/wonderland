@@ -6,4 +6,6 @@ public class MusicReference {
 	
 	public String ref;
 	public Music music;
+	
+	public AudioCue checkOut;
 }

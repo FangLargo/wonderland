@@ -1,6 +1,5 @@
 package com.mf.wonderland.Book;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
@@ -25,6 +24,7 @@ public class Figure {
 
 		this.startX = xT;
 		this.startY = yT;
+		this.startScale = startScale;
 		this.parallaxDist = parallax;
 		this.parallaxMode = paraMode;
 	}
@@ -36,6 +36,7 @@ public class Figure {
 	
 	public float startX;
 	public float startY;
+	public float startScale;
 	
 	public Array<Anim> anims = new Array<Anim>();
 	public Array<AutoAnim> autoAnims = new Array<AutoAnim>();
@@ -43,6 +44,7 @@ public class Figure {
 	private Anim currentTransAnim;
 	private Anim currentRotAnim;
 	private Anim currentScaleAnim;
+	private Anim currentAlphaAnim;
 	
 	public void updateFigureAnim(float progress) {
 		if(anims.size > 0) {
@@ -61,6 +63,10 @@ public class Figure {
 					} else if(a.type.equals(Anim.SCALE)) {
 						this.figureSprite.setScale(val.x, val.y);
 						this.currentScaleAnim = a;
+					} else if(a.type.equals(Anim.ALPHA)) {
+						this.figureSprite.setAlpha(val.x);
+						//System.out.println("Adjust Alpha" + val.x);
+						this.currentAlphaAnim = a;
 					}
 				}
 			}
@@ -88,10 +94,18 @@ public class Figure {
 					this.figureSprite.setScale(this.currentScaleAnim.startX, this.currentScaleAnim.startY);
 				}
 			}
+			
+			if(this.currentAlphaAnim != null) {
+				if(progress > this.currentAlphaAnim.endScroll) {
+					this.figureSprite.setAlpha(this.currentAlphaAnim.endX);
+				} else if(progress < this.currentAlphaAnim.startScroll) {
+					this.figureSprite.setAlpha(this.currentAlphaAnim.startX);
+				}
+			}
 		} else {
 			this.figureSprite.setPosition(this.startX, this.startY);
 			this.figureSprite.setOriginCenter();
-			this.figureSprite.setScale(1);
+			this.figureSprite.setScale(this.startScale);
 		}
 	}
 	
@@ -104,16 +118,19 @@ public class Figure {
 					val = a.updateAutoAnim(progress, 0);
 //					System.out.println("Delta: " + delta + ", val: " + val);
 					if(a.type.equals(Anim.TRANSLATE)) {
-						this.figureSprite.translate(val.x, val.y);
+						//this.figureSprite.translate(val.x, val.y);
+						this.figureSprite.setPosition(val.x, val.y);
 						//this.currentTransAnim = a.toAnimData();
 
 					} else if(a.type.equals(Anim.ROTATE)) {
 						this.figureSprite.setOriginCenter();
-						this.figureSprite.rotate(val.x);
+						this.figureSprite.setRotation(val.x);
 						//this.currentRotAnim = a.toAnimData();
 					} else if(a.type.equals(Anim.SCALE)) {
 						this.figureSprite.setScale(val.x, val.y);
 						//this.currentScaleAnim = a.toAnimData();
+					} else if(a.type.equals(Anim.ALPHA)) {
+						this.figureSprite.setAlpha(val.x);
 					}
 				}
 				//System.out.println(val.y);

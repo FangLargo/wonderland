@@ -123,3 +123,10 @@ Thumbs.db
 !/ios-moe/xcode/*.xcodeproj/xcshareddata
 !/ios-moe/xcode/*.xcodeproj/project.pbxproj
 /ios-moe/xcode/native/
+
+## custom assets
+/android/assets/images/*.png
+/android/assets/images/*.atlas
+/android/assets/images/*.tpproj
+/android/assets/audio/sound/*.mp3
+/android/assets/audio/music/*.ogg

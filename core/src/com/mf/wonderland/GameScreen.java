@@ -35,8 +35,10 @@ public class GameScreen implements Screen {
     //For debug
     SpriteBatch debugBatch = new SpriteBatch();
     BitmapFont font = new BitmapFont();
-
-    Book testBook;
+    
+    String bookName = "book.json";
+    float pageWidth = 100f;
+    Book book;
 
 	public GameScreen(final Wonderland gam) {
 		this.game = gam;
@@ -48,13 +50,12 @@ public class GameScreen implements Screen {
         Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
         
         //debugs        
-        testBook = BookTest.jsonBookMaker();
+        //book = BookTest.jsonBookMaker();
+        //book = BookTest.templateMaker();
         
-//        for(Page p: testBook.pages) {
-//        	System.out.println(p.scrollStart + " -> " + p.scrollEnd);
-//        }
-//      Music music = Gdx.audio.newMusic(Gdx.files.internal("audio/music/Pretty_Little_Dog.mp3"));
-//	    music.play();
+        //Open Book:
+        book = Book.createNewBook(bookName, pageWidth);
+        
 	}
 
 	@Override
@@ -72,13 +73,13 @@ public class GameScreen implements Screen {
 		progress = progress - scrollHandler.dx/pixelsPerUnit;
 		
 		if(progress < 0) {
-			progress = 0;
-		} else if (progress >= testBook.totalScrollWidth) {
-			progress = testBook.totalScrollWidth - 0.01f;
+			progress = 0f;
+		} else if (progress >= book.totalScrollWidth) {
+			progress = book.totalScrollWidth - 0.01f;
 		}
 			
-		testBook.updateCamera(camera, progress);
-		testBook.updateBook(progress, camera, game.batch, delta);
+		book.updateCamera(camera, progress);
+		book.updateBook(progress, camera, game.batch, delta);
 
 		camera.update();
 		
@@ -86,7 +87,7 @@ public class GameScreen implements Screen {
 	    game.batch.begin();
 
 	    //Send in game.batch, Book pulls out each sprite that needs rendering and renders.
-	    testBook.renderBook(progress, game.batch, camera, delta);
+	    book.renderBook(progress, game.batch, camera, delta);
 	    //testBook.pages.get(0).figures.get(0).figureSprite.draw(game.batch);
 
 	    game.batch.end();
@@ -94,7 +95,7 @@ public class GameScreen implements Screen {
 	    //Render debug
 	    debugBatch.begin();
 	    font.draw(debugBatch, camera.zoom + " ", 0, 60);
-	    font.draw(debugBatch, progress + " ", 0, 40);
+	    font.draw(debugBatch, book.uncorrectedProgress + " ", 0, 40);
 	    font.draw(debugBatch, camera.position.x + ", " + camera.position.y, 0, 20);
 	    debugBatch.end();
 	    

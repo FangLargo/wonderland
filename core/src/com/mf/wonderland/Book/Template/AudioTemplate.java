@@ -8,7 +8,7 @@ public class AudioTemplate {
 		
 	}
 	
-	public AudioTemplate(int ty, String name, float st, float en, float maxVol) {
+	public AudioTemplate(String ty, String name, float st, float en, float maxVol) {
 		this.type = ty;
 		this.name = name;
 		this.start = st;
@@ -16,7 +16,7 @@ public class AudioTemplate {
 		this.maxVolume = maxVol;
 	}
 	
-	public int type;
+	public String type;
 	public String name;
 	public float start;
 	public float end;

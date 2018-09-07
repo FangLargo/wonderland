@@ -10,7 +10,7 @@ public class ScrollHandler implements GestureListener {
 	public float dx = 0;
 	//Timer timer;
 	float speed = 0;
-	float damp = 0.8f;
+	float damp = 0.65f;
 
 	@Override
 	public boolean fling(float velocityX, float velocityY, int button) {

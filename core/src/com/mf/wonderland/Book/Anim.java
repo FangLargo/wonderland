@@ -63,5 +63,6 @@ public class Anim {
 	public static String TRANSLATE = "translate";
 	public static String ROTATE = "rotate";
 	public static String SCALE = "scale";
+	public static String ALPHA = "alpha";
 
 }

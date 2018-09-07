@@ -1,0 +1,314 @@
+{
+"pages": [
+	{
+		"pageName": "page1",
+		"stageHeight": 1440,
+		"figureScale": 0.75,
+		"scrollWidth": 2560,
+		"endPositionX": 2560,
+		"atlas": "images/test/page1.atlas",
+		"figures": [
+			{
+				"regionName": "littledog_bg",
+				"startScale": 1
+			},
+			{
+				"regionName": "littledog_dog",
+				"startX": 1290,
+				"startY": 200,
+				"startScale": 1,
+				"parallaxDist": 2,
+				"autoAnims": [
+					{
+						"type": "translate",
+						"startScroll": 1000,
+						"endScroll": 2560,
+						"length": 4,
+						"frames": [
+							{
+								"x": -200
+							},
+							{
+								"x": 200,
+								"z": 2
+							}
+						]
+					}
+				]
+			}
+		],
+		"cameraAnims": [
+			{
+				"type": "scale",
+				"startScroll": 2440,
+				"startX": 1,
+				"endScroll": 2560,
+				"endX": 1
+			}
+		],
+		"audios": [
+			{
+				"type": "music",
+				"name": "test/Pretty_Little_Dog.mp3",
+				"start": -1,
+				"end": 2600,
+				"frames": [
+					{
+						"x": -1,
+						"y": 0.4
+					},
+					{
+						"x": 500,
+						"y": 1
+					},
+					{
+						"x": 2600,
+						"y": 1
+					}
+				],
+				"maxVolume": 1
+			}
+		]
+	},
+	{
+		"pageName": "page2",
+		"stageHeight": 1440,
+		"figureScale": 0.75,
+		"scrollWidth": 2880,
+		"atlas": "images/test/page2.atlas",
+		"figures": [
+			{
+				"regionName": "shogatsu2015_bg",
+				"startScale": 1
+			},
+			{
+				"regionName": "shogatsu2015_matsu",
+				"startX": 1426,
+				"startY": 60,
+				"startScale": 1,
+				"parallaxDist": 0.8
+			},
+			{
+				"regionName": "shogatsu2015_girl",
+				"startX": 1325,
+				"startY": 50,
+				"startScale": 1,
+				"parallaxDist": 2
+			}
+		],
+		"cameraAnims": [
+			{
+				"type": "scale",
+				"startX": 1,
+				"endScroll": 600,
+				"endX": 5
+			},
+			{
+				"type": "rotate",
+				"startScroll": 100,
+				"endScroll": 600,
+				"endX": 360
+			},
+			{
+				"type": "scale",
+				"startScroll": 1600,
+				"startX": 5,
+				"endScroll": 2880,
+				"endX": 1
+			},
+			{
+				"type": "translate",
+				"endScroll": 600,
+				"endX": 250,
+				"endY": 300
+			},
+			{
+				"type": "translate",
+				"startScroll": 1600,
+				"startX": 700,
+				"startY": 300,
+				"endScroll": 2880
+			},
+			{
+				"type": "translate",
+				"startScroll": 600,
+				"startX": 250,
+				"startY": 300,
+				"endScroll": 1600,
+				"endX": 700,
+				"endY": 300
+			}
+		],
+		"audios": [
+			{
+				"type": "music",
+				"name": "test/Omoigawa.mp3",
+				"end": 2880,
+				"maxVolume": 1
+			}
+		]
+	},
+	{
+		"pageName": "page3",
+		"stageHeight": 1440,
+		"figureScale": 0.75,
+		"scrollWidth": 2500,
+		"endPositionY": -1440,
+		"atlas": "images/test/page3.atlas",
+		"figures": [
+			{
+				"regionName": "dog_bird_bg",
+				"startY": -1440,
+				"startScale": 1,
+				"parallaxMode": 1
+			},
+			{
+				"regionName": "dog_bird_bird",
+				"startX": 2500,
+				"startY": -1440,
+				"startScale": 1,
+				"parallaxDist": 0.4,
+				"parallaxMode": 1,
+				"anims": [
+					{
+						"type": "translate",
+						"startScroll": 1600,
+						"startX": 2560,
+						"startY": -1410,
+						"endScroll": 1900,
+						"endX": 1750,
+						"endY": -1410
+					},
+					{
+						"type": "rotate",
+						"startScroll": 1600,
+						"endScroll": 1900,
+						"endX": 360
+					},
+					{
+						"type": "scale",
+						"startScroll": 1600,
+						"startX": 0.2,
+						"startY": 0.2,
+						"endScroll": 1900,
+						"endX": 1,
+						"endY": 1
+					}
+				],
+				"autoAnims": [
+					{
+						"type": "rotate",
+						"startScroll": 2301,
+						"endScroll": 2501,
+						"length": 1,
+						"frames": [
+							{
+								"x": -30
+							},
+							{
+								"x": 30,
+								"z": 0.5
+							}
+						]
+					},
+					{
+						"type": "translate",
+						"startScroll": 2301,
+						"endScroll": 2501,
+						"length": 1,
+						"frames": [
+							{
+								"x": 50,
+								"y": 400
+							},
+							{
+								"y": -70,
+								"z": 0.25
+							},
+							{
+								"x": -50,
+								"y": 400,
+								"z": 0.5
+							},
+							{
+								"y": -70,
+								"z": 0.75
+							}
+						]
+					},
+					{
+						"type": "scale",
+						"startScroll": 2301,
+						"endScroll": 2501,
+						"length": 1,
+						"frames": [
+							{
+								"x": 0.5,
+								"y": 1
+							},
+							{
+								"x": 1,
+								"y": 0.5,
+								"z": 0.25
+							},
+							{
+								"x": 0.5,
+								"y": 1,
+								"z": 0.5
+							},
+							{
+								"x": 1,
+								"y": 0.5,
+								"z": 0.75
+							}
+						]
+					},
+					{
+						"type": "alpha",
+						"startScroll": 2301,
+						"endScroll": 2501,
+						"length": 1,
+						"frames": [
+							{
+								"x": 1
+							},
+							{
+								"z": 0.5
+							}
+						]
+					}
+				]
+			},
+			{
+				"regionName": "dog_bird_dog",
+				"startY": -1440,
+				"startScale": 1,
+				"parallaxDist": 0.4,
+				"parallaxMode": 1
+			}
+		],
+		"cameraAnims": [
+			{
+				"type": "translate",
+				"endScroll": 1440,
+				"endY": -1440
+			},
+			{
+				"type": "scale",
+				"startX": 1,
+				"endScroll": 100,
+				"endX": 1
+			}
+		],
+		"audios": [
+			{
+				"type": "sound",
+				"name": "test/bamboo-swing.wav",
+				"start": 1400,
+				"end": 1600,
+				"maxVolume": 1
+			}
+		]
+	}
+]
+}

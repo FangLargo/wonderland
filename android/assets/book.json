@@ -1,300 +1,2097 @@
 {
-pages: [
-	{
-		pageName: page1
-		stageHeight: 1440
-		figureScale: 0.75
-		scrollWidth: 2560
-		endPositionX: 2560
-		atlas: images/page1.atlas
-		figures: [
-			{
-				regionName: littledog_bg
-				startScale: 1
-			}
-			{
-				regionName: littledog_dog
-				startX: 1290
-				startY: 200
-				startScale: 1
-				parallaxDist: 2
-				autoAnims: [
-					{
-						type: translate
-						startScroll: 1000
-						endScroll: 2560
-						length: 4
-						frames: [
-							{
-								x: -200
-							}
-							{
-								x: 200
-								z: 2
-							}
-						]
-					}
-				]
-			}
-		]
-		cameraAnims: [
-			{
-				type: scale
-				startScroll: 2440
-				startX: 1
-				endScroll: 2560
-				endX: 1
-			}
-		]
-		audios: [
-			{
-				type: 1
-				name: Pretty_Little_Dog.mp3
-				start: -1
-				end: 2600
-				frames: [
-					{
-						x: -1
-						y: 0.4
-					}
-					{
-						x: 500
-						y: 1
-					}
-					{
-						x: 2600
-						y: 1
-					}
-				]
-				maxVolume: 1
-			}
-		]
-	}
-	{
-		pageName: page2
-		stageHeight: 1440
-		figureScale: 0.75
-		scrollWidth: 2880
-		atlas: images/page2.atlas
-		figures: [
-			{
-				regionName: shogatsu2015_bg
-				startScale: 1
-			}
-			{
-				regionName: shogatsu2015_matsu
-				startX: 1426
-				startY: 60
-				startScale: 1
-				parallaxDist: 0.8
-			}
-			{
-				regionName: shogatsu2015_girl
-				startX: 1325
-				startY: 50
-				startScale: 1
-				parallaxDist: 2
-			}
-		]
-		cameraAnims: [
-			{
-				type: scale
-				startX: 1
-				endScroll: 600
-				endX: 5
-			}
-			{
-				type: rotate
-				startScroll: 100
-				endScroll: 600
-				endX: 360
-			}
-			{
-				type: scale
-				startScroll: 1600
-				startX: 5
-				endScroll: 2880
-				endX: 1
-			}
-			{
-				type: translate
-				endScroll: 600
-				endX: 250
-				endY: 300
-			}
-			{
-				type: translate
-				startScroll: 1600
-				startX: 700
-				startY: 300
-				endScroll: 2880
-			}
-			{
-				type: translate
-				startScroll: 600
-				startX: 250
-				startY: 300
-				endScroll: 1600
-				endX: 700
-				endY: 300
-			}
-		]
-		audios: [
-			{
-				type: 1
-				name: Omoigawa.mp3
-				end: 2880
-				maxVolume: 1
-			}
-		]
-	}
-	{
-		pageName: page3
-		stageHeight: 1440
-		figureScale: 0.75
-		scrollWidth: 2500
-		endPositionY: -1440
-		atlas: images/page3.atlas
-		figures: [
-			{
-				regionName: dog_bird_bg
-				startY: -1440
-				startScale: 1
-				parallaxMode: 1
-			}
-			{
-				regionName: dog_bird_bird
-				startX: 2500
-				startY: -1440
-				startScale: 1
-				parallaxDist: 0.4
-				parallaxMode: 1
-				anims: [
-					{
-						type: translate
-						startScroll: 1600
-						startX: 2560
-						startY: -1410
-						endScroll: 1900
-						endX: 1750
-						endY: -1410
-					}
-					{
-						type: rotate
-						startScroll: 1600
-						endScroll: 1900
-						endX: 360
-					}
-					{
-						type: scale
-						startScroll: 1600
-						startX: 0.2
-						startY: 0.2
-						endScroll: 1900
-						endX: 1
-						endY: 1
-					}
-				]
-				autoAnims: [
-					{
-						type: rotate
-						startScroll: 2301
-						endScroll: 2501
-						length: 1
-						frames: [
-							{
-								x: -30
-							}
-							{
-								x: 30
-								z: 0.5
-							}
-						]
-					}
-					{
-						type: translate
-						startScroll: 2301
-						endScroll: 2501
-						length: 1
-						frames: [
-							{
-								x: 50
-								y: 400
-							}
-							{
-								y: -70
-								z: 0.25
-							}
-							{
-								x: -50
-								y: 400
-								z: 0.5
-							}
-							{
-								y: -70
-								z: 0.75
-							}
-						]
-					}
-					{
-						type: scale
-						startScroll: 2301
-						endScroll: 2501
-						length: 1
-						frames: [
-							{
-								x: 0.5
-								y: 1
-							}
-							{
-								x: 1
-								y: 0.5
-								z: 0.25
-							}
-							{
-								x: 0.5
-								y: 1
-								z: 0.5
-							}
-							{
-								x: 1
-								y: 0.5
-								z: 0.75
-							}
-						]
-					}
-				]
-			}
-			{
-				regionName: dog_bird_dog
-				startY: -1440
-				startScale: 1
-				parallaxDist: 0.4
-				parallaxMode: 1
-			}
-		]
-		cameraAnims: [
-			{
-				type: translate
-				endScroll: 1440
-				endY: -1440
-			}
-			{
-				type: scale
-				startX: 1
-				endScroll: 100
-				endX: 1
-			}
-		]
-		audios: [
-			{
-				type: 2
-				name: bamboo-swing.wav
-				start: 1400
-				end: 1600
-				maxVolume: 1
-			}
-		]
-	}
-]
+    "pages": [
+        {
+            "pageName": "page1-fall",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 3000,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page1.atlas",
+            "figures": [
+                {
+                    "regionName": "back",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "flare",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "startX": 900,
+                            "startY": 1100,
+                            "endScroll": 3000,
+                            "endX": 900,
+                            "endY": 250
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "endScroll": 3000,
+                            "length": 0.4,
+                            "frames": [
+                                {
+                                    "x": 0.05,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0.13,
+                                    "y": 0,
+                                    "z": 0.1
+                                },
+                                {
+                                    "x": 1,
+                                    "y": 0,
+                                    "z": 0.15
+                                },
+                                {
+                                    "x": 0.1,
+                                    "y": 0,
+                                    "z": 0.26
+                                },
+                                {
+                                    "x": 0.3,
+                                    "y": 0,
+                                    "z": 0.32
+                                },
+                                {
+                                    "x": 0.1,
+                                    "y": 0,
+                                    "z": 0.37
+                                },
+                                {
+                                    "x": 0.23,
+                                    "y": 0,
+                                    "z": 0.4
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "black",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0.8,
+                            "startY": 0,
+                            "endScroll": 1200,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 1920,
+                    "endX": 0,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_ocean.ogg",
+                    "start": -1,
+                    "end": 3000,
+                    "frames": [
+                        {
+                            "x": -1,
+                            "y": 0.2
+                        },
+                        {
+                            "x": 1000,
+                            "y": 0.2
+                        },
+                        {
+                            "x": 2500,
+                            "y": 0.2
+                        },
+                        {
+                            "x": 3000,
+                            "y": 0.4
+                        }
+                    ],
+                    "maxVolume": 0.2
+                },
+                {
+                    "type": "music",
+                    "name": "fall.ogg",
+                    "start": 0,
+                    "end": 3000,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        },
+                        {
+                            "x": 1500,
+                            "y": 0.4
+                        },
+                        {
+                            "x": 3000,
+                            "y": 0.8
+                        }
+                    ],
+                    "maxVolume": 1
+                }
+            ]
+        },
+        {
+            "pageName": "page2-splash",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 8000,
+            "startPositionX": 0,
+            "startPositionY": 7346,
+            "endPositionX": 3000,
+            "endPositionY": 0,
+            "atlas": "images/page2.atlas",
+            "figures": [
+                {
+                    "regionName": "splash_01",
+                    "startX": 0,
+                    "startY": 7660,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_02",
+                    "startX": 0,
+                    "startY": 6894,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_03",
+                    "startX": 0,
+                    "startY": 6128,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_04",
+                    "startX": 0,
+                    "startY": 5362,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_05",
+                    "startX": 0,
+                    "startY": 4596,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_06",
+                    "startX": 0,
+                    "startY": 3830,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_07",
+                    "startX": 0,
+                    "startY": 3064,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_08",
+                    "startX": 0,
+                    "startY": 2298,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_09",
+                    "startX": 0,
+                    "startY": 1532,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_10",
+                    "startX": 0,
+                    "startY": 766,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "splash_11",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "infant",
+                    "startX": 700,
+                    "startY": 2000,
+                    "startScale": 0.3,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "scale",
+                            "startScroll": 0,
+                            "startX": 0.5,
+                            "startY": 0.5,
+                            "endScroll": 7000,
+                            "endX": 0.5,
+                            "endY": 0.5
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 4000,
+                            "startX": 750,
+                            "startY": 2300,
+                            "endScroll": 7000,
+                            "endX": 750,
+                            "endY": 900
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "black",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 7346,
+                            "endScroll": 7000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 1000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 6000,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 6500,
+                            "endX": 1,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 7346,
+                    "endScroll": 7000,
+                    "endX": 0,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_ocean.ogg",
+                    "start": 0,
+                    "end": 4000,
+                    "frames": [
+                        {
+                            "x": 3000,
+                            "y": 0.3
+                        },
+                        {
+                            "x": 4000,
+                            "y": 0
+                        }
+                    ],
+                    "maxVolume": 1
+                },
+                {
+                    "type": "music",
+                    "name": "underwater.ogg",
+                    "start": 2500,
+                    "end": 7800,
+                    "frames": [
+                        {
+                            "x": 2500,
+                            "y": 0
+                        },
+                        {
+                            "x": 3500,
+                            "y": 1
+                        },
+                        {
+                            "x": 7000,
+                            "y": 1
+                        },
+                        {
+                            "x": 7500,
+                            "y": 0
+                        }
+                    ],
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "splash.mp3",
+                    "start": 0,
+                    "end": 200,
+                    "maxVolume": 1
+                }
+            ]
+        },
+        {
+            "pageName": "page3-frames",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 28320,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page3.atlas",
+            "figures": [
+                {
+                    "regionName": "sky_day",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "sky_evening",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 6000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 18500,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 19800,
+                            "endX": 1,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "sky_night",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 8000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 24500,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 26400,
+                            "endX": 1,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "wave2",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "scale",
+                            "startScroll": 0,
+                            "startX": 1.2,
+                            "startY": 1,
+                            "endScroll": 7000,
+                            "endX": 1.2,
+                            "endY": 1
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "endScroll": 30000,
+                            "length": 10,
+                            "frames": [
+                                {
+                                    "x": 70,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "sailing_boat",
+                    "startX": 1600,
+                    "startY": 120,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "startX": 1600,
+                            "startY": 90,
+                            "endScroll": 30000,
+                            "endX": 0,
+                            "endY": 90
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 30000,
+                            "length": 4,
+                            "frames": [
+                                {
+                                    "x": 15,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "wave1",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "scale",
+                            "startScroll": 0,
+                            "startX": 1.2,
+                            "startY": 1,
+                            "endScroll": 7000,
+                            "endX": 1.2,
+                            "endY": 1
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "endScroll": 30000,
+                            "length": 7,
+                            "frames": [
+                                {
+                                    "x": -150,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 3.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "black",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 1,
+                            "endScroll": 20000,
+                            "endX": 0.2,
+                            "endY": 1
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 20000,
+                            "startX": 0.2,
+                            "startY": 1,
+                            "endScroll": 28320,
+                            "endX": 0.4,
+                            "endY": 1
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-01_sit1",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 1200,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 2400,
+                            "endX": 600,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 3600,
+                            "startX": 600,
+                            "startY": 240,
+                            "endScroll": 4800,
+                            "endX": -800,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-02_sit2",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 4800,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 6000,
+                            "endX": 600,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 7200,
+                            "startX": 600,
+                            "startY": 240,
+                            "endScroll": 8400,
+                            "endX": -800,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-03_things",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 8400,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 9600,
+                            "endX": 580,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 10800,
+                            "startX": 580,
+                            "startY": 240,
+                            "endScroll": 12000,
+                            "endX": -850,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-04_telescope",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 12000,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 13200,
+                            "endX": 500,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 14400,
+                            "startX": 500,
+                            "startY": 240,
+                            "endScroll": 15600,
+                            "endX": -920,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-05_blanket",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 15600,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 16800,
+                            "endX": 600,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 18000,
+                            "startX": 600,
+                            "startY": 240,
+                            "endScroll": 19200,
+                            "endX": -820,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-06_hat",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 19200,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 20400,
+                            "endX": 600,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 21600,
+                            "startX": 600,
+                            "startY": 240,
+                            "endScroll": 22800,
+                            "endX": -800,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                },
+                {
+                    "regionName": "frames-07_book",
+                    "startX": 1950,
+                    "startY": 240,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 22800,
+                            "startX": 1950,
+                            "startY": 240,
+                            "endScroll": 24000,
+                            "endX": 600,
+                            "endY": 240
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 25200,
+                            "startX": 600,
+                            "startY": 240,
+                            "endScroll": 26400,
+                            "endX": -820,
+                            "endY": 240
+                        }
+                    ],
+                    "autoAnims": []
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 9500,
+                    "endX": 0,
+                    "endY": 0
+                },
+                {
+                    "type": "translate",
+                    "startScroll": 26400,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 28320,
+                    "endX": 1920,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 28320,
+                    "frames": [],
+                    "maxVolume": 0.5
+                }
+            ]
+        },
+        {
+            "pageName": "page4-map",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 5000,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page4.atlas",
+            "figures": [
+                {
+                    "regionName": "sky",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 1900,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "map",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1.5,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "scale",
+                            "startScroll": 0,
+                            "startX": 1,
+                            "startY": 1,
+                            "endScroll": 500,
+                            "endX": 1.4,
+                            "endY": 1.4
+                        },
+                        {
+                            "type": "scale",
+                            "startScroll": 1500,
+                            "startX": 1.4,
+                            "startY": 1.4,
+                            "endScroll": 2300,
+                            "endX": 1,
+                            "endY": 1
+                        },
+                        {
+                            "type": "translate",
+                            "startScroll": 1800,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 2500,
+                            "endX": 0,
+                            "endY": -1080
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 1000,
+                    "endX": 0,
+                    "endY": 0
+                },
+                {
+                    "type": "translate",
+                    "startScroll": 3080,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 5000,
+                    "endX": 1920,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 5000,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0.5
+                        },
+                        {
+                            "x": 1600,
+                            "y": 0.5
+                        },
+                        {
+                            "x": 3000,
+                            "y": 0.35
+                        }
+                    ],
+                    "maxVolume": 0.5
+                },
+                {
+                    "type": "sound",
+                    "name": "paper.mp3",
+                    "start": 1500,
+                    "end": 2500,
+                    "maxVolume": 1
+                },
+                {
+                    "type": "music",
+                    "name": "rain_heavy.ogg",
+                    "start": 1600,
+                    "end": 5000,
+                    "frames": [
+                        {
+                            "x": 1600,
+                            "y": 0
+                        },
+                        {
+                            "x": 3000,
+                            "y": 0.4
+                        },
+                        {
+                            "x": 5000,
+                            "y": 0.4
+                        }
+                    ],
+                    "maxVolume": 1
+                }
+            ]
+        },
+        {
+            "pageName": "page5-lie",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 2920,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page5.atlas",
+            "figures": [
+                {
+                    "regionName": "lie_boat",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 1900,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 500,
+                    "endX": 0,
+                    "endY": 0
+                },
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 1000,
+                    "endX": 0,
+                    "endY": 0
+                },
+                {
+                    "type": "translate",
+                    "startScroll": 1000,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 2920,
+                    "endX": 1920,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 2920,
+                    "frames": [],
+                    "maxVolume": 0.35
+                },
+                {
+                    "type": "music",
+                    "name": "rain_heavy.ogg",
+                    "start": 0,
+                    "end": 2920,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0.4
+                        },
+                        {
+                            "x": 2920,
+                            "y": 0.4
+                        }
+                    ],
+                    "maxVolume": 1
+                }
+            ]
+        },
+        {
+            "pageName": "page6-rain",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 4500,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page6.atlas",
+            "figures": [
+                {
+                    "regionName": "white",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "rain2",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 1800,
+                            "endX": 1,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 4400,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 4500,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "rain1",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 900,
+                            "endX": 1,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 1700,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 2500,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 1920,
+                    "endX": 0,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 4500,
+                    "frames": [],
+                    "maxVolume": 0.5
+                },
+                {
+                    "type": "music",
+                    "name": "rain_heavy.ogg",
+                    "start": 0,
+                    "end": 4500,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0.3
+                        },
+                        {
+                            "x": 1600,
+                            "y": 0.6
+                        },
+                        {
+                            "x": 2500,
+                            "y": 0
+                        }
+                    ],
+                    "maxVolume": 0.5
+                },
+                {
+                    "type": "music",
+                    "name": "rain_storm.ogg",
+                    "start": 0,
+                    "end": 4500,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        },
+                        {
+                            "x": 1600,
+                            "y": 0
+                        },
+                        {
+                            "x": 2500,
+                            "y": 1
+                        }
+                    ],
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 4350,
+                    "end": 4500,
+                    "maxVolume": 1
+                }
+            ]
+        },
+        {
+            "pageName": "page7-storms",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 7000,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page7.atlas",
+            "figures": [
+                {
+                    "regionName": "white",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 6800,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 7000,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "storm3",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 3000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 4400,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 4500,
+                            "endX": 1,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 4500,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 6400,
+                            "endX": 1,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 6450,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 6600,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "storm2",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 2000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 2600,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 2700,
+                            "endX": 1,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 2700,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 4200,
+                            "endX": 1,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 4250,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 4400,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "storm1",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 2450,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 2600,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 1920,
+                    "endX": 0,
+                    "endY": 0
+                }
+            ],
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "rain_storm.ogg",
+                    "start": 0,
+                    "end": 6700,
+                    "frames": [],
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 2450,
+                    "end": 2700,
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 4250,
+                    "end": 4400,
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 6450,
+                    "end": 6600,
+                    "maxVolume": 1
+                }
+            ]
+        },
+        {
+            "pageName": "page8-end",
+            "stageHeight": 1080,
+            "figureScale": 0.75,
+            "scrollWidth": 8000,
+            "startPositionX": 0,
+            "startPositionY": 0,
+            "endPositionX": 1920,
+            "endPositionY": 0,
+            "atlas": "images/page8.atlas",
+            "figures": [
+                {
+                    "regionName": "end",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "translate",
+                            "startScroll": 0,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 1900,
+                            "endX": 0,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "regionName": "black",
+                    "startX": 0,
+                    "startY": 0,
+                    "startScale": 1,
+                    "startRotation": 0,
+                    "parallaxMode": 0,
+                    "anims": [
+                        {
+                            "type": "alpha",
+                            "startScroll": 1000,
+                            "startX": 1,
+                            "startY": 0,
+                            "endScroll": 4000,
+                            "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 4000,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 8000,
+                            "endX": 1,
+                            "endY": 0
+                        }
+                    ],
+                    "autoAnims": [
+                        {
+                            "type": "rotate",
+                            "startScroll": 0,
+                            "endScroll": 2501,
+                            "length": 1,
+                            "frames": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "z": 0.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cameraAnims": [
+                {
+                    "type": "translate",
+                    "startScroll": 0,
+                    "startX": 0,
+                    "startY": 0,
+                    "endScroll": 1920,
+                    "endX": 0,
+                    "endY": 0
+                }
+            ],
+            "audios": []
+        }
+    ]
 }
