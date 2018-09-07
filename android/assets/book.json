@@ -707,7 +707,7 @@
             "pageName": "page3-frames",
             "stageHeight": 1080,
             "figureScale": 0.75,
-            "scrollWidth": 30000,
+            "scrollWidth": 28320,
             "startPositionX": 0,
             "startPositionY": 0,
             "endPositionX": 1920,
@@ -762,10 +762,10 @@
                         },
                         {
                             "type": "alpha",
-                            "startScroll": 20000,
+                            "startScroll": 18500,
                             "startX": 0,
                             "startY": 0,
-                            "endScroll": 21000,
+                            "endScroll": 19800,
                             "endX": 1,
                             "endY": 0
                         }
@@ -810,10 +810,10 @@
                         },
                         {
                             "type": "alpha",
-                            "startScroll": 28000,
+                            "startScroll": 24500,
                             "startX": 0,
                             "startY": 0,
-                            "endScroll": 29000,
+                            "endScroll": 26400,
                             "endX": 1,
                             "endY": 0
                         }
@@ -890,10 +890,10 @@
                             "type": "translate",
                             "startScroll": 0,
                             "startX": 1600,
-                            "startY": 110,
+                            "startY": 90,
                             "endScroll": 30000,
                             "endX": 0,
-                            "endY": 80
+                            "endY": 90
                         }
                     ],
                     "autoAnims": [
@@ -978,7 +978,7 @@
                             "startScroll": 20000,
                             "startX": 0.2,
                             "startY": 1,
-                            "endScroll": 30000,
+                            "endScroll": 28320,
                             "endX": 0.4,
                             "endY": 1
                         }
@@ -995,19 +995,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 1000,
+                            "startScroll": 1200,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 2500,
+                            "endScroll": 2400,
                             "endX": 600,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 3500,
+                            "startScroll": 3600,
                             "startX": 600,
                             "startY": 240,
-                            "endScroll": 5000,
+                            "endScroll": 4800,
                             "endX": -800,
                             "endY": 240
                         }
@@ -1024,19 +1024,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 5000,
+                            "startScroll": 4800,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 6500,
+                            "endScroll": 6000,
                             "endX": 600,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 7500,
+                            "startScroll": 7200,
                             "startX": 600,
                             "startY": 240,
-                            "endScroll": 9000,
+                            "endScroll": 8400,
                             "endX": -800,
                             "endY": 240
                         }
@@ -1053,19 +1053,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 9000,
+                            "startScroll": 8400,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 10500,
+                            "endScroll": 9600,
                             "endX": 580,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 11500,
+                            "startScroll": 10800,
                             "startX": 580,
                             "startY": 240,
-                            "endScroll": 13000,
+                            "endScroll": 12000,
                             "endX": -850,
                             "endY": 240
                         }
@@ -1082,19 +1082,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 13000,
+                            "startScroll": 12000,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 14500,
+                            "endScroll": 13200,
                             "endX": 500,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 15500,
+                            "startScroll": 14400,
                             "startX": 500,
                             "startY": 240,
-                            "endScroll": 17000,
+                            "endScroll": 15600,
                             "endX": -920,
                             "endY": 240
                         }
@@ -1111,19 +1111,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 17000,
+                            "startScroll": 15600,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 18500,
+                            "endScroll": 16800,
                             "endX": 600,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 19500,
+                            "startScroll": 18000,
                             "startX": 600,
                             "startY": 240,
-                            "endScroll": 21000,
+                            "endScroll": 19200,
                             "endX": -820,
                             "endY": 240
                         }
@@ -1140,19 +1140,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 21000,
+                            "startScroll": 19200,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 22500,
+                            "endScroll": 20400,
                             "endX": 600,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 23500,
+                            "startScroll": 21600,
                             "startX": 600,
                             "startY": 240,
-                            "endScroll": 25000,
+                            "endScroll": 22800,
                             "endX": -800,
                             "endY": 240
                         }
@@ -1169,19 +1169,19 @@
                     "anims": [
                         {
                             "type": "translate",
-                            "startScroll": 25000,
+                            "startScroll": 22800,
                             "startX": 1950,
                             "startY": 240,
-                            "endScroll": 26500,
+                            "endScroll": 24000,
                             "endX": 600,
                             "endY": 240
                         },
                         {
                             "type": "translate",
-                            "startScroll": 27500,
+                            "startScroll": 25200,
                             "startX": 600,
                             "startY": 240,
-                            "endScroll": 29000,
+                            "endScroll": 26400,
                             "endX": -820,
                             "endY": 240
                         }
@@ -1201,10 +1201,10 @@
                 },
                 {
                     "type": "translate",
-                    "startScroll": 29000,
+                    "startScroll": 26400,
                     "startX": 0,
                     "startY": 0,
-                    "endScroll": 30000,
+                    "endScroll": 28320,
                     "endX": 1920,
                     "endY": 0
                 }
@@ -1214,7 +1214,7 @@
                     "type": "music",
                     "name": "gentle_boat.ogg",
                     "start": 0,
-                    "end": 30000,
+                    "end": 28320,
                     "frames": [],
                     "maxVolume": 0.5
                 }
@@ -1348,7 +1348,57 @@
                     "endY": 0
                 }
             ],
-            "audios": []
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 5000,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0.5
+                        },
+                        {
+                            "x": 1600,
+                            "y": 0.5
+                        },
+                        {
+                            "x": 3000,
+                            "y": 0.35
+                        }
+                    ],
+                    "maxVolume": 0.5
+                },
+                {
+                    "type": "sound",
+                    "name": "paper.mp3",
+                    "start": 1500,
+                    "end": 2500,
+                    "maxVolume": 1
+                },
+                {
+                    "type": "music",
+                    "name": "rain_heavy.ogg",
+                    "start": 1600,
+                    "end": 5000,
+                    "frames": [
+                        {
+                            "x": 1600,
+                            "y": 0
+                        },
+                        {
+                            "x": 3000,
+                            "y": 0.4
+                        },
+                        {
+                            "x": 5000,
+                            "y": 0.4
+                        }
+                    ],
+                    "maxVolume": 1
+                }
+            ]
         },
         {
             "pageName": "page5-lie",
@@ -1430,10 +1480,36 @@
                     "endY": 0
                 }
             ],
-            "audios": []
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 2920,
+                    "frames": [],
+                    "maxVolume": 0.35
+                },
+                {
+                    "type": "music",
+                    "name": "rain_heavy.ogg",
+                    "start": 0,
+                    "end": 2920,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0.4
+                        },
+                        {
+                            "x": 2920,
+                            "y": 0.4
+                        }
+                    ],
+                    "maxVolume": 1
+                }
+            ]
         },
         {
-            "pageName": "page6-raining",
+            "pageName": "page6-rain",
             "stageHeight": 1080,
             "figureScale": 0.75,
             "scrollWidth": 4500,
@@ -1491,7 +1567,7 @@
                         },
                         {
                             "type": "alpha",
-                            "startScroll": 4300,
+                            "startScroll": 4400,
                             "startX": 1,
                             "startY": 0,
                             "endScroll": 4500,
@@ -1580,7 +1656,65 @@
                     "endY": 0
                 }
             ],
-            "audios": []
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "gentle_boat.ogg",
+                    "start": 0,
+                    "end": 4500,
+                    "frames": [],
+                    "maxVolume": 0.5
+                },
+                {
+                    "type": "music",
+                    "name": "rain_heavy.ogg",
+                    "start": 0,
+                    "end": 4500,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0.3
+                        },
+                        {
+                            "x": 1600,
+                            "y": 0.6
+                        },
+                        {
+                            "x": 2500,
+                            "y": 0
+                        }
+                    ],
+                    "maxVolume": 0.5
+                },
+                {
+                    "type": "music",
+                    "name": "rain_storm.ogg",
+                    "start": 0,
+                    "end": 4500,
+                    "frames": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        },
+                        {
+                            "x": 1600,
+                            "y": 0
+                        },
+                        {
+                            "x": 2500,
+                            "y": 1
+                        }
+                    ],
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 4350,
+                    "end": 4500,
+                    "maxVolume": 1
+                }
+            ]
         },
         {
             "pageName": "page7-storms",
@@ -1669,7 +1803,7 @@
                         },
                         {
                             "type": "alpha",
-                            "startScroll": 6400,
+                            "startScroll": 6450,
                             "startX": 1,
                             "startY": 0,
                             "endScroll": 6600,
@@ -1735,7 +1869,7 @@
                         },
                         {
                             "type": "alpha",
-                            "startScroll": 4200,
+                            "startScroll": 4250,
                             "startX": 1,
                             "startY": 0,
                             "endScroll": 4400,
@@ -1774,7 +1908,7 @@
                     "anims": [
                         {
                             "type": "alpha",
-                            "startScroll": 2400,
+                            "startScroll": 2450,
                             "startX": 1,
                             "startY": 0,
                             "endScroll": 2600,
@@ -1815,13 +1949,43 @@
                     "endY": 0
                 }
             ],
-            "audios": []
+            "audios": [
+                {
+                    "type": "music",
+                    "name": "rain_storm.ogg",
+                    "start": 0,
+                    "end": 6700,
+                    "frames": [],
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 2450,
+                    "end": 2700,
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 4250,
+                    "end": 4400,
+                    "maxVolume": 1
+                },
+                {
+                    "type": "sound",
+                    "name": "thunder.mp3",
+                    "start": 6450,
+                    "end": 6600,
+                    "maxVolume": 1
+                }
+            ]
         },
         {
             "pageName": "page8-end",
             "stageHeight": 1080,
             "figureScale": 0.75,
-            "scrollWidth": 1920,
+            "scrollWidth": 8000,
             "startPositionX": 0,
             "startPositionY": 0,
             "endPositionX": 1920,
@@ -1877,11 +2041,20 @@
                     "anims": [
                         {
                             "type": "alpha",
-                            "startScroll": 0,
+                            "startScroll": 1000,
                             "startX": 1,
                             "startY": 0,
-                            "endScroll": 1900,
+                            "endScroll": 4000,
                             "endX": 0,
+                            "endY": 0
+                        },
+                        {
+                            "type": "alpha",
+                            "startScroll": 4000,
+                            "startX": 0,
+                            "startY": 0,
+                            "endScroll": 8000,
+                            "endX": 1,
                             "endY": 0
                         }
                     ],

@@ -16,7 +16,7 @@ public class AudioManager {
 			
 			float vol = a.getVolume(progress, delta);
 			int index = this.findReference(a);
-			System.out.println(a.reference + ": " + a.page + ", "  + page);
+			//System.out.println(a.reference + ": " + a.page + ", "  + page);
 			
 			
 			
@@ -28,7 +28,7 @@ public class AudioManager {
 
 					this.musicReferences.get(index).checkOut = a;
 
-					System.out.println(a.reference + ", " + a.page + ", " + page);
+					//System.out.println(a.reference + ", " + a.page + ", " + page);
 
 				} 
 				else if(a.type.equals(AudioCue.MUSIC) && a.page != page) {
