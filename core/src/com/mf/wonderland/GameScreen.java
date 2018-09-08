@@ -13,6 +13,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.input.GestureDetector;
+import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.mf.wonderland.Book.Book;
 import com.mf.wonderland.Book.Page;
 import com.mf.wonderland.debug.BookTest;
@@ -33,12 +35,14 @@ public class GameScreen implements Screen {
     
     
     //For debug
-    SpriteBatch debugBatch = new SpriteBatch();
-    BitmapFont font = new BitmapFont();
+    SpriteBatch debugBatch;
+    BitmapFont font;
     
     String bookName = "book.json";
     float pageWidth = 100f;
     Book book;
+    
+    FillViewport viewport;
 
 	public GameScreen(final Wonderland gam) {
 		this.game = gam;
@@ -46,8 +50,13 @@ public class GameScreen implements Screen {
 		camera = new OrthographicCamera();
         camera.setToOrtho(false, screenWidth, screenHeight);
         camera.position.set(0, 0, 0);
+        
+        viewport = new FillViewport(screenWidth, screenHeight, camera);
 		
         Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
+        
+        debugBatch = new SpriteBatch();
+        font = new BitmapFont();
         
         //debugs        
         //book = BookTest.jsonBookMaker();
@@ -93,11 +102,11 @@ public class GameScreen implements Screen {
 	    game.batch.end();
 	    
 	    //Render debug
-	    debugBatch.begin();
-	    font.draw(debugBatch, camera.zoom + " ", 0, 60);
-	    font.draw(debugBatch, book.uncorrectedProgress + " ", 0, 40);
-	    font.draw(debugBatch, camera.position.x + ", " + camera.position.y, 0, 20);
-	    debugBatch.end();
+//	    debugBatch.begin();
+//	    font.draw(debugBatch, camera.zoom + " ", 0, 60);
+//	    font.draw(debugBatch, book.uncorrectedProgress + " ", 0, 40);
+//	    font.draw(debugBatch, camera.position.x + ", " + camera.position.y, 0, 20);
+//	    debugBatch.end();
 	    
 	    //log.log();
 	    //System.out.println(progress);
@@ -110,7 +119,16 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		// TODO Auto-generated method stub
-		
+		//pixelsPerUnit = Gdx.graphics.getHeight()/screenHeight;
+	    //screenWidth = Gdx.graphics.getWidth()/pixelsPerUnit;
+		float w = width;
+	    if(width/16 > height/9) {
+	    	w = (height/9)*16;
+	    }
+	    //viewport.update((int) screenWidth, (int) screenHeight);
+	    viewport.update(width, height);
+	    viewport.apply();
+	    camera.setToOrtho(false, screenWidth, screenHeight);
 	}
 
 	@Override
