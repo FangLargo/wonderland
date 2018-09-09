@@ -129,4 +129,5 @@ Thumbs.db
 /android/assets/images/*.atlas
 /android/assets/images/*.tpproj
 /android/assets/audio/sound/*.mp3
+/android/assets/audio/sound/*.ogg
 /android/assets/audio/music/*.ogg
