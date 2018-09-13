@@ -2,7 +2,9 @@ package com.mf.wonderland;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -32,7 +34,8 @@ public class GameScreen implements Screen {
     
     //Creates new instance of ScrollHandler
     ScrollHandler scrollHandler = new ScrollHandler();
-    
+    WebInputHandler webInputHandler = new WebInputHandler();
+    boolean debugWebInput = true;
     
     //For debug
     SpriteBatch debugBatch;
@@ -52,8 +55,12 @@ public class GameScreen implements Screen {
         camera.position.set(0, 0, 0);
         
         viewport = new FillViewport(screenWidth, screenHeight, camera);
-		
-        Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
+        
+        if(Gdx.app.getType() != ApplicationType.WebGL && debugWebInput == false) {
+        	Gdx.input.setInputProcessor(new GestureDetector(scrollHandler));
+		} else {
+			Gdx.input.setInputProcessor(webInputHandler.inputAdapter);
+		}
         
         debugBatch = new SpriteBatch();
         font = new BitmapFont();
@@ -79,7 +86,15 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClearColor(0f, 0f, 0f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-		progress = progress - scrollHandler.dx/pixelsPerUnit;
+		//progress = progress - scrollHandler.dx/pixelsPerUnit;
+		//progress = progress - Gdx.input.getInputProcessor().dx/pixelsPerUnit;
+		
+		if(Gdx.app.getType() != ApplicationType.WebGL && debugWebInput == false) {
+			progress = progress - scrollHandler.dx/pixelsPerUnit;
+		} else {
+			progress = progress - webInputHandler.dx/pixelsPerUnit;
+		}
+
 		
 		if(progress < 0) {
 			progress = 0f;
