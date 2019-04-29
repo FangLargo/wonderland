@@ -35,7 +35,7 @@ public class GameScreen implements Screen {
     //Creates new instance of ScrollHandler
     ScrollHandler scrollHandler = new ScrollHandler();
     WebInputHandler webInputHandler = new WebInputHandler();
-    boolean debugWebInput = true;
+    boolean debugWebInput = false;
     
     //For debug
     SpriteBatch debugBatch;
